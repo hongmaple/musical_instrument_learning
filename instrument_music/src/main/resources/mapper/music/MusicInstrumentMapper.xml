@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.instrument.music.mapper.MusicInstrumentMapper">
+    
+    <resultMap type="MusicInstrument" id="MusicInstrumentResult">
+        <result property="id"    column="id"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="name"    column="name"    />
+        <result property="content"    column="content"    />
+    </resultMap>
+
+    <sql id="selectMusicInstrumentVo">
+        select id, create_by, create_time, update_by, update_time, name, content from music_instrument
+    </sql>
+
+    <select id="selectMusicInstrumentList" parameterType="MusicInstrument" resultMap="MusicInstrumentResult">
+        <include refid="selectMusicInstrumentVo"/>
+        <where>  
+            <if test="name != null  and name != ''"> and name like concat('%', #{name}, '%')</if>
+            <if test="content != null  and content != ''"> and content = #{content}</if>
+        </where>
+    </select>
+    
+    <select id="selectMusicInstrumentById" parameterType="Long" resultMap="MusicInstrumentResult">
+        <include refid="selectMusicInstrumentVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertMusicInstrument" parameterType="MusicInstrument" useGeneratedKeys="true" keyProperty="id">
+        insert into music_instrument
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="name != null and name != ''">name,</if>
+            <if test="content != null">content,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="name != null and name != ''">#{name},</if>
+            <if test="content != null">#{content},</if>
+         </trim>
+    </insert>
+
+    <update id="updateMusicInstrument" parameterType="MusicInstrument">
+        update music_instrument
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="name != null and name != ''">name = #{name},</if>
+            <if test="content != null">content = #{content},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteMusicInstrumentById" parameterType="Long">
+        delete from music_instrument where id = #{id}
+    </delete>
+
+    <delete id="deleteMusicInstrumentByIds" parameterType="String">
+        delete from music_instrument where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

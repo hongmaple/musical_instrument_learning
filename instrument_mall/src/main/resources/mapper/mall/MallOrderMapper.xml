@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.instrument.mall.mapper.MallOrderMapper">
+    
+    <resultMap type="MallOrder" id="MallOrderResult">
+        <result property="orderId"    column="order_id"    />
+        <result property="totalPay"    column="total_pay"    />
+        <result property="actualPay"    column="actual_pay"    />
+        <result property="buyerNick"    column="buyer_nick"    />
+        <result property="receiver"    column="receiver"    />
+        <result property="receiverMobile"    column="receiver_mobile"    />
+        <result property="receiverState"    column="receiver_state"    />
+        <result property="receiverCity"    column="receiver_city"    />
+        <result property="receiverDistrict"    column="receiver_district"    />
+        <result property="receiverAddress"    column="receiver_address"    />
+        <result property="remark"    column="remark"    />
+        <result property="status"    column="status"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="paymentTime"    column="payment_time"    />
+        <result property="consignTime"    column="consign_time"    />
+        <result property="endTime"    column="end_time"    />
+        <result property="closeTime"    column="close_time"    />
+        <result property="isDeleted"    column="is_deleted"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="createBy"    column="create_by"    />
+    </resultMap>
+
+    <sql id="selectMallOrderVo">
+        select order_id, total_pay, actual_pay, buyer_nick, receiver, receiver_mobile, receiver_state, receiver_city, receiver_district, receiver_address, remark, status, create_time, payment_time, consign_time, end_time, close_time, is_deleted, update_by, create_by from mall_order
+    </sql>
+
+    <select id="selectMallOrderList" parameterType="MallOrder" resultMap="MallOrderResult">
+        <include refid="selectMallOrderVo"/>
+        <where>  
+            <if test="totalPay != null "> and total_pay &gt;= #{totalPay}</if>
+            <if test="actualPay != null "> and actual_pay &gt;= #{actualPay}</if>
+            <if test="buyerNick != null  and buyerNick != ''"> and buyer_nick like concat('%', #{buyerNick}, '%')</if>
+            <if test="receiver != null  and receiver != ''"> and receiver like concat('%', #{receiver}, '%')</if>
+            <if test="receiverMobile != null  and receiverMobile != ''"> and receiver_mobile like concat('%', #{receiverMobile}, '%')</if>
+            <if test="receiverState != null  and receiverState != ''"> and receiver_state like concat('%', #{receiverState}, '%')</if>
+            <if test="receiverCity != null  and receiverCity != ''"> and receiver_city like concat('%', #{receiverCity}, '%')</if>
+            <if test="receiverDistrict != null  and receiverDistrict != ''"> and receiver_district like concat('%', #{receiverDistrict}, '%')</if>
+            <if test="receiverAddress != null  and receiverAddress != ''"> and receiver_address like concat('%', #{receiverAddress}, '%')</if>
+            <if test="status != null "> and status = #{status}</if>
+            <if test="params.beginPaymentTime != null and params.beginPaymentTime != '' and params.endPaymentTime != null and params.endPaymentTime != ''"> and payment_time between #{params.beginPaymentTime} and #{params.endPaymentTime}</if>
+            <if test="params.beginConsignTime != null and params.beginConsignTime != '' and params.endConsignTime != null and params.endConsignTime != ''"> and consign_time between #{params.beginConsignTime} and #{params.endConsignTime}</if>
+            <if test="params.beginEndTime != null and params.beginEndTime != '' and params.endEndTime != null and params.endEndTime != ''"> and end_time between #{params.beginEndTime} and #{params.endEndTime}</if>
+            <if test="params.beginCloseTime != null and params.beginCloseTime != '' and params.endCloseTime != null and params.endCloseTime != ''"> and close_time between #{params.beginCloseTime} and #{params.endCloseTime}</if>
+        </where>
+    </select>
+    
+    <select id="selectMallOrderByOrderId" parameterType="String" resultMap="MallOrderResult">
+        <include refid="selectMallOrderVo"/>
+        where order_id = #{orderId}
+    </select>
+        
+    <insert id="insertMallOrder" parameterType="MallOrder">
+        insert into mall_order
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="orderId != null">order_id,</if>
+            <if test="totalPay != null">total_pay,</if>
+            <if test="actualPay != null">actual_pay,</if>
+            <if test="buyerNick != null and buyerNick != ''">buyer_nick,</if>
+            <if test="receiver != null and receiver != ''">receiver,</if>
+            <if test="receiverMobile != null and receiverMobile != ''">receiver_mobile,</if>
+            <if test="receiverState != null and receiverState != ''">receiver_state,</if>
+            <if test="receiverCity != null and receiverCity != ''">receiver_city,</if>
+            <if test="receiverDistrict != null and receiverDistrict != ''">receiver_district,</if>
+            <if test="receiverAddress != null and receiverAddress != ''">receiver_address,</if>
+            <if test="remark != null">remark,</if>
+            <if test="status != null">status,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="paymentTime != null">payment_time,</if>
+            <if test="consignTime != null">consign_time,</if>
+            <if test="endTime != null">end_time,</if>
+            <if test="closeTime != null">close_time,</if>
+            <if test="isDeleted != null">is_deleted,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="createBy != null">create_by,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="orderId != null">#{orderId},</if>
+            <if test="totalPay != null">#{totalPay},</if>
+            <if test="actualPay != null">#{actualPay},</if>
+            <if test="buyerNick != null and buyerNick != ''">#{buyerNick},</if>
+            <if test="receiver != null and receiver != ''">#{receiver},</if>
+            <if test="receiverMobile != null and receiverMobile != ''">#{receiverMobile},</if>
+            <if test="receiverState != null and receiverState != ''">#{receiverState},</if>
+            <if test="receiverCity != null and receiverCity != ''">#{receiverCity},</if>
+            <if test="receiverDistrict != null and receiverDistrict != ''">#{receiverDistrict},</if>
+            <if test="receiverAddress != null and receiverAddress != ''">#{receiverAddress},</if>
+            <if test="remark != null">#{remark},</if>
+            <if test="status != null">#{status},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="paymentTime != null">#{paymentTime},</if>
+            <if test="consignTime != null">#{consignTime},</if>
+            <if test="endTime != null">#{endTime},</if>
+            <if test="closeTime != null">#{closeTime},</if>
+            <if test="isDeleted != null">#{isDeleted},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="createBy != null">#{createBy},</if>
+         </trim>
+    </insert>
+
+    <update id="updateMallOrder" parameterType="MallOrder">
+        update mall_order
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="totalPay != null">total_pay = #{totalPay},</if>
+            <if test="actualPay != null">actual_pay = #{actualPay},</if>
+            <if test="buyerNick != null and buyerNick != ''">buyer_nick = #{buyerNick},</if>
+            <if test="receiver != null and receiver != ''">receiver = #{receiver},</if>
+            <if test="receiverMobile != null and receiverMobile != ''">receiver_mobile = #{receiverMobile},</if>
+            <if test="receiverState != null and receiverState != ''">receiver_state = #{receiverState},</if>
+            <if test="receiverCity != null and receiverCity != ''">receiver_city = #{receiverCity},</if>
+            <if test="receiverDistrict != null and receiverDistrict != ''">receiver_district = #{receiverDistrict},</if>
+            <if test="receiverAddress != null and receiverAddress != ''">receiver_address = #{receiverAddress},</if>
+            <if test="remark != null">remark = #{remark},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="paymentTime != null">payment_time = #{paymentTime},</if>
+            <if test="consignTime != null">consign_time = #{consignTime},</if>
+            <if test="endTime != null">end_time = #{endTime},</if>
+            <if test="closeTime != null">close_time = #{closeTime},</if>
+            <if test="isDeleted != null">is_deleted = #{isDeleted},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+        </trim>
+        where order_id = #{orderId}
+    </update>
+
+    <delete id="deleteMallOrderByOrderId" parameterType="String">
+        delete from mall_order where order_id = #{orderId}
+    </delete>
+
+    <delete id="deleteMallOrderByOrderIds" parameterType="String">
+        delete from mall_order where order_id in 
+        <foreach item="orderId" collection="array" open="(" separator="," close=")">
+            #{orderId}
+        </foreach>
+    </delete>
+</mapper>

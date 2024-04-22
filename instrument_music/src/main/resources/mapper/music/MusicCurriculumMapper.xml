@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.instrument.music.mapper.MusicCurriculumMapper">
+    
+    <resultMap type="MusicCurriculum" id="MusicCurriculumResult">
+        <result property="id"    column="id"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="title"    column="title"    />
+        <result property="type"    column="type"    />
+        <result property="content"    column="content"    />
+        <result property="top"    column="Top"    />
+        <result property="status"    column="status"    />
+        <result property="blogPicType"    column="blog_pic_type"    />
+        <result property="blogPic"    column="blog_pic"    />
+        <result property="blogPicLink"    column="blog_pic_link"    />
+        <result property="instrumentId"    column="instrument_id"    />
+    </resultMap>
+
+    <sql id="selectMusicCurriculumVo">
+        select id, create_by, create_time, update_by, update_time, title, type, content, Top, status, blog_pic_type, blog_pic, blog_pic_link, instrument_id from music_curriculum
+    </sql>
+
+    <select id="selectMusicCurriculumList" parameterType="MusicCurriculum" resultMap="MusicCurriculumResult">
+        <include refid="selectMusicCurriculumVo"/>
+        <where>  
+            <if test="title != null  and title != ''"> and title like concat('%', #{title}, '%')</if>
+            <if test="type != null  and type != ''"> and type = #{type}</if>
+            <if test="content != null  and content != ''"> and content = #{content}</if>
+            <if test="top != null  and top != ''"> and Top = #{top}</if>
+            <if test="status != null  and status != ''"> and status = #{status}</if>
+            <if test="blogPicType != null  and blogPicType != ''"> and blog_pic_type = #{blogPicType}</if>
+            <if test="blogPic != null  and blogPic != ''"> and blog_pic = #{blogPic}</if>
+            <if test="blogPicLink != null  and blogPicLink != ''"> and blog_pic_link = #{blogPicLink}</if>
+            <if test="instrumentId != null "> and instrument_id = #{instrumentId}</if>
+        </where>
+    </select>
+    
+    <select id="selectMusicCurriculumById" parameterType="Long" resultMap="MusicCurriculumResult">
+        <include refid="selectMusicCurriculumVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertMusicCurriculum" parameterType="MusicCurriculum" useGeneratedKeys="true" keyProperty="id">
+        insert into music_curriculum
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="title != null and title != ''">title,</if>
+            <if test="type != null and type != ''">type,</if>
+            <if test="content != null">content,</if>
+            <if test="top != null">Top,</if>
+            <if test="status != null">status,</if>
+            <if test="blogPicType != null">blog_pic_type,</if>
+            <if test="blogPic != null">blog_pic,</if>
+            <if test="blogPicLink != null">blog_pic_link,</if>
+            <if test="instrumentId != null">instrument_id,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="title != null and title != ''">#{title},</if>
+            <if test="type != null and type != ''">#{type},</if>
+            <if test="content != null">#{content},</if>
+            <if test="top != null">#{top},</if>
+            <if test="status != null">#{status},</if>
+            <if test="blogPicType != null">#{blogPicType},</if>
+            <if test="blogPic != null">#{blogPic},</if>
+            <if test="blogPicLink != null">#{blogPicLink},</if>
+            <if test="instrumentId != null">#{instrumentId},</if>
+         </trim>
+    </insert>
+
+    <update id="updateMusicCurriculum" parameterType="MusicCurriculum">
+        update music_curriculum
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="title != null and title != ''">title = #{title},</if>
+            <if test="type != null and type != ''">type = #{type},</if>
+            <if test="content != null">content = #{content},</if>
+            <if test="top != null">Top = #{top},</if>
+            <if test="status != null">status = #{status},</if>
+            <if test="blogPicType != null">blog_pic_type = #{blogPicType},</if>
+            <if test="blogPic != null">blog_pic = #{blogPic},</if>
+            <if test="blogPicLink != null">blog_pic_link = #{blogPicLink},</if>
+            <if test="instrumentId != null">instrument_id = #{instrumentId},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteMusicCurriculumById" parameterType="Long">
+        delete from music_curriculum where id = #{id}
+    </delete>
+
+    <delete id="deleteMusicCurriculumByIds" parameterType="String">
+        delete from music_curriculum where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

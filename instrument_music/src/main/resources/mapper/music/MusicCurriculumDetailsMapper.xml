@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.instrument.music.mapper.MusicCurriculumDetailsMapper">
+    
+    <resultMap type="MusicCurriculumDetails" id="MusicCurriculumDetailsResult">
+        <result property="id"    column="id"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="cId"    column="c_id"    />
+        <result property="title"    column="title"    />
+        <result property="content"    column="content"    />
+        <result property="status"    column="status"    />
+    </resultMap>
+
+    <sql id="selectMusicCurriculumDetailsVo">
+        select id, create_by, create_time, update_by, update_time, c_id, title, content, status from music_curriculum_details
+    </sql>
+
+    <select id="selectMusicCurriculumDetailsList" parameterType="MusicCurriculumDetails" resultMap="MusicCurriculumDetailsResult">
+        <include refid="selectMusicCurriculumDetailsVo"/>
+        <where>  
+            <if test="cId != null "> and c_id = #{cId}</if>
+            <if test="title != null  and title != ''"> and title like concat('%', #{title}, '%')</if>
+            <if test="status != null  and status != ''"> and status = #{status}</if>
+        </where>
+    </select>
+    
+    <select id="selectMusicCurriculumDetailsById" parameterType="Long" resultMap="MusicCurriculumDetailsResult">
+        <include refid="selectMusicCurriculumDetailsVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertMusicCurriculumDetails" parameterType="MusicCurriculumDetails" useGeneratedKeys="true" keyProperty="id">
+        insert into music_curriculum_details
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="cId != null">c_id,</if>
+            <if test="title != null and title != ''">title,</if>
+            <if test="content != null">content,</if>
+            <if test="status != null">status,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="cId != null">#{cId},</if>
+            <if test="title != null and title != ''">#{title},</if>
+            <if test="content != null">#{content},</if>
+            <if test="status != null">#{status},</if>
+         </trim>
+    </insert>
+
+    <update id="updateMusicCurriculumDetails" parameterType="MusicCurriculumDetails">
+        update music_curriculum_details
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="cId != null">c_id = #{cId},</if>
+            <if test="title != null and title != ''">title = #{title},</if>
+            <if test="content != null">content = #{content},</if>
+            <if test="status != null">status = #{status},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteMusicCurriculumDetailsById" parameterType="Long">
+        delete from music_curriculum_details where id = #{id}
+    </delete>
+
+    <delete id="deleteMusicCurriculumDetailsByIds" parameterType="String">
+        delete from music_curriculum_details where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>
