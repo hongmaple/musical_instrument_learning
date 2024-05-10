@@ -198,7 +198,7 @@
         style="min-height: 200px;"
         ref="upload"
         :limit="5"
-        accept=".jpg, .png,.txt,.doc,.docx,.xls,.xlsx,.ppt,.zip,.pdf"
+        accept=".jpg, .png,.txt,.doc,.docx,.xls,.xlsx,.ppt,.zip,.pdf,.mp4"
         :action="upload.url"
         :headers="upload.headers"
         :file-list="upload.fileList"
@@ -207,7 +207,7 @@
         :auto-upload="false">
         <el-button slot="trigger" size="small" type="primary">选取文件</el-button>
         <el-button style="margin-left: 10px;" size="small" type="success" :loading="upload.isUploading" @click="submitUpload">上传到服务器</el-button>
-        <div slot="tip" class="el-upload__tip">只能上传jpg/png/txt/doc/docx/xls/xlsx/ppt/zip/pdf文件，且单个文件不超过50Mb</div>
+        <div slot="tip" class="el-upload__tip">只能上传jpg/png/txt/doc/docx/xls/xlsx/ppt/zip/pdf/mp4文件，且单个文件不超过50Mb</div>
       </el-upload>
     </el-dialog>
   </div>

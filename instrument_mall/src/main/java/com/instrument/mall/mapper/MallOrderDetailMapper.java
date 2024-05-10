@@ -2,6 +2,7 @@ package com.instrument.mall.mapper;
 
 import java.util.List;
 import com.instrument.mall.domain.MallOrderDetail;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * 订单详情Mapper接口
@@ -58,4 +59,6 @@ public interface MallOrderDetailMapper
      * @return 结果
      */
     public int deleteMallOrderDetailByIds(Long[] ids);
+
+    int insertMallOrderDetailList(@Param("mallOrderDetails") List<MallOrderDetail> mallOrderDetails);
 }

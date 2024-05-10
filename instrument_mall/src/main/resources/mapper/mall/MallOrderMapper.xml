@@ -44,6 +44,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="receiverDistrict != null  and receiverDistrict != ''"> and receiver_district like concat('%', #{receiverDistrict}, '%')</if>
             <if test="receiverAddress != null  and receiverAddress != ''"> and receiver_address like concat('%', #{receiverAddress}, '%')</if>
             <if test="status != null "> and status = #{status}</if>
+            <if test="createBy != null "> and create_by = #{createBy}</if>
             <if test="params.beginPaymentTime != null and params.beginPaymentTime != '' and params.endPaymentTime != null and params.endPaymentTime != ''"> and payment_time between #{params.beginPaymentTime} and #{params.endPaymentTime}</if>
             <if test="params.beginConsignTime != null and params.beginConsignTime != '' and params.endConsignTime != null and params.endConsignTime != ''"> and consign_time between #{params.beginConsignTime} and #{params.endConsignTime}</if>
             <if test="params.beginEndTime != null and params.beginEndTime != '' and params.endEndTime != null and params.endEndTime != ''"> and end_time between #{params.beginEndTime} and #{params.endEndTime}</if>

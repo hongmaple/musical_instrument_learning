@@ -58,4 +58,6 @@ public interface IMusicInstrumentService
      * @return 结果
      */
     public int deleteMusicInstrumentById(Long id);
+
+    List<MusicInstrument> selectMusicInstrumentByIds(List<Long> iIds);
 }

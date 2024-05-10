@@ -9,6 +9,15 @@ export function listInstrument(query) {
   })
 }
 
+// 查询乐器列表
+export function customerListInstrument(query) {
+  return request({
+    url: '/music/instrument/customerListInstrument',
+    method: 'get',
+    params: query
+  })
+}
+
 // 查询乐器详细
 export function getInstrument(id) {
   return request({

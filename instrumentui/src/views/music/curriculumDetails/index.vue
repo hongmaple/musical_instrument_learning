@@ -7,6 +7,7 @@
           placeholder="请输入课程ID"
           clearable
           size="small"
+          disabled
           @keyup.enter.native="handleQuery"
         />
       </el-form-item>
@@ -139,7 +140,8 @@
           <el-input v-model="form.title" placeholder="请输入标题" />
         </el-form-item>
         <el-form-item label="介绍内容">
-          <editor v-model="form.content" :min-height="192"/>
+<!--          <editor v-model="form.content" :min-height="192"/>-->
+          <el-input v-model="form.content" type="textarea" placeholder="请输入内容" />
         </el-form-item>
         <el-form-item label="状态">
           <el-radio-group v-model="form.status">
@@ -150,6 +152,10 @@
             >{{dict.label}}</el-radio>
           </el-radio-group>
         </el-form-item>
+        <el-form-item label="视频">
+          <FileUpload v-model="form.url" :limit="1" :file-type="['mp4']" :file-size="100" />
+        </el-form-item>
+
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button type="primary" @click="submitForm">确 定</el-button>
@@ -197,16 +203,20 @@ export default {
       form: {},
       // 表单校验
       rules: {
-        cId: [
-          { required: true, message: "课程ID不能为空", trigger: "blur" }
-        ],
         title: [
           { required: true, message: "标题不能为空", trigger: "blur" }
         ],
-      }
+        url: [
+          { required: true, message: "视频不能为空", trigger: "blur" }
+        ],
+      },
+      curriculumId: null
     };
   },
   created() {
+    const curriculumId = this.$route.params && this.$route.params.curriculumId;
+    this.queryParams.cId = curriculumId;
+    this.curriculumId = curriculumId;
     this.getList();
   },
   methods: {
@@ -276,12 +286,14 @@ export default {
       this.$refs["form"].validate(valid => {
         if (valid) {
           if (this.form.id != null) {
+            this.form.cId = this.curriculumId;
             updateCurriculumDetails(this.form).then(response => {
               this.$modal.msgSuccess("修改成功");
               this.open = false;
               this.getList();
             });
           } else {
+            this.form.cId = this.curriculumId;
             addCurriculumDetails(this.form).then(response => {
               this.$modal.msgSuccess("新增成功");
               this.open = false;

@@ -2,6 +2,7 @@ package com.instrument.music.mapper;
 
 import java.util.List;
 import com.instrument.music.domain.MusicInstrument;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * 乐器Mapper接口
@@ -58,4 +59,6 @@ public interface MusicInstrumentMapper
      * @return 结果
      */
     public int deleteMusicInstrumentByIds(Long[] ids);
+
+    List<MusicInstrument> selectMusicInstrumentByIds(@Param("ids") List<Long> iIds);
 }

@@ -55,6 +55,8 @@ public class MusicCurriculum extends BaseEntity
     @Excel(name = "乐器id")
     private Long instrumentId;
 
+    private MusicInstrument musicInstrument;
+
     public void setId(Long id) 
     {
         this.id = id;
@@ -144,6 +146,14 @@ public class MusicCurriculum extends BaseEntity
     public Long getInstrumentId() 
     {
         return instrumentId;
+    }
+
+    public MusicInstrument getMusicInstrument() {
+        return musicInstrument;
+    }
+
+    public void setMusicInstrument(MusicInstrument musicInstrument) {
+        this.musicInstrument = musicInstrument;
     }
 
     @Override

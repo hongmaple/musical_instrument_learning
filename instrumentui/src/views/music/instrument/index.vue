@@ -78,9 +78,15 @@
         </template>
       </el-table-column>
       <el-table-column label="乐器名" align="center" prop="name" />
-      <el-table-column label="介绍内容" align="center" prop="content" />
+<!--      <el-table-column label="介绍内容" align="center" prop="content" />-->
       <el-table-column label="操作" align="center" class-name="small-padding fixed-width">
         <template slot-scope="scope">
+          <el-button
+            size="mini"
+            type="text"
+            icon="el-icon-download"
+            @click="handleDownload(scope.row)"
+          >下载音频</el-button>
           <el-button
             size="mini"
             type="text"
@@ -98,7 +104,7 @@
         </template>
       </el-table-column>
     </el-table>
-    
+
     <pagination
       v-show="total>0"
       :total="total"
@@ -265,7 +271,18 @@ export default {
       this.download('music/instrument/export', {
         ...this.queryParams
       }, `instrument_${new Date().getTime()}.xlsx`)
-    }
+    },
+    // 文件下载处理
+    handleDownload(row) {
+      var name = row.result;
+      var url = row.url;
+      var suffix = url.substring(url.lastIndexOf("."), url.length);
+      const a = document.createElement('a')
+      a.setAttribute('download', name)
+      a.setAttribute('target', '_blank')
+      a.setAttribute('href', process.env.VUE_APP_BASE_API + url)
+      a.click()
+    },
   }
 };
 </script>

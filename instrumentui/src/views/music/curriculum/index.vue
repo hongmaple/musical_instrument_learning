@@ -10,20 +10,10 @@
           @keyup.enter.native="handleQuery"
         />
       </el-form-item>
-      <el-form-item label="类型 0：乐器，1：乐理" prop="type">
-        <el-select v-model="queryParams.type" placeholder="请选择类型 0：乐器，1：乐理" clearable size="small">
+      <el-form-item label="类型" prop="type">
+        <el-select v-model="queryParams.type" placeholder="请选择类型" clearable size="small">
           <el-option
-            v-for="dict in dict.type.sys_normal_disable"
-            :key="dict.value"
-            :label="dict.label"
-            :value="dict.value"
-          />
-        </el-select>
-      </el-form-item>
-      <el-form-item label="置顶" prop="top">
-        <el-select v-model="queryParams.top" placeholder="请选择置顶" clearable size="small">
-          <el-option
-            v-for="dict in dict.type.sys_normal_disable"
+            v-for="dict in dict.type.curriculum_type"
             :key="dict.value"
             :label="dict.label"
             :value="dict.value"
@@ -32,32 +22,9 @@
       </el-form-item>
       <el-form-item label="状态" prop="status">
         <el-select v-model="queryParams.status" placeholder="请选择状态" clearable size="small">
-          <el-option
-            v-for="dict in dict.type.sys_normal_disable"
-            :key="dict.value"
-            :label="dict.label"
-            :value="dict.value"
-          />
+          <el-option v-for="dict in dict.type.cms_blog_status" :key="dict.value" :label="dict.label"
+                     :value="dict.value" />
         </el-select>
-      </el-form-item>
-      <el-form-item label="首页图片类型" prop="blogPicType">
-        <el-select v-model="queryParams.blogPicType" placeholder="请选择首页图片类型" clearable size="small">
-          <el-option
-            v-for="dict in dict.type.sys_normal_disable"
-            :key="dict.value"
-            :label="dict.label"
-            :value="dict.value"
-          />
-        </el-select>
-      </el-form-item>
-      <el-form-item label="首页图片" prop="blogPicLink">
-        <el-input
-          v-model="queryParams.blogPicLink"
-          placeholder="请输入首页图片"
-          clearable
-          size="small"
-          @keyup.enter.native="handleQuery"
-        />
       </el-form-item>
       <el-form-item>
         <el-button type="primary" icon="el-icon-search" size="mini" @click="handleQuery">搜索</el-button>
@@ -113,7 +80,13 @@
 
     <el-table v-loading="loading" :data="curriculumList" @selection-change="handleSelectionChange">
       <el-table-column type="selection" width="55" align="center" />
-      <el-table-column label="ID" align="center" prop="id" />
+      <el-table-column label="ID" align="center" prop="id" >
+        <template slot-scope="scope">
+          <router-link :to="'/curriculum/curriculum-details/index/' + scope.row.id" class="link-type">
+            <span>{{ scope.row.id }}</span>
+          </router-link>
+        </template>
+      </el-table-column>
       <el-table-column label="创建者" align="center" prop="createBy" />
       <el-table-column label="创建时间" align="center" prop="createTime" width="180">
         <template slot-scope="scope">
@@ -127,29 +100,37 @@
         </template>
       </el-table-column>
       <el-table-column label="标题" align="center" prop="title" />
-      <el-table-column label="类型 0：乐器，1：乐理" align="center" prop="type">
+      <el-table-column label="类型" align="center" prop="type">
         <template slot-scope="scope">
-          <dict-tag :options="dict.type.sys_normal_disable" :value="scope.row.type"/>
-        </template>
-      </el-table-column>
-      <el-table-column label="介绍内容" align="center" prop="content" />
-      <el-table-column label="置顶" align="center" prop="top">
-        <template slot-scope="scope">
-          <dict-tag :options="dict.type.sys_normal_disable" :value="scope.row.top"/>
+          <dict-tag :options="dict.type.curriculum_type" :value="scope.row.type"/>
         </template>
       </el-table-column>
       <el-table-column label="状态" align="center" prop="status">
         <template slot-scope="scope">
-          <dict-tag :options="dict.type.sys_normal_disable" :value="scope.row.status"/>
+          <dict-tag :options="dict.type.cms_blog_status" :value="scope.row.status" />
         </template>
       </el-table-column>
-      <el-table-column label="首页图片类型" align="center" prop="blogPicType">
+      <el-table-column label="首图预览" align="center" prop="blogPic" >
         <template slot-scope="scope">
-          <dict-tag :options="dict.type.sys_normal_disable" :value="scope.row.blogPicType"/>
+          <el-image
+            v-if="scope.row.blogPicType == '0'"
+            style="width: 120px;height: 60px;"
+            :src="scope.row.blogPicLink"
+            lazy
+            :preview-src-list="[scope.row.blogPicLink]">
+            <div slot="error" class="image-slot">
+              <el-image src="/errorImg.jpg" fit="cover" class="blogPic"></el-image>
+            </div>
+          </el-image>
+          <el-image
+            v-if="scope.row.blogPicType == '1'"
+            style="width: 120px;height: 60px;"
+            :src="scope.row.blogPic"
+            lazy
+            :preview-src-list="[scope.row.blogPic]">
+          </el-image>
         </template>
       </el-table-column>
-      <el-table-column label="首页图片" align="center" prop="blogPic" />
-      <el-table-column label="首页图片" align="center" prop="blogPicLink" />
       <el-table-column label="乐器id" align="center" prop="instrumentId" />
       <el-table-column label="操作" align="center" class-name="small-padding fixed-width">
         <template slot-scope="scope">
@@ -170,7 +151,7 @@
         </template>
       </el-table-column>
     </el-table>
-    
+
     <pagination
       v-show="total>0"
       :total="total"
@@ -180,60 +161,76 @@
     />
 
     <!-- 添加或修改课程对话框 -->
-    <el-dialog :title="title" :visible.sync="open" width="500px" append-to-body>
+    <el-dialog :title="title" :visible.sync="open" width="1200px" append-to-body>
       <el-form ref="form" :model="form" :rules="rules" label-width="80px">
-        <el-form-item label="标题" prop="title">
-          <el-input v-model="form.title" placeholder="请输入标题" />
-        </el-form-item>
-        <el-form-item label="类型 0：乐器，1：乐理" prop="type">
-          <el-select v-model="form.type" placeholder="请选择类型 0：乐器，1：乐理">
-            <el-option
-              v-for="dict in dict.type.sys_normal_disable"
-              :key="dict.value"
-              :label="dict.label"
-:value="dict.value"
-            ></el-option>
-          </el-select>
-        </el-form-item>
-        <el-form-item label="介绍内容" prop="content">
-          <el-input v-model="form.content" type="textarea" placeholder="请输入内容" />
-        </el-form-item>
-        <el-form-item label="置顶">
-          <el-radio-group v-model="form.top">
-            <el-radio
-              v-for="dict in dict.type.sys_normal_disable"
-              :key="dict.value"
-:label="dict.value"
-            >{{dict.label}}</el-radio>
-          </el-radio-group>
-        </el-form-item>
-        <el-form-item label="状态">
-          <el-radio-group v-model="form.status">
-            <el-radio
-              v-for="dict in dict.type.sys_normal_disable"
-              :key="dict.value"
-:label="dict.value"
-            >{{dict.label}}</el-radio>
-          </el-radio-group>
-        </el-form-item>
-        <el-form-item label="首页图片类型">
-          <el-radio-group v-model="form.blogPicType">
-            <el-radio
-              v-for="dict in dict.type.sys_normal_disable"
-              :key="dict.value"
-:label="dict.value"
-            >{{dict.label}}</el-radio>
-          </el-radio-group>
-        </el-form-item>
-        <el-form-item label="首页图片">
-          <imageUpload v-model="form.blogPic"/>
-        </el-form-item>
-        <el-form-item label="首页图片" prop="blogPicLink">
-          <el-input v-model="form.blogPicLink" placeholder="请输入首页图片" />
-        </el-form-item>
+        <el-row>
+          <el-col :span="8">
+            <el-form-item label="标题" prop="title">
+              <el-input v-model="form.title" placeholder="请输入标题" />
+            </el-form-item>
+          </el-col>
+          <el-col :span="8">
+            <el-form-item label="类型" prop="type">
+              <el-select v-model="form.type" placeholder="请选择类型">
+                <el-option
+                  v-for="dict in dict.type.curriculum_type"
+                  :key="dict.value"
+                  :label="dict.label"
+                  :value="dict.value"
+                ></el-option>
+              </el-select>
+            </el-form-item>
+          </el-col>
+
+        </el-row>
+        <el-row>
+          <el-col :span="8">
+            <el-form-item label="简介" prop="content">
+              <el-input v-model="form.content" type="textarea" placeholder="请输入内容" />
+            </el-form-item>
+          </el-col>
+          <el-col :span="8">
+            <el-form-item label="首图">
+              <el-radio-group v-model="form.blogPicType">
+                <el-radio-button label="0">地址</el-radio-button>
+                <el-radio-button label="1">上传</el-radio-button>
+              </el-radio-group>
+              <div v-show="form.blogPicType == '0'" class="tabBlock">
+                <el-input v-model="form.blogPicLink" placeholder="请输入图片地址 https://" style="margin-bottom: 10px;" />
+                <el-image :src="form.blogPicLink" :preview-src-list="[form.blogPicLink]" fit="cover" class="blogPic" >
+                  <div slot="error" class="image-slot">
+                    <el-image src="/errorImg.jpg" fit="cover" class="blogPic"></el-image>
+                  </div>
+                </el-image>
+              </div>
+              <div v-show="form.blogPicType == '1'" class="tabBlock">
+                <imageUpload v-model="form.blogPic" :limit="1" />
+              </div>
+            </el-form-item>
+          </el-col>
+          <el-col :span="17">
+            <el-form-item label="置顶">
+              <el-checkbox v-model="top"></el-checkbox>
+            </el-form-item>
+          </el-col>
+          <el-col :span="17">
+            <el-form-item label="乐器">
+              <el-select v-model="form.instrumentId" filterable placeholder="请选择">
+                <el-option
+                  v-for="item in instrumentList"
+                  :key="item.id"
+                  :label="item.name"
+                  :value="item.id">
+                </el-option>
+              </el-select>
+            </el-form-item>
+          </el-col>
+
+        </el-row>
       </el-form>
       <div slot="footer" class="dialog-footer">
-        <el-button type="primary" @click="submitForm">确 定</el-button>
+        <el-button type="primary" @click="releaseForm">发 布</el-button>
+        <el-button type="info" @click="saveForm">暂 存</el-button>
         <el-button @click="cancel">取 消</el-button>
       </div>
     </el-dialog>
@@ -242,10 +239,11 @@
 
 <script>
 import { listCurriculum, getCurriculum, delCurriculum, addCurriculum, updateCurriculum } from "@/api/music/curriculum";
+import { listInstrument} from "@/api/music/instrument";
 
 export default {
   name: "Curriculum",
-  dicts: ['sys_normal_disable', 'sys_normal_disable', 'sys_normal_disable', 'sys_normal_disable'],
+  dicts: ['cms_blog_status', 'curriculum_type'],
   data() {
     return {
       // 遮罩层
@@ -288,12 +286,23 @@ export default {
           { required: true, message: "标题不能为空", trigger: "blur" }
         ],
         type: [
-          { required: true, message: "类型 0：乐器，1：乐理不能为空", trigger: "change" }
+          { required: true, message: "类型不能为空", trigger: "change" }
         ],
-      }
+      },
+      top: false,
+      instrumentList: []
     };
   },
   created() {
+    const instrumentParams = {
+      pageNum: 1,
+      pageSize: 99999,
+    }
+    this.loading = true;
+    listInstrument(instrumentParams).then(response => {
+      this.instrumentList = response.rows;
+      this.loading = false;
+    });
     this.getList();
   },
   methods: {
@@ -359,15 +368,26 @@ export default {
       const id = row.id || this.ids
       getCurriculum(id).then(response => {
         this.form = response.data;
+        if (this.form.top === "1") {
+          this.top = true;
+        } else {
+          this.top = false;
+        }
         this.open = true;
         this.title = "修改课程";
       });
     },
     /** 提交按钮 */
-    submitForm() {
+    releaseForm() {
       this.$refs["form"].validate(valid => {
         if (valid) {
+          this.form.status = "1";
           if (this.form.id != null) {
+            if (this.top) {
+              this.form.top = "1";
+            } else {
+              this.form.top = "0";
+            }
             updateCurriculum(this.form).then(response => {
               this.$modal.msgSuccess("修改成功");
               this.open = false;
@@ -380,6 +400,34 @@ export default {
               this.getList();
             });
           }
+        }
+      });
+    },
+    /** 暂存按钮 */
+    saveForm() {
+      this.$refs["form"].validate(valid => {
+        if (valid) {
+          this.$modal.confirm('是否确认暂存？').then(()=>{
+            this.form.status = "0";
+            if (this.top) {
+              this.form.top = "1";
+            } else {
+              this.form.top = "0";
+            }
+            if (this.form.id != null) {
+              updateCurriculum(this.form).then(response => {
+                this.$modal.msgSuccess("暂存成功");
+                this.open = false;
+                this.getList();
+              });
+            } else {
+              addCurriculum(this.form).then(response => {
+                this.$modal.msgSuccess("暂存成功");
+                this.open = false;
+                this.getList();
+              });
+            }
+          }).catch(() => {})
         }
       });
     },

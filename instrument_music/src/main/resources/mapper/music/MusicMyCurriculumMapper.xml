@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.instrument.music.mapper.MusicMyCurriculumMapper">
+    
+    <resultMap type="MusicMyCurriculum" id="MusicMyCurriculumResult">
+        <result property="id"    column="id"    />
+        <result property="curriculumId"    column="curriculum_id"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectMusicMyCurriculumVo">
+        select id, curriculum_id, create_by, create_time, update_by, update_time from music_my_curriculum
+    </sql>
+
+    <select id="selectMusicMyCurriculumList" parameterType="MusicMyCurriculum" resultMap="MusicMyCurriculumResult">
+        <include refid="selectMusicMyCurriculumVo"/>
+        <where>  
+            <if test="curriculumId != null "> and curriculum_id = #{curriculumId}</if>
+            <if test="createBy != null "> and create_by = #{createBy}</if>
+        </where>
+    </select>
+    
+    <select id="selectMusicMyCurriculumById" parameterType="Long" resultMap="MusicMyCurriculumResult">
+        <include refid="selectMusicMyCurriculumVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertMusicMyCurriculum" parameterType="MusicMyCurriculum" useGeneratedKeys="true" keyProperty="id">
+        insert into music_my_curriculum
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="curriculumId != null">curriculum_id,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="curriculumId != null">#{curriculumId},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateMusicMyCurriculum" parameterType="MusicMyCurriculum">
+        update music_my_curriculum
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="curriculumId != null">curriculum_id = #{curriculumId},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteMusicMyCurriculumById" parameterType="Long">
+        delete from music_my_curriculum where id = #{id}
+    </delete>
+
+    <delete id="deleteMusicMyCurriculumByIds" parameterType="String">
+        delete from music_my_curriculum where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

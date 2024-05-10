@@ -36,6 +36,8 @@ public class MusicCurriculumDetails extends BaseEntity
     @Excel(name = "状态", readConverterExp = "0=暂存,1=发布")
     private String status;
 
+    private String url;
+
     public void setId(Long id) 
     {
         this.id = id;
@@ -80,6 +82,14 @@ public class MusicCurriculumDetails extends BaseEntity
     public String getStatus() 
     {
         return status;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     @Override

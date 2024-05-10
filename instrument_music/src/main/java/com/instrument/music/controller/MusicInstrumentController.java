@@ -47,6 +47,18 @@ public class MusicInstrumentController extends BaseController
     }
 
     /**
+     * 查询乐器列表
+     */
+    @PreAuthorize("@ss.hasPermi('music:instrument:customerListInstrument')")
+    @GetMapping("/customerListInstrument")
+    public TableDataInfo customerListInstrument(MusicInstrument musicInstrument)
+    {
+        startPage();
+        List<MusicInstrument> list = musicInstrumentService.selectMusicInstrumentList(musicInstrument);
+        return getDataTable(list);
+    }
+
+    /**
      * 导出乐器列表
      */
     @PreAuthorize("@ss.hasPermi('music:instrument:export')")
@@ -77,6 +89,7 @@ public class MusicInstrumentController extends BaseController
     @PostMapping
     public AjaxResult add(@RequestBody MusicInstrument musicInstrument)
     {
+        musicInstrument.setCreateBy(getUsername());
         return toAjax(musicInstrumentService.insertMusicInstrument(musicInstrument));
     }
 
@@ -88,6 +101,7 @@ public class MusicInstrumentController extends BaseController
     @PutMapping
     public AjaxResult edit(@RequestBody MusicInstrument musicInstrument)
     {
+        musicInstrument.setUpdateBy(getUsername());
         return toAjax(musicInstrumentService.updateMusicInstrument(musicInstrument));
     }
 

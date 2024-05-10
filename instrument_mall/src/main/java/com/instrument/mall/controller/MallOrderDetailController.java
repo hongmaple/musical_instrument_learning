@@ -77,6 +77,7 @@ public class MallOrderDetailController extends BaseController
     @PostMapping
     public AjaxResult add(@RequestBody MallOrderDetail mallOrderDetail)
     {
+        mallOrderDetail.setCreateBy(getUsername());
         return toAjax(mallOrderDetailService.insertMallOrderDetail(mallOrderDetail));
     }
 
@@ -88,6 +89,7 @@ public class MallOrderDetailController extends BaseController
     @PutMapping
     public AjaxResult edit(@RequestBody MallOrderDetail mallOrderDetail)
     {
+        mallOrderDetail.setUpdateBy(getUsername());
         return toAjax(mallOrderDetailService.updateMallOrderDetail(mallOrderDetail));
     }
 

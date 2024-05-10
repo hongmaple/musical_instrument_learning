@@ -154,7 +154,7 @@
         fullTypeList: [],
         fullTagList: [],
         recommendList: [],
-        selectMethod: '全部博客',
+        selectMethod: '全部文章',
         typeId: -1,
         tagId: -1,
         selected: false,

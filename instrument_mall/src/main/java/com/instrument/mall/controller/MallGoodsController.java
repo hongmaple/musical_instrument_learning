@@ -47,6 +47,18 @@ public class MallGoodsController extends BaseController
     }
 
     /**
+     * 查询商品列表
+     */
+    @PreAuthorize("@ss.hasPermi('mall:goods:customerListGoods')")
+    @GetMapping("/customerListGoods")
+    public TableDataInfo customerListGoods(MallGoods mallGoods)
+    {
+        startPage();
+        List<MallGoods> list = mallGoodsService.selectMallGoodsList(mallGoods);
+        return getDataTable(list);
+    }
+
+    /**
      * 导出商品列表
      */
     @PreAuthorize("@ss.hasPermi('mall:goods:export')")
@@ -77,6 +89,7 @@ public class MallGoodsController extends BaseController
     @PostMapping
     public AjaxResult add(@RequestBody MallGoods mallGoods)
     {
+        mallGoods.setCreateBy(getUsername());
         return toAjax(mallGoodsService.insertMallGoods(mallGoods));
     }
 
@@ -88,6 +101,7 @@ public class MallGoodsController extends BaseController
     @PutMapping
     public AjaxResult edit(@RequestBody MallGoods mallGoods)
     {
+        mallGoods.setUpdateBy(getUsername());
         return toAjax(mallGoodsService.updateMallGoods(mallGoods));
     }
 

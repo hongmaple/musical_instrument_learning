@@ -1,6 +1,7 @@
 package com.instrument.system.service.impl;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.slf4j.Logger;
@@ -268,7 +269,11 @@ public class SysUserServiceImpl implements ISysUserService
     @Override
     public boolean registerUser(SysUser user)
     {
-        return userMapper.insertUser(user) > 0;
+        user.setRoleIds(new Long[]{4L});
+        int i = userMapper.insertUser(user);
+        // 新增用户与角色管理
+        insertUserRole(user);
+        return i > 0;
     }
 
     /**

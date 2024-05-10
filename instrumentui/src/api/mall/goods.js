@@ -9,6 +9,15 @@ export function listGoods(query) {
   })
 }
 
+// 查询商品列表
+export function customerListGoods(query) {
+  return request({
+    url: '/mall/goods/customerListGoods',
+    method: 'get',
+    params: query
+  })
+}
+
 // 查询商品详细
 export function getGoods(id) {
   return request({

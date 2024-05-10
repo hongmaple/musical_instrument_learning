@@ -1,19 +1,19 @@
 <template>
   <div class="app-container">
     <el-form :model="queryParams" ref="queryForm" :inline="true" v-show="showSearch" label-width="68px">
-      <el-form-item label="总金额 单位分" prop="totalPay">
+      <el-form-item label="总金额" prop="totalPay">
         <el-input
           v-model="queryParams.totalPay"
-          placeholder="请输入总金额 单位分"
+          placeholder="请输入总金额"
           clearable
           size="small"
           @keyup.enter.native="handleQuery"
         />
       </el-form-item>
-      <el-form-item label="实付金额 单位分" prop="actualPay">
+      <el-form-item label="实付金额" prop="actualPay">
         <el-input
           v-model="queryParams.actualPay"
-          placeholder="请输入实付金额 单位分"
+          placeholder="请输入实付金额"
           clearable
           size="small"
           @keyup.enter.native="handleQuery"
@@ -149,16 +149,6 @@
     <el-row :gutter="10" class="mb8">
       <el-col :span="1.5">
         <el-button
-          type="primary"
-          plain
-          icon="el-icon-plus"
-          size="mini"
-          @click="handleAdd"
-          v-hasPermi="['mall:order:add']"
-        >新增</el-button>
-      </el-col>
-      <el-col :span="1.5">
-        <el-button
           type="success"
           plain
           icon="el-icon-edit"
@@ -168,17 +158,17 @@
           v-hasPermi="['mall:order:edit']"
         >修改</el-button>
       </el-col>
-      <el-col :span="1.5">
-        <el-button
-          type="danger"
-          plain
-          icon="el-icon-delete"
-          size="mini"
-          :disabled="multiple"
-          @click="handleDelete"
-          v-hasPermi="['mall:order:remove']"
-        >删除</el-button>
-      </el-col>
+<!--      <el-col :span="1.5">-->
+<!--        <el-button-->
+<!--          type="danger"-->
+<!--          plain-->
+<!--          icon="el-icon-delete"-->
+<!--          size="mini"-->
+<!--          :disabled="multiple"-->
+<!--          @click="handleDelete"-->
+<!--          v-hasPermi="['mall:order:remove']"-->
+<!--        >删除</el-button>-->
+<!--      </el-col>-->
       <el-col :span="1.5">
         <el-button
           type="warning"
@@ -194,9 +184,15 @@
 
     <el-table v-loading="loading" :data="orderList" @selection-change="handleSelectionChange">
       <el-table-column type="selection" width="55" align="center" />
-      <el-table-column label="订单id" align="center" prop="orderId" />
-      <el-table-column label="总金额 单位分" align="center" prop="totalPay" />
-      <el-table-column label="实付金额 单位分" align="center" prop="actualPay" />
+      <el-table-column label="订单id" align="center" prop="orderId" >
+        <template slot-scope="scope">
+          <router-link :to="'/mall/orderDetail/index/'+scope.row.orderId " class="link-type">
+            <span>{{ scope.row.orderId }}</span>
+          </router-link>
+        </template>
+      </el-table-column>
+      <el-table-column label="总金额" align="center" prop="totalPay" />
+      <el-table-column label="实付金额" align="center" prop="actualPay" />
       <el-table-column label="买家昵称" align="center" prop="buyerNick" />
       <el-table-column label="买家全称" align="center" prop="receiver" />
       <el-table-column label="收货人手机" align="center" prop="receiverMobile" />
@@ -212,22 +208,22 @@
       </el-table-column>
       <el-table-column label="付款时间" align="center" prop="paymentTime" width="180">
         <template slot-scope="scope">
-          <span>{{ parseTime(scope.row.paymentTime, '{y}-{m}-{d}') }}</span>
+          <span>{{ parseTime(scope.row.paymentTime, '{y}-{m}-{d} {h}:{i}:{s}') }}</span>
         </template>
       </el-table-column>
       <el-table-column label="发货时间" align="center" prop="consignTime" width="180">
         <template slot-scope="scope">
-          <span>{{ parseTime(scope.row.consignTime, '{y}-{m}-{d}') }}</span>
+          <span>{{ parseTime(scope.row.consignTime, '{y}-{m}-{d} {h}:{i}:{s}') }}</span>
         </template>
       </el-table-column>
       <el-table-column label="交易完成时间" align="center" prop="endTime" width="180">
         <template slot-scope="scope">
-          <span>{{ parseTime(scope.row.endTime, '{y}-{m}-{d}') }}</span>
+          <span>{{ parseTime(scope.row.endTime, '{y}-{m}-{d} {h}:{i}:{s}') }}</span>
         </template>
       </el-table-column>
       <el-table-column label="交易关闭时间" align="center" prop="closeTime" width="180">
         <template slot-scope="scope">
-          <span>{{ parseTime(scope.row.closeTime, '{y}-{m}-{d}') }}</span>
+          <span>{{ parseTime(scope.row.closeTime, '{y}-{m}-{d} {h}:{i}:{s}') }}</span>
         </template>
       </el-table-column>
       <el-table-column label="更新者" align="center" prop="updateBy" />
@@ -237,21 +233,34 @@
           <el-button
             size="mini"
             type="text"
-            icon="el-icon-edit"
-            @click="handleUpdate(scope.row)"
+            @click="handleviewDetails(scope.row)"
             v-hasPermi="['mall:order:edit']"
-          >修改</el-button>
+          >查看</el-button>
           <el-button
+            v-if="scope.row.status==2"
             size="mini"
             type="text"
-            icon="el-icon-delete"
-            @click="handleDelete(scope.row)"
-            v-hasPermi="['mall:order:remove']"
-          >删除</el-button>
+            @click="handleFaHuo(scope.row)"
+            v-hasPermi="['mall:order:edit']"
+          >发货</el-button>
+<!--          <el-button-->
+<!--            size="mini"-->
+<!--            type="text"-->
+<!--            icon="el-icon-edit"-->
+<!--            @click="handleUpdate(scope.row)"-->
+<!--            v-hasPermi="['mall:order:edit']"-->
+<!--          >修改</el-button>-->
+<!--          <el-button-->
+<!--            size="mini"-->
+<!--            type="text"-->
+<!--            icon="el-icon-delete"-->
+<!--            @click="handleDelete(scope.row)"-->
+<!--            v-hasPermi="['mall:order:remove']"-->
+<!--          >删除</el-button>-->
         </template>
       </el-table-column>
     </el-table>
-    
+
     <pagination
       v-show="total>0"
       :total="total"
@@ -263,85 +272,113 @@
     <!-- 添加或修改订单对话框 -->
     <el-dialog :title="title" :visible.sync="open" width="500px" append-to-body>
       <el-form ref="form" :model="form" :rules="rules" label-width="80px">
-        <el-form-item label="总金额 单位分" prop="totalPay">
-          <el-input v-model="form.totalPay" placeholder="请输入总金额 单位分" />
-        </el-form-item>
-        <el-form-item label="实付金额 单位分" prop="actualPay">
-          <el-input v-model="form.actualPay" placeholder="请输入实付金额 单位分" />
-        </el-form-item>
-        <el-form-item label="买家昵称" prop="buyerNick">
-          <el-input v-model="form.buyerNick" placeholder="请输入买家昵称" />
-        </el-form-item>
-        <el-form-item label="买家全称" prop="receiver">
-          <el-input v-model="form.receiver" placeholder="请输入买家全称" />
-        </el-form-item>
-        <el-form-item label="收货人手机" prop="receiverMobile">
-          <el-input v-model="form.receiverMobile" placeholder="请输入收货人手机" />
-        </el-form-item>
-        <el-form-item label="省份" prop="receiverState">
-          <el-input v-model="form.receiverState" placeholder="请输入省份" />
-        </el-form-item>
-        <el-form-item label="城市" prop="receiverCity">
-          <el-input v-model="form.receiverCity" placeholder="请输入城市" />
-        </el-form-item>
-        <el-form-item label="区/县 " prop="receiverDistrict">
-          <el-input v-model="form.receiverDistrict" placeholder="请输入区/县 " />
-        </el-form-item>
-        <el-form-item label="收货地址" prop="receiverAddress">
-          <el-input v-model="form.receiverAddress" placeholder="请输入收货地址" />
-        </el-form-item>
-        <el-form-item label="留言" prop="remark">
-          <el-input v-model="form.remark" placeholder="请输入留言" />
-        </el-form-item>
         <el-form-item label="状态" prop="status">
           <el-select v-model="form.status" placeholder="请选择状态">
             <el-option
               v-for="dict in dict.type.orderType"
               :key="dict.value"
               :label="dict.label"
-:value="parseInt(dict.value)"
+              :value="parseInt(dict.value)"
             ></el-option>
           </el-select>
-        </el-form-item>
-        <el-form-item label="付款时间" prop="paymentTime">
-          <el-date-picker clearable size="small"
-            v-model="form.paymentTime"
-            type="date"
-            value-format="yyyy-MM-dd"
-            placeholder="选择付款时间">
-          </el-date-picker>
-        </el-form-item>
-        <el-form-item label="发货时间" prop="consignTime">
-          <el-date-picker clearable size="small"
-            v-model="form.consignTime"
-            type="date"
-            value-format="yyyy-MM-dd"
-            placeholder="选择发货时间">
-          </el-date-picker>
-        </el-form-item>
-        <el-form-item label="交易完成时间" prop="endTime">
-          <el-date-picker clearable size="small"
-            v-model="form.endTime"
-            type="date"
-            value-format="yyyy-MM-dd"
-            placeholder="选择交易完成时间">
-          </el-date-picker>
-        </el-form-item>
-        <el-form-item label="交易关闭时间" prop="closeTime">
-          <el-date-picker clearable size="small"
-            v-model="form.closeTime"
-            type="date"
-            value-format="yyyy-MM-dd"
-            placeholder="选择交易关闭时间">
-          </el-date-picker>
-        </el-form-item>
-        <el-form-item label="${comment}" prop="isDeleted">
-          <el-input v-model="form.isDeleted" placeholder="请输入${comment}" />
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
         <el-button type="primary" @click="submitForm">确 定</el-button>
         <el-button @click="cancel">取 消</el-button>
+      </div>
+    </el-dialog>
+
+    <!-- 查看订单详情对话框 -->
+    <el-dialog :title="title" :visible.sync="viewDetailsOpen" width="500px" append-to-body>
+      <el-row :gutter="20">
+        <el-col :span="12">
+          <h3>总金额：</h3>
+          <div class="grid-content bg-purple" style="padding-left: 5px">  {{form.totalPay}}</div>
+        </el-col>
+        <el-col :span="12">
+          <h3>实付金额：</h3>
+          <div class="grid-content bg-purple" style="padding-left: 5px">  {{form.actualPay}}</div>
+        </el-col>
+      </el-row>
+      <el-row :gutter="20">
+        <el-col :span="12">
+          <h3>买家昵称：</h3>
+          <div class="grid-content bg-purple" style="padding-left: 5px">  {{form.buyerNick}}</div>
+        </el-col>
+        <el-col :span="12">
+          <h3>买家全称：</h3>
+          <div class="grid-content bg-purple" style="padding-left: 5px">  {{form.receiver}}</div>
+        </el-col>
+      </el-row>
+      <el-row :gutter="20">
+        <el-col :span="12">
+          <h3>收货人手机：</h3>
+          <div class="grid-content bg-purple" style="padding-left: 5px">  {{form.receiverMobile}}</div>
+        </el-col>
+        <el-col :span="12">
+          <h3>收货地址：</h3>
+          <div class="grid-content bg-purple" style="padding-left: 5px">
+            {{form.buyerNick}}
+            {{form.receiverCity}}
+            {{form.receiverDistrict}}
+            {{form.receiverAddress}}
+          </div>
+        </el-col>
+      </el-row>
+
+      <el-row :gutter="20">
+        <el-col :span="12">
+          <h3>买家昵称：</h3>
+          <div class="grid-content bg-purple" style="padding-left: 5px">  {{form.buyerNick}}</div>
+        </el-col>
+        <el-col :span="12">
+          <h3>买家全称：</h3>
+          <div class="grid-content bg-purple" style="padding-left: 5px">  {{form.receiver}}</div>
+        </el-col>
+      </el-row>
+
+      <el-row :gutter="20">
+        <el-col :span="12">
+          <h3>留言：</h3>
+          <div class="grid-content bg-purple" style="padding-left: 5px">  {{form.remark}}</div>
+        </el-col>
+        <el-col :span="12">
+          <h3>状态：</h3>
+          <div class="grid-content bg-purple" style="padding-left: 5px">
+            <el-select disabled v-model="form.status">
+              <el-option
+                v-for="dict in dict.type.orderType"
+                :key="dict.value"
+                :label="dict.label"
+                :value="parseInt(dict.value)"
+              ></el-option>
+            </el-select>
+          </div>
+        </el-col>
+      </el-row>
+      <el-row :gutter="20">
+        <el-col :span="12">
+          <h3>付款时间：</h3>
+          <div class="grid-content bg-purple" style="padding-left: 5px">     {{ parseTime(form.paymentTime, '{y}-{m}-{d} {h}:{i}:{s}') }}</div>
+        </el-col>
+        <el-col :span="12">
+          <h3>发货时间：</h3>
+          <div class="grid-content bg-purple" style="padding-left: 5px">     {{ parseTime(form.consignTime, '{y}-{m}-{d} {h}:{i}:{s}') }}</div>
+        </el-col>
+      </el-row>
+      <el-row :gutter="20">
+        <el-col :span="12">
+          <h3>交易完成时间：</h3>
+          <div class="grid-content bg-purple" style="padding-left: 5px">     {{ parseTime(form.endTime, '{y}-{m}-{d} {h}:{i}:{s}') }}</div>
+        </el-col>
+        <el-col :span="12">
+          <h3>交易关闭时间：</h3>
+          <div class="grid-content bg-purple" style="padding-left: 5px">     {{ parseTime(form.closeTime, '{y}-{m}-{d} {h}:{i}:{s}') }}</div>
+        </el-col>
+      </el-row>
+      <div slot="footer" class="dialog-footer">
+        <el-button @click="cancel">关 闭</el-button>
       </div>
     </el-dialog>
   </div>
@@ -373,6 +410,8 @@ export default {
       title: "",
       // 是否显示弹出层
       open: false,
+      //查看详情
+      viewDetailsOpen: false,
       // $comment时间范围
       daterangePaymentTime: [],
       // $comment时间范围
@@ -436,19 +475,19 @@ export default {
     getList() {
       this.loading = true;
       this.queryParams.params = {};
-      if (null != this.daterangePaymentTime && '' != this.daterangePaymentTime) {
+      if (null != this.daterangePaymentTime && '' !== this.daterangePaymentTime) {
         this.queryParams.params["beginPaymentTime"] = this.daterangePaymentTime[0];
         this.queryParams.params["endPaymentTime"] = this.daterangePaymentTime[1];
       }
-      if (null != this.daterangeConsignTime && '' != this.daterangeConsignTime) {
+      if (null != this.daterangeConsignTime && '' !== this.daterangeConsignTime) {
         this.queryParams.params["beginConsignTime"] = this.daterangeConsignTime[0];
         this.queryParams.params["endConsignTime"] = this.daterangeConsignTime[1];
       }
-      if (null != this.daterangeEndTime && '' != this.daterangeEndTime) {
+      if (null != this.daterangeEndTime && '' !== this.daterangeEndTime) {
         this.queryParams.params["beginEndTime"] = this.daterangeEndTime[0];
         this.queryParams.params["endEndTime"] = this.daterangeEndTime[1];
       }
-      if (null != this.daterangeCloseTime && '' != this.daterangeCloseTime) {
+      if (null != this.daterangeCloseTime && '' !== this.daterangeCloseTime) {
         this.queryParams.params["beginCloseTime"] = this.daterangeCloseTime[0];
         this.queryParams.params["endCloseTime"] = this.daterangeCloseTime[1];
       }
@@ -461,6 +500,7 @@ export default {
     // 取消按钮
     cancel() {
       this.open = false;
+      this.viewDetailsOpen = false;
       this.reset();
     },
     // 表单重置
@@ -525,6 +565,16 @@ export default {
         this.title = "修改订单";
       });
     },
+    /** 修改按钮操作 */
+    handleviewDetails(row) {
+      this.reset();
+      const orderId = row.orderId || this.ids
+      getOrder(orderId).then(response => {
+        this.form = response.data;
+        this.viewDetailsOpen = true;
+        this.title = "查看订单详情";
+      });
+    },
     /** 提交按钮 */
     submitForm() {
       this.$refs["form"].validate(valid => {
@@ -560,6 +610,14 @@ export default {
       this.download('mall/order/export', {
         ...this.queryParams
       }, `order_${new Date().getTime()}.xlsx`)
+    },
+    handleFaHuo(row) {
+      row.status = 3;
+      updateOrder(row).then(response => {
+        this.$modal.msgSuccess("发货成功");
+        this.open = false;
+        this.getList();
+      });
     }
   }
 };

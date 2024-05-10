@@ -77,6 +77,7 @@ public class MusicCurriculumDetailsController extends BaseController
     @PostMapping
     public AjaxResult add(@RequestBody MusicCurriculumDetails musicCurriculumDetails)
     {
+        musicCurriculumDetails.setCreateBy(getUsername());
         return toAjax(musicCurriculumDetailsService.insertMusicCurriculumDetails(musicCurriculumDetails));
     }
 
@@ -88,6 +89,7 @@ public class MusicCurriculumDetailsController extends BaseController
     @PutMapping
     public AjaxResult edit(@RequestBody MusicCurriculumDetails musicCurriculumDetails)
     {
+        musicCurriculumDetails.setUpdateBy(getUsername());
         return toAjax(musicCurriculumDetailsService.updateMusicCurriculumDetails(musicCurriculumDetails));
     }
 

@@ -10,7 +10,7 @@
           @keyup.enter.native="handleQuery"
         />
       </el-form-item>
-      <el-form-item label="价格 单位元" prop="price">
+      <el-form-item label="价格" prop="price">
         <el-input
           v-model="queryParams.price"
           placeholder="请输入价格 单位元"
@@ -73,11 +73,14 @@
 
     <el-table v-loading="loading" :data="goodsList" @selection-change="handleSelectionChange">
       <el-table-column type="selection" width="55" align="center" />
-      <el-table-column label="${comment}" align="center" prop="id" />
+      <el-table-column label="id" align="center" prop="id" />
       <el-table-column label="标题" align="center" prop="title" />
-      <el-table-column label="封面" align="center" prop="images" />
-      <el-table-column label="价格 单位元" align="center" prop="price" />
-      <el-table-column label="是否删除" align="center" prop="isDeleted" />
+      <el-table-column label="封面" align="center" prop="images" >
+        <template slot-scope="scope">
+          <ImagePreview :width="100" :height="100" :src="scope.row.images"/>
+        </template>
+      </el-table-column>
+      <el-table-column label="价格" align="center" prop="price" />
       <el-table-column label="创建时间" align="center" prop="createTime" width="180">
         <template slot-scope="scope">
           <span>{{ parseTime(scope.row.createTime, '{y}-{m}-{d}') }}</span>
@@ -109,7 +112,7 @@
         </template>
       </el-table-column>
     </el-table>
-    
+
     <pagination
       v-show="total>0"
       :total="total"
@@ -127,11 +130,8 @@
         <el-form-item label="封面">
           <imageUpload v-model="form.images"/>
         </el-form-item>
-        <el-form-item label="价格 单位元" prop="price">
+        <el-form-item label="价格" prop="price">
           <el-input v-model="form.price" placeholder="请输入价格 单位元" />
-        </el-form-item>
-        <el-form-item label="是否删除" prop="isDeleted">
-          <el-input v-model="form.isDeleted" placeholder="请输入是否删除" />
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">

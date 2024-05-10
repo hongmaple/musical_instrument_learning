@@ -56,11 +56,19 @@ export const constantRoutes = [{
             }
           },
           {
+            path: 'cmsForumIndex',
+            component: (resolve) => require(['@/views/cms/components/cmsForumIndex'], resolve),
+            name: 'cmsForumIndex',
+            meta: {
+              title: '论坛',
+            }
+          },
+          {
             path: 'essay',
             component: (resolve) => require(['@/views/cms/components/cmsEssay'], resolve),
             name: 'essay',
             meta: {
-              title: '随笔',
+              title: '大家的随笔',
             }
           },
           {
@@ -75,6 +83,14 @@ export const constantRoutes = [{
             path: 'blog',
             component: (resolve) => require(['@/views/cms/components/cmsBlog'], resolve),
             name: 'blog',
+            meta: {
+              title: '博客详情',
+            }
+          },
+          {
+            path: 'forum',
+            component: (resolve) => require(['@/views/cms/components/forum'], resolve),
+            name: 'forum',
             meta: {
               title: '博客详情',
             }
@@ -223,7 +239,104 @@ export const constantRoutes = [{
         activeMenu: '/tool/gen'
       }
     }]
-  }
+  },
+  {
+    path: '/curriculum/curriculum-details',
+    component: Layout,
+    hidden: true,
+    children: [{
+      path: 'index/:curriculumId(\\d+)',
+      component: (resolve) => require(['@/views/music/curriculumDetails'], resolve),
+      name: 'curriculum-details',
+      meta: {
+        title: '课程列表',
+        activeMenu: '/music/curriculum'
+      }
+    }]
+  },
+  {
+    path: '/curriculum',
+    component: (resolve) => require(['@/views/curriculum/index'], resolve),
+    hidden: true,
+    children: [
+
+      {
+        path: 'main',
+        component: (resolve) => require(['@/views/curriculum/main'], resolve),
+        hidden: true,
+        children: [
+          {
+            path: 'list',
+            component: (resolve) => require(['@/views/curriculum/list'], resolve),
+            name: 'curriculumList',
+            meta: {
+              title: '课程列表'
+            }
+          },
+          {
+            path: 'info',
+            component: (resolve) => require(['@/views/curriculum/info'], resolve),
+            name: 'info',
+            meta: {
+              title: '课程列表'
+            }
+          },
+          {
+            path: 'instrumentList',
+            component: (resolve) => require(['@/views/music/instrument/instrument'], resolve),
+            name: 'instrumentList',
+            meta: {
+              title: '乐器介绍'
+            }
+          },
+          {
+            path: 'goodsList',
+            component: (resolve) => require(['@/views/mall/goods/goodsList'], resolve),
+            name: 'goodsList',
+            meta: {
+              title: '购物中心'
+            }
+          },
+          {
+            path: 'recognition',
+            component: (resolve) => require(['@/views/music/recognition/recognition'], resolve),
+            name: 'recognition',
+            meta: {
+              title: '乐器识别'
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    path: '/mall/orderDetail/my-list',
+    component: Layout,
+    hidden: true,
+    children: [{
+      path: 'index/:orderId(\\d+)',
+      component: (resolve) => require(['@/views/mall/mallDetail/index'], resolve),
+      name: 'myOrderDetailList',
+      meta: {
+        title: '我的订单详情',
+        activeMenu: '/mall/mallDetail'
+      }
+    }]
+  },
+  {
+    path: '/mall/orderDetail',
+    component: Layout,
+    hidden: true,
+    children: [{
+      path: 'index/:orderId(\\d+)',
+      component: (resolve) => require(['@/views/mall/mallDetail/index'], resolve),
+      name: 'myOrderDetailList',
+      meta: {
+        title: '订单详情',
+        activeMenu: '/mall/mallDetail'
+      }
+    }]
+  },
 ]
 
 export default new Router({

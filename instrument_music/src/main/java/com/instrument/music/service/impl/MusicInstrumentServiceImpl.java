@@ -93,4 +93,9 @@ public class MusicInstrumentServiceImpl implements IMusicInstrumentService
     {
         return musicInstrumentMapper.deleteMusicInstrumentById(id);
     }
+
+    @Override
+    public List<MusicInstrument> selectMusicInstrumentByIds(List<Long> iIds) {
+        return musicInstrumentMapper.selectMusicInstrumentByIds(iIds);
+    }
 }

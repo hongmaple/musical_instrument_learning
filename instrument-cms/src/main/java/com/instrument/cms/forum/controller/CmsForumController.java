@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.instrument.cms.forum.domain.CmsForum;
 import com.instrument.cms.forum.service.ICmsForumService;
+import com.instrument.common.utils.SecurityUtils;
 import com.instrument.common.utils.poi.ExcelUtil;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -78,6 +79,7 @@ public class CmsForumController extends BaseController
     @PostMapping
     public AjaxResult add(@RequestBody CmsForum cmsForum)
     {
+        cmsForum.setCreateBy(getUsername());
         return toAjax(cmsForumService.insertCmsForum(cmsForum));
     }
 
@@ -89,6 +91,7 @@ public class CmsForumController extends BaseController
     @PutMapping
     public AjaxResult edit(@RequestBody CmsForum cmsForum)
     {
+        cmsForum.setUpdateBy(getUsername());
         return toAjax(cmsForumService.updateCmsForum(cmsForum));
     }
 

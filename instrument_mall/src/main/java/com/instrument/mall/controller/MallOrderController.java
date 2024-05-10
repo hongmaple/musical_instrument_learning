@@ -47,6 +47,19 @@ public class MallOrderController extends BaseController
     }
 
     /**
+     * 查询订单列表
+     */
+    @PreAuthorize("@ss.hasPermi('mall:order:myList')")
+    @GetMapping("/myList")
+    public TableDataInfo myList(MallOrder mallOrder)
+    {
+        startPage();
+        mallOrder.setCreateBy(getUsername());
+        List<MallOrder> list = mallOrderService.selectMallOrderList(mallOrder);
+        return getDataTable(list);
+    }
+
+    /**
      * 导出订单列表
      */
     @PreAuthorize("@ss.hasPermi('mall:order:export')")
@@ -77,6 +90,7 @@ public class MallOrderController extends BaseController
     @PostMapping
     public AjaxResult add(@RequestBody MallOrder mallOrder)
     {
+        mallOrder.setCreateBy(getUsername());
         return toAjax(mallOrderService.insertMallOrder(mallOrder));
     }
 
@@ -88,6 +102,7 @@ public class MallOrderController extends BaseController
     @PutMapping
     public AjaxResult edit(@RequestBody MallOrder mallOrder)
     {
+        mallOrder.setUpdateBy(getUsername());
         return toAjax(mallOrderService.updateMallOrder(mallOrder));
     }
 

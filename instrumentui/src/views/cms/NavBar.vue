@@ -33,7 +33,7 @@
     </div>
 
     <div v-if="searchInput" class="search_input">
-      <el-input @focus="checkInput" @blur="notSearching()" class="search" placeholder="搜索博客"
+      <el-input @focus="checkInput" @blur="notSearching()" class="search" placeholder="搜索文章"
         prefix-icon="el-icon-search" v-model="queryInfo.query" size="mini">
       </el-input>
       <ul v-if="searching">
@@ -54,7 +54,7 @@
         </div>
         <el-dropdown-menu slot="dropdown">
           <router-link target="_blank" to="/index">
-            <el-dropdown-item>管理博客</el-dropdown-item>
+            <el-dropdown-item>我的中心</el-dropdown-item>
           </router-link>
           <el-dropdown-item divided @click.native="logout">
             <span>退出登录</span>
@@ -111,11 +111,36 @@
             path: '/cms/main/message',
             icon: 'el-icon-chat-dot-round',
           },
+          // {
+          //   id: 3,
+          //   authName: '文档',
+          //   path: '/cms/doucument',
+          //   icon: 'el-icon-document',
+          // },
           {
             id: 3,
-            authName: '文档',
-            path: '/cms/doucument',
-            icon: 'el-icon-document',
+            authName: '课程中心',
+            path: '/curriculum/main/list',
+          },
+          {
+            id: 4,
+            authName: '乐器介绍',
+            path: '/curriculum/main/instrumentList',
+          },
+          {
+            id: 5,
+            authName: '购物中心',
+            path: '/curriculum/main/goodsList',
+          },
+          {
+            id: 6,
+            authName: '论坛',
+            path: '/cms/main/cmsForumIndex',
+          },
+          {
+            id: 7,
+            authName: '乐器识别',
+            path: '/curriculum/main/recognition',
           },
         ],
         // 查询参数

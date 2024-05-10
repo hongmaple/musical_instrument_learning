@@ -28,10 +28,10 @@
           @keyup.enter.native="handleQuery"
         />
       </el-form-item>
-      <el-form-item label="价格,单位：元" prop="price">
+      <el-form-item label="价格" prop="price">
         <el-input
           v-model="queryParams.price"
-          placeholder="请输入价格,单位：元"
+          placeholder="请输入价格"
           clearable
           size="small"
           @keyup.enter.native="handleQuery"
@@ -44,38 +44,17 @@
     </el-form>
 
     <el-row :gutter="10" class="mb8">
-      <el-col :span="1.5">
-        <el-button
-          type="primary"
-          plain
-          icon="el-icon-plus"
-          size="mini"
-          @click="handleAdd"
-          v-hasPermi="['mall:mallDetail:add']"
-        >新增</el-button>
-      </el-col>
-      <el-col :span="1.5">
-        <el-button
-          type="success"
-          plain
-          icon="el-icon-edit"
-          size="mini"
-          :disabled="single"
-          @click="handleUpdate"
-          v-hasPermi="['mall:mallDetail:edit']"
-        >修改</el-button>
-      </el-col>
-      <el-col :span="1.5">
-        <el-button
-          type="danger"
-          plain
-          icon="el-icon-delete"
-          size="mini"
-          :disabled="multiple"
-          @click="handleDelete"
-          v-hasPermi="['mall:mallDetail:remove']"
-        >删除</el-button>
-      </el-col>
+<!--      <el-col :span="1.5">-->
+<!--        <el-button-->
+<!--          type="danger"-->
+<!--          plain-->
+<!--          icon="el-icon-delete"-->
+<!--          size="mini"-->
+<!--          :disabled="multiple"-->
+<!--          @click="handleDelete"-->
+<!--          v-hasPermi="['mall:mallDetail:remove']"-->
+<!--        >删除</el-button>-->
+<!--      </el-col>-->
       <el-col :span="1.5">
         <el-button
           type="warning"
@@ -95,28 +74,32 @@
       <el-table-column label="订单id" align="center" prop="orderId" />
       <el-table-column label="商品id" align="center" prop="goodsId" />
       <el-table-column label="商品标题" align="center" prop="title" />
-      <el-table-column label="价格,单位：元" align="center" prop="price" />
-      <el-table-column label="商品图片" align="center" prop="image" />
-      <el-table-column label="操作" align="center" class-name="small-padding fixed-width">
+      <el-table-column label="价格" align="center" prop="price" />
+      <el-table-column label="商品图片" align="center" prop="image" >
         <template slot-scope="scope">
-          <el-button
-            size="mini"
-            type="text"
-            icon="el-icon-edit"
-            @click="handleUpdate(scope.row)"
-            v-hasPermi="['mall:mallDetail:edit']"
-          >修改</el-button>
-          <el-button
-            size="mini"
-            type="text"
-            icon="el-icon-delete"
-            @click="handleDelete(scope.row)"
-            v-hasPermi="['mall:mallDetail:remove']"
-          >删除</el-button>
+          <ImagePreview :width="100" :height="100" :src="scope.row.image"/>
         </template>
       </el-table-column>
+<!--      <el-table-column label="操作" align="center" class-name="small-padding fixed-width">-->
+<!--        <template slot-scope="scope">-->
+<!--          <el-button-->
+<!--            size="mini"-->
+<!--            type="text"-->
+<!--            icon="el-icon-edit"-->
+<!--            @click="handleUpdate(scope.row)"-->
+<!--            v-hasPermi="['mall:mallDetail:edit']"-->
+<!--          >修改</el-button>-->
+<!--          <el-button-->
+<!--            size="mini"-->
+<!--            type="text"-->
+<!--            icon="el-icon-delete"-->
+<!--            @click="handleDelete(scope.row)"-->
+<!--            v-hasPermi="['mall:mallDetail:remove']"-->
+<!--          >删除</el-button>-->
+<!--        </template>-->
+<!--      </el-table-column>-->
     </el-table>
-    
+
     <pagination
       v-show="total>0"
       :total="total"
@@ -124,31 +107,6 @@
       :limit.sync="queryParams.pageSize"
       @pagination="getList"
     />
-
-    <!-- 添加或修改订单详情对话框 -->
-    <el-dialog :title="title" :visible.sync="open" width="500px" append-to-body>
-      <el-form ref="form" :model="form" :rules="rules" label-width="80px">
-        <el-form-item label="订单id" prop="orderId">
-          <el-input v-model="form.orderId" placeholder="请输入订单id" />
-        </el-form-item>
-        <el-form-item label="商品id" prop="goodsId">
-          <el-input v-model="form.goodsId" placeholder="请输入商品id" />
-        </el-form-item>
-        <el-form-item label="商品标题" prop="title">
-          <el-input v-model="form.title" placeholder="请输入商品标题" />
-        </el-form-item>
-        <el-form-item label="价格,单位：元" prop="price">
-          <el-input v-model="form.price" placeholder="请输入价格,单位：元" />
-        </el-form-item>
-        <el-form-item label="商品图片">
-          <imageUpload v-model="form.image"/>
-        </el-form-item>
-      </el-form>
-      <div slot="footer" class="dialog-footer">
-        <el-button type="primary" @click="submitForm">确 定</el-button>
-        <el-button @click="cancel">取 消</el-button>
-      </div>
-    </el-dialog>
   </div>
 </template>
 
@@ -200,7 +158,7 @@ export default {
           { required: true, message: "商品标题不能为空", trigger: "blur" }
         ],
         price: [
-          { required: true, message: "价格,单位：元不能为空", trigger: "blur" }
+          { required: true, message: "价格不能为空", trigger: "blur" }
         ],
       }
     };

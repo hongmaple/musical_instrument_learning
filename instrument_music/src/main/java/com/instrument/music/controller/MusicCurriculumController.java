@@ -1,7 +1,14 @@
 package com.instrument.music.controller;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 import javax.servlet.http.HttpServletResponse;
+
+import com.instrument.common.utils.SecurityUtils;
+import com.instrument.music.domain.MusicInstrument;
+import com.instrument.music.service.IMusicInstrumentService;
+import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,6 +41,9 @@ public class MusicCurriculumController extends BaseController
     @Autowired
     private IMusicCurriculumService musicCurriculumService;
 
+    @Autowired
+    private IMusicInstrumentService musicInstrumentService;
+
     /**
      * 查询课程列表
      */
@@ -43,6 +53,27 @@ public class MusicCurriculumController extends BaseController
     {
         startPage();
         List<MusicCurriculum> list = musicCurriculumService.selectMusicCurriculumList(musicCurriculum);
+        List<Long> iIds = list.stream().map(MusicCurriculum::getInstrumentId).collect(Collectors.toList());
+        if (CollectionUtils.isEmpty(iIds)) return getDataTable(list);
+        List<MusicInstrument> musicInstruments = musicInstrumentService.selectMusicInstrumentByIds(iIds);
+        list.forEach(musicCurriculum1 -> musicInstruments.stream().filter(m -> m.getId().equals(musicCurriculum1.getInstrumentId())).findAny().ifPresent(musicCurriculum1::setMusicInstrument));
+        return getDataTable(list);
+    }
+
+    /**
+     * 查询课程列表
+     */
+    @PreAuthorize("@ss.hasPermi('music:curriculum:customerListCurriculum')")
+    @GetMapping("/customerListCurriculum")
+    public TableDataInfo customerListCurriculum(MusicCurriculum musicCurriculum)
+    {
+        musicCurriculum.setStatus("1");
+        startPage();
+        List<MusicCurriculum> list = musicCurriculumService.selectMusicCurriculumList(musicCurriculum);
+        List<Long> iIds = list.stream().map(MusicCurriculum::getInstrumentId).collect(Collectors.toList());
+        if (CollectionUtils.isEmpty(iIds)) return getDataTable(list);
+        List<MusicInstrument> musicInstruments = musicInstrumentService.selectMusicInstrumentByIds(iIds);
+        list.forEach(musicCurriculum1 -> musicInstruments.stream().filter(m -> m.getId().equals(musicCurriculum1.getInstrumentId())).findAny().ifPresent(musicCurriculum1::setMusicInstrument));
         return getDataTable(list);
     }
 
@@ -77,6 +108,7 @@ public class MusicCurriculumController extends BaseController
     @PostMapping
     public AjaxResult add(@RequestBody MusicCurriculum musicCurriculum)
     {
+        musicCurriculum.setCreateBy(getUsername());
         return toAjax(musicCurriculumService.insertMusicCurriculum(musicCurriculum));
     }
 
@@ -88,6 +120,7 @@ public class MusicCurriculumController extends BaseController
     @PutMapping
     public AjaxResult edit(@RequestBody MusicCurriculum musicCurriculum)
     {
+        musicCurriculum.setUpdateBy(getUsername());
         return toAjax(musicCurriculumService.updateMusicCurriculum(musicCurriculum));
     }
 

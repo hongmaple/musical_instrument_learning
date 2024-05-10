@@ -9,6 +9,15 @@ export function listCurriculum(query) {
   })
 }
 
+// 查询课程列表
+export function customerListCurriculum(query) {
+  return request({
+    url: '/music/curriculum/customerListCurriculum',
+    method: 'get',
+    params: query
+  })
+}
+
 // 查询课程详细
 export function getCurriculum(id) {
   return request({

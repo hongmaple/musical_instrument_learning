@@ -30,7 +30,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <include refid="selectMusicInstrumentVo"/>
         where id = #{id}
     </select>
-        
+    <select id="selectMusicInstrumentByIds" resultType="com.instrument.music.domain.MusicInstrument">
+        <include refid="selectMusicInstrumentVo"/>
+        where id in
+        <foreach item="id" collection="ids" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </select>
+
     <insert id="insertMusicInstrument" parameterType="MusicInstrument" useGeneratedKeys="true" keyProperty="id">
         insert into music_instrument
         <trim prefix="(" suffix=")" suffixOverrides=",">

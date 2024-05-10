@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.instrument.music.mapper.CurriculumPracticeMapper">
+    
+    <resultMap type="CurriculumPractice" id="CurriculumPracticeResult">
+        <result property="id"    column="id"    />
+        <result property="type"    column="type"    />
+        <result property="curriculumId"    column="curriculum_id"    />
+        <result property="curriculumDetailsId"    column="curriculum_details_id"    />
+        <result property="url"    column="url"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectCurriculumPracticeVo">
+        select id, type, curriculum_id, curriculum_details_id, url, create_by, create_time, update_by, update_time from music_curriculum_practice
+    </sql>
+
+    <select id="selectCurriculumPracticeList" parameterType="CurriculumPractice" resultMap="CurriculumPracticeResult">
+        <include refid="selectCurriculumPracticeVo"/>
+        <where>  
+            <if test="type != null  and type != ''"> and type = #{type}</if>
+            <if test="curriculumId != null "> and curriculum_id = #{curriculumId}</if>
+            <if test="curriculumDetailsId != null "> and curriculum_details_id = #{curriculumDetailsId}</if>
+            <if test="createBy != null "> and create_by = #{createBy}</if>
+        </where>
+    </select>
+    
+    <select id="selectCurriculumPracticeById" parameterType="Long" resultMap="CurriculumPracticeResult">
+        <include refid="selectCurriculumPracticeVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertCurriculumPractice" parameterType="CurriculumPractice" useGeneratedKeys="true" keyProperty="id">
+        insert into music_curriculum_practice
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="type != null and type != ''">type,</if>
+            <if test="curriculumId != null">curriculum_id,</if>
+            <if test="curriculumDetailsId != null">curriculum_details_id,</if>
+            <if test="url != null">url,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="type != null and type != ''">#{type},</if>
+            <if test="curriculumId != null">#{curriculumId},</if>
+            <if test="curriculumDetailsId != null">#{curriculumDetailsId},</if>
+            <if test="url != null">#{url},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateCurriculumPractice" parameterType="CurriculumPractice">
+        update music_curriculum_practice
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="type != null and type != ''">type = #{type},</if>
+            <if test="curriculumId != null">curriculum_id = #{curriculumId},</if>
+            <if test="curriculumDetailsId != null">curriculum_details_id = #{curriculumDetailsId},</if>
+            <if test="url != null">url = #{url},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteCurriculumPracticeById" parameterType="Long">
+        delete from music_curriculum_practice where id = #{id}
+    </delete>
+
+    <delete id="deleteCurriculumPracticeByIds" parameterType="String">
+        delete from music_curriculum_practice where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

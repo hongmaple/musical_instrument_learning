@@ -9,6 +9,7 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 /**
  * 订单对象 mall_order
@@ -86,6 +87,8 @@ public class MallOrder extends BaseEntity
 
     /** $column.columnComment */
     private Integer isDeleted;
+
+    private List<MallGoods> mallGoodsList;
 
     public void setOrderId(String orderId) 
     {
@@ -230,6 +233,14 @@ public class MallOrder extends BaseEntity
     public Integer getIsDeleted() 
     {
         return isDeleted;
+    }
+
+    public List<MallGoods> getMallGoodsList() {
+        return mallGoodsList;
+    }
+
+    public void setMallGoodsList(List<MallGoods> mallGoodsList) {
+        this.mallGoodsList = mallGoodsList;
     }
 
     @Override

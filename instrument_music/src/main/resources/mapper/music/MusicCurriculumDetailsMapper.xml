@@ -14,10 +14,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result property="title"    column="title"    />
         <result property="content"    column="content"    />
         <result property="status"    column="status"    />
+        <result property="url"    column="url"    />
     </resultMap>
 
     <sql id="selectMusicCurriculumDetailsVo">
-        select id, create_by, create_time, update_by, update_time, c_id, title, content, status from music_curriculum_details
+        select id, create_by, create_time, update_by, update_time, c_id,url
+             , title, content, status from music_curriculum_details
     </sql>
 
     <select id="selectMusicCurriculumDetailsList" parameterType="MusicCurriculumDetails" resultMap="MusicCurriculumDetailsResult">
@@ -45,6 +47,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="title != null and title != ''">title,</if>
             <if test="content != null">content,</if>
             <if test="status != null">status,</if>
+            <if test="url != null">url,</if>
          </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="createBy != null">#{createBy},</if>
@@ -55,6 +58,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="title != null and title != ''">#{title},</if>
             <if test="content != null">#{content},</if>
             <if test="status != null">#{status},</if>
+            <if test="url != null">#{url},</if>
          </trim>
     </insert>
 
@@ -69,6 +73,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="title != null and title != ''">title = #{title},</if>
             <if test="content != null">content = #{content},</if>
             <if test="status != null">status = #{status},</if>
+            <if test="url != null">url = #{url},</if>
         </trim>
         where id = #{id}
     </update>

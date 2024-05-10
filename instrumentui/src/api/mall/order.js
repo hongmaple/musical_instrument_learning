@@ -9,6 +9,15 @@ export function listOrder(query) {
   })
 }
 
+// 查询我的订单列表
+export function myListOrder(query) {
+  return request({
+    url: '/mall/order/myList',
+    method: 'get',
+    params: query
+  })
+}
+
 // 查询订单详细
 export function getOrder(orderId) {
   return request({
