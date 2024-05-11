@@ -269,7 +269,7 @@ public class SysUserServiceImpl implements ISysUserService
     @Override
     public boolean registerUser(SysUser user)
     {
-        user.setRoleIds(new Long[]{4L});
+        user.setRoleIds(user.getRoleIds());
         int i = userMapper.insertUser(user);
         // 新增用户与角色管理
         insertUserRole(user);
