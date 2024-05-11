@@ -70,7 +70,7 @@
 import { getCodeImg, register } from "@/api/login";
 
 export default {
-  name: "Register",
+  name: "teacherRegister",
   data() {
     const equalToPassword = (rule, value, callback) => {
       if (this.registerForm.password !== value) {
