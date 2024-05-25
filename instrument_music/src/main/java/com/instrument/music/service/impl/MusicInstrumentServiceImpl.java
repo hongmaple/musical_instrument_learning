@@ -1,7 +1,9 @@
 package com.instrument.music.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 import com.instrument.common.utils.DateUtils;
+import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.instrument.music.mapper.MusicInstrumentMapper;
@@ -95,7 +97,8 @@ public class MusicInstrumentServiceImpl implements IMusicInstrumentService
     }
 
     @Override
-    public List<MusicInstrument> selectMusicInstrumentByIds(List<Long> iIds) {
-        return musicInstrumentMapper.selectMusicInstrumentByIds(iIds);
+    public List<MusicInstrument> selectMusicInstrumentByIds(List<Long> ids) {
+        if (CollectionUtils.isEmpty(ids)) return new ArrayList<>();
+        return musicInstrumentMapper.selectMusicInstrumentByIds(ids);
     }
 }

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50744
 File Encoding         : 65001
 
-Date: 2024-05-08 23:12:03
+Date: 2024-05-15 02:44:56
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -45,7 +45,7 @@ CREATE TABLE `cms_blog` (
 -- Records of cms_blog
 -- ----------------------------
 INSERT INTO `cms_blog` VALUES ('1', 'admin', '2024-04-26 23:11:09', '', '2024-04-27 19:17:53', '测试乐器介绍', '1', '1', 0x3C703E3C62723E3C2F703E3C703E3C62723E3C2F703E3C68333E3C6120687265663D2268747470733A2F2F7777772E62616964752E636F6D2F6C696E6B3F75726C3D6E4A556F526D5F396C52384576525064747043785A327345764A6543325474797A5572584536756E62494C523841457341754A31366C6E7A38306344674B6C5831436C4D533869485F747A644350375A4F31686133596F4D364C7646376334495F6373754E324E65556D765757684559773578706B6F53554834723644495F4734454968613034334A6F4E7647664E4F482D5F6A433662742D7250664B664C6F42396E2D32616F574A6E643558457963516B5A56424C4152554D42694A353278586437636337755958364E37315A457A55664E6435664D7A705141744F625649496F505035614C65516843567952525A4643795843555441684D637852595F4F7754376F494D617476446250776E3438395434614A3042565377457762646E784C645F316C6D6D6D7149724A677A65527669504B41364373376E5545317953312D707876787553416B5F64426A425452676E6644513846476E646166574B55496C5A7758624165304F3155782D63776A57657A4D78753358566F484B67727178596130764C6B63555032555F725641424D5044644537352D385A536D414E34316D77376E734A717A3535327A6856426E58367845306758776F622D31796E6967504F424C4C7849716751505336615150446476766E4B31696B4A74464850302D74537A5772312D49314571222072656C3D226E6F6F70656E6572206E6F726566657272657222207461726765743D225F626C616E6B22207374796C653D22636F6C6F723A207267622833342C2033342C203334293B223EE4B990E599A8E4BB8BE7BB8D3C2F613E3C2F68333E3C703EE4B990E599A8E58FAFE4BBA5E58886E4B8BAE6B091E6978FE4B990E599A8E4B88EE8A5BFE6B48BE4B990E599A8EFBC8CE5B8B8E8A781E79A84E6B091E6978FE4B990E599A8E69C89E7AC9BE5AD90E38081E58FA4E7AD9DE38081E4BA8CE883A1E38081E790B5E790B6E38081E7AEABE38081E9BC93E38081E790B4E38081E891ABE88AA6E4B89DE38081E594A2E59190E38081E59F99E7AD89EFBC8CE5B8B8E8A781E79A84E8A5BFE6B48BE4B990E599A8E69C89E59089E4BB96E38081E5B08FE68F90E790B4E38081E992A2E790B4E7AD89E38082E4BBA5E4B88BE698AFE4B880E4BA9BE4B990E599A8E79A84E8AFA6E7BB86E4BB8BE7BB8DEFBC9A3C737570207374796C653D226261636B67726F756E642D636F6C6F723A207472616E73706172656E743B20636F6C6F723A20766172282D2D7375702D636F6C6F722C2023353234304646293B223E31323C2F7375703E3C2F703E3C756C3E3C6C693EE7AC9BE38082E4B880E7A78DE590B9E7AEA1E4B990E599A8EFBC8CE4BBA5E585B6E7A9BAE781B5E682A0E8BF9CE79A84E99FB3E889B2E89197E7A7B0E380823C2F6C693E3C6C693EE58FA4E7AD9DE38082E5BCB9E68BA8E4B990E599A8EFBC8CE99FB3E889B2E4BC98E7BE8EEFBC8CE99FB5E591B3E58D81E8B6B3EFBC8CE6B581E8A18CE4BA8EE4B8ADE59BBDE380823C2F6C693E3C6C693EE4BA8CE883A1E38082E68B89E5BCA6E4B990E599A8EFBC8CE4BBA5E585B6E69F94E7BE8EE79A84E99FB3E889B2E5928CE78BACE789B9E79A84E6BC94E5A58FE68A80E5B7A7E997BBE5908DE380823C2F6C693E3C6C693EE790B5E790B6E38082E5BCB9E68BA8E4B990E599A8EFBC8CE99FB3E889B2E9AB98E4BAA2E6BF80E69882EFBC8CE58585E6BBA1E998B3E5889AE4B98BE7BE8EEFBC8CE698AFE4B8ADE59BBDE4BCA0E7BB9FE79A84E5BCB9E68BA8E4B990E599A8E380823C2F6C693E3C6C693EE7AEABE38082E590B9E7AEA1E4B990E599A8EFBC8CE99FB3E889B2E7A9BAE781B5E682A0E8BF9CEFBC8CE5A682E5908CE9AB98E5B1B1E6B581E6B0B4E380823C2F6C693E3C6C693EE9BC93E38082E68993E587BBE4B990E599A8EFBC8CE4BD9CE4B8BAE4B8ADE59BBDE6B091E6978FE99FB3E4B990E79A84E6A087E5BF97E680A7E4B990E599A8E4B98BE4B880E380823C2F6C693E3C6C693EE790B4E38082E5BCA6E4B990E599A8EFBC8CE5A3B0E99FB3E6B885E5B9BDE8808CE6B7B1E6B289EFBC8CE5B8B8E794A8E4BA8EE8A1A8E78EB0E99FB3E4B990E79A84E6B7B1E5BAA6E5928CE68385E6849FE380823C2F6C693E3C6C693EE891ABE88AA6E4B89DE38082E590B9E7AEA1E4B990E599A8EFBC8CE99FB3E889B2E69F94E5928CE7BB86E885BBEFBC8CE5AE9BE5A682E5B1B1E997B4E6B885E6B389E380823C2F6C693E3C6C693EE594A2E59190E38082E590B9E7AEA1E4B990E599A8EFBC8CE99FB3E889B2E9AB98E4BAA2E6BF80E69882EFBC8CE58585E6BBA1E6B4BBE58A9BE380823C2F6C693E3C6C693EE59F99E38082E590B9E7AEA1E4B990E599A8EFBC8CE99FB3E889B2E6B7B1E6B289E8808CE682A0E8BF9CEFBC8CE8A2ABE8AA89E4B8BAE2809CE6B091E4B990E4B98BE9AD82E2809DE380823C2F6C693E3C2F756C3E3C703EE6AF8FE7A78DE4B990E599A8E983BDE69C89E585B6E78BACE789B9E79A84E5A3B0E99FB3E5928CE6BC94E5A58FE68A80E5B7A7EFBC8CE883BDE5A49FE8A1A8E8BEBEE4B88DE5908CE79A84E68385E6849FE5928CE99FB3E4B990E9A38EE6A0BCE380823C2F703E, null, '0', '1', '1', '0', '', '', '参数对比撒大苏打 撒 阿森纳撒测试多少的文风你文档', null);
-INSERT INTO `cms_blog` VALUES ('2', 'admin', '2024-04-26 23:13:06', 'admin', '2024-05-07 23:39:30', '测试乐理学习', '1', '1', 0x3C703E3C7370616E207374796C653D22636F6C6F723A207267622832342C2032352C203238293B223EE5B79DE99FB3E4BD9CE69BB2E7B3BBE7A195E5A3ABEFBC8CE8BF99E4B988E4BA9BE5B9B4E8A781E588B0E8BF87E8AEB8E5A49AE69C8BE58F8BEFBC8CE6AF94E5A682E4B89AE4BD99E697B6E997B4E4B88DE58585E8A395E683B3E5ADA6E4B880E782B9E4B990E599A8E58585E5AE9EE887AAE5B7B1EFBC8CE4B990E79086E79FA5E8AF86E4B88DE68782E4BD86E683B3E887AAE5B7B1E58699E6AD8CEFBC8CE4B990E8B0B1E4B88DE8AEA4E8AF86E683B3E5BCB9E5A58FE992A2E790B4E7AD89E7AD893C2F7370616E3E3C2F703E3C703E3C7370616E207374796C653D22636F6C6F723A207267622832342C2032352C203238293B223EE79C8BE8BF87E7BD91E4B88AE5A4A7E5A49AE695B0E69599E7A88BEFBC8CE4B880E69DA5E5B0B1E8AEB2E4BA94E7BABFE8B0B1E38081E4BA94E5BAA6E59C88E7AD89E7AD89E79A84E6AF94E6AF94E79A86E698AFEFBC8CE5AE9EE99985E4B88AE8BF99E7B1BBE8A786E9A291E8BF98E698AFE7BB99E69C89E79BB8E5BD93E4B880E983A8E58886E59FBAE7A180E79A84E69C8BE58F8BE5ADA6E4B9A0E79A84EFBC8CE982A3E4B988E68891E4BBACE68EA8E587BAE79A84E8BF99E4B8AAE69599E7A88BE5B0B1E698AFE99288E5AFB9E79C9FE6ADA3E5AE8CE585A8E99BB6E59FBAE7A180EFBC8C646F207265206D69E983BDE4B88DE79FA5E98193E79A84E69C8BE58F8BEFBC8CE68891E4BBACE4BB8EE69C80E69C80E59FBAE7A180E79A84E59CB0E696B9E5BC80E5A78BE8AEB2E8A7A3EFBC8CE5B8AEE58AA9E4BDA0E59CA8E99FB3E4B990E8BF99E69DA1E8B7AFE4B88AE4B880E6ADA5E4B880E6ADA5E5898DE8A18CE380823C2F7370616E3E3C2F703E3C703E3C62723E3C2F703E, null, '1', '7', '1', '0', '', '', '【第一季（精简版）/已完结】可放心食用\n【第二季（最终版）/已完结】此版为加强重制版，戳BV14p4', null);
+INSERT INTO `cms_blog` VALUES ('2', 'admin', '2024-04-26 23:13:06', 'admin', '2024-05-14 01:25:36', '测试乐理学习', '1', '1', 0x3C703E3C7370616E207374796C653D22636F6C6F723A207267622832342C2032352C203238293B223EE5B79DE99FB3E4BD9CE69BB2E7B3BBE7A195E5A3ABEFBC8CE8BF99E4B988E4BA9BE5B9B4E8A781E588B0E8BF87E8AEB8E5A49AE69C8BE58F8BEFBC8CE6AF94E5A682E4B89AE4BD99E697B6E997B4E4B88DE58585E8A395E683B3E5ADA6E4B880E782B9E4B990E599A8E58585E5AE9EE887AAE5B7B1EFBC8CE4B990E79086E79FA5E8AF86E4B88DE68782E4BD86E683B3E887AAE5B7B1E58699E6AD8CEFBC8CE4B990E8B0B1E4B88DE8AEA4E8AF86E683B3E5BCB9E5A58FE992A2E790B4E7AD89E7AD893C2F7370616E3E3C2F703E3C703E3C7370616E207374796C653D22636F6C6F723A207267622832342C2032352C203238293B223EE79C8BE8BF87E7BD91E4B88AE5A4A7E5A49AE695B0E69599E7A88BEFBC8CE4B880E69DA5E5B0B1E8AEB2E4BA94E7BABFE8B0B1E38081E4BA94E5BAA6E59C88E7AD89E7AD89E79A84E6AF94E6AF94E79A86E698AFEFBC8CE5AE9EE99985E4B88AE8BF99E7B1BBE8A786E9A291E8BF98E698AFE7BB99E69C89E79BB8E5BD93E4B880E983A8E58886E59FBAE7A180E79A84E69C8BE58F8BE5ADA6E4B9A0E79A84EFBC8CE982A3E4B988E68891E4BBACE68EA8E587BAE79A84E8BF99E4B8AAE69599E7A88BE5B0B1E698AFE99288E5AFB9E79C9FE6ADA3E5AE8CE585A8E99BB6E59FBAE7A180EFBC8C646F207265206D69E983BDE4B88DE79FA5E98193E79A84E69C8BE58F8BEFBC8CE68891E4BBACE4BB8EE69C80E69C80E59FBAE7A180E79A84E59CB0E696B9E5BC80E5A78BE8AEB2E8A7A3EFBC8CE5B8AEE58AA9E4BDA0E59CA8E99FB3E4B990E8BF99E69DA1E8B7AFE4B88AE4B880E6ADA5E4B880E6ADA5E5898DE8A18CE380823C2F7370616E3E3C2F703E3C703E3C62723E3C2F703E, null, '1', '9', '1', '0', '', '', '【第一季（精简版）/已完结】可放心食用\n【第二季（最终版）/已完结】此版为加强重制版，戳BV14p4', null);
 
 -- ----------------------------
 -- Table structure for cms_blog_file
@@ -168,12 +168,12 @@ CREATE TABLE `cms_forum` (
   `blog_pic_link` varchar(100) DEFAULT '' COMMENT '首页图片（ 0地址）',
   `blog_desc` varchar(100) DEFAULT '' COMMENT '简介',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='论坛';
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='论坛';
 
 -- ----------------------------
 -- Records of cms_forum
 -- ----------------------------
-INSERT INTO `cms_forum` VALUES ('1', '', '2024-05-01 16:27:56', '', '2024-05-01 16:30:03', '测试', '1', 0x3C703EE7ACACE4B889E696B9E6B0B4E794B5E8B4B9E5BEAEE69C8DE58AA1E4BA8CE6ACA1E6B1A1E69F933C2F703E, null, '0', '0', '1', '0', '', '', '吃啥吃啥啊四渡赤水擦拭吃啥饭');
+INSERT INTO `cms_forum` VALUES ('2', 'maple', '2024-05-08 23:20:10', '', null, '测试', '1', 0x3C703EE5958AE9A5BFE79A84E6B09BE59BB43C2F703E, null, '1', '0', '1', '0', '', '', '少吃点');
 
 -- ----------------------------
 -- Table structure for cms_message
@@ -270,6 +270,50 @@ INSERT INTO `cms_type` VALUES ('1', 'admin', '2024-04-26 23:07:57', '', null, '�
 INSERT INTO `cms_type` VALUES ('2', 'admin', '2024-04-26 23:08:10', '', null, '乐理学习', '', '0', '');
 
 -- ----------------------------
+-- Table structure for curriculum_comment
+-- ----------------------------
+DROP TABLE IF EXISTS `curriculum_comment`;
+CREATE TABLE `curriculum_comment` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `parent_id` bigint(20) DEFAULT NULL COMMENT '父评论id',
+  `main_id` bigint(20) DEFAULT NULL COMMENT '主评论id(第一级评论)',
+  `like_num` int(11) DEFAULT NULL COMMENT '点赞数量',
+  `content` varchar(255) DEFAULT NULL COMMENT '内容',
+  `type` char(1) DEFAULT NULL COMMENT '评论类型：对人评论，对项目评论，对资源评论',
+  `curriculum_id` bigint(20) DEFAULT NULL COMMENT '被评论者id，可以是人、项目、资源',
+  `del_flag` char(1) DEFAULT '0' COMMENT '删除标志（0代表存在 1代表删除）',
+  `user_id` bigint(20) DEFAULT NULL COMMENT '评论者id',
+  `create_by` varchar(64) DEFAULT '' COMMENT '创建者',
+  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+  `update_by` varchar(64) DEFAULT '' COMMENT '更新者',
+  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='课程评论表';
+
+-- ----------------------------
+-- Records of curriculum_comment
+-- ----------------------------
+INSERT INTO `curriculum_comment` VALUES ('7', null, null, null, '不错', '0', '24', '0', '1', 'admin', '2024-05-15 01:03:57', '', null);
+
+-- ----------------------------
+-- Table structure for curriculum_comment_like
+-- ----------------------------
+DROP TABLE IF EXISTS `curriculum_comment_like`;
+CREATE TABLE `curriculum_comment_like` (
+  `comment_id` bigint(20) NOT NULL COMMENT '点赞评论ID',
+  `user_id` bigint(20) NOT NULL COMMENT '用户ID',
+  `create_by` varchar(64) DEFAULT '' COMMENT '创建者',
+  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+  `update_by` varchar(64) DEFAULT '' COMMENT '更新者',
+  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+  PRIMARY KEY (`comment_id`,`user_id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='留言点赞表';
+
+-- ----------------------------
+-- Records of curriculum_comment_like
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for gen_table
 -- ----------------------------
 DROP TABLE IF EXISTS `gen_table`;
@@ -295,14 +339,14 @@ CREATE TABLE `gen_table` (
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `remark` varchar(500) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`table_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='代码生成业务表';
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='代码生成业务表';
 
 -- ----------------------------
 -- Records of gen_table
 -- ----------------------------
 INSERT INTO `gen_table` VALUES ('12', 'mall_goods', '商品', null, null, 'MallGoods', 'crud', 'com.instrument.mall', 'mall', 'goods', '商品', 'maple', '0', '/', '{\"parentMenuId\":\"2074\"}', 'admin', '2024-04-20 17:18:56', '', '2024-04-20 18:08:10', null);
 INSERT INTO `gen_table` VALUES ('13', 'mall_order', '订单', null, null, 'MallOrder', 'crud', 'com.instrument.mall', 'mall', 'order', '订单', 'maple', '0', '/', '{\"parentMenuId\":\"2074\"}', 'admin', '2024-04-20 17:18:56', '', '2024-04-20 17:46:13', null);
-INSERT INTO `gen_table` VALUES ('14', 'music_instrument', '乐器', null, null, 'MusicInstrument', 'crud', 'com.instrument.music', 'music', 'instrument', '乐器', 'maple', '0', '/', '{\"parentMenuId\":2075}', 'admin', '2024-04-20 17:19:06', '', '2024-04-20 18:03:14', null);
+INSERT INTO `gen_table` VALUES ('14', 'music_instrument', '乐器', null, null, 'MusicInstrument', 'crud', 'com.instrument.music', 'music', 'instrument', '乐器', 'maple', '0', '/', '{\"parentMenuId\":\"2075\"}', 'admin', '2024-04-20 17:19:06', '', '2024-05-14 23:21:27', null);
 INSERT INTO `gen_table` VALUES ('15', 'cms_forum', '论坛', null, null, 'CmsForum', 'crud', 'com.instrument.cms', 'cms', 'forum', '论坛', 'maple', '0', '/', '{\"parentMenuId\":\"2007\"}', 'admin', '2024-04-20 17:20:06', '', '2024-04-20 18:06:33', null);
 INSERT INTO `gen_table` VALUES ('16', 'mall_order_detail', '订单详情表', null, null, 'MallOrderDetail', 'crud', 'com.instrument.mall', 'mall', 'mallDetail', '订单详情', 'maple', '0', '/', '{\"parentMenuId\":\"2074\"}', 'admin', '2024-04-20 17:20:06', '', '2024-04-20 18:19:22', null);
 INSERT INTO `gen_table` VALUES ('17', 'music_curriculum', '课程', null, null, 'MusicCurriculum', 'crud', 'com.instrument.music', 'music', 'curriculum', '课程', 'maple', '0', '/', '{\"parentMenuId\":2075}', 'admin', '2024-04-20 17:20:06', '', '2024-04-20 18:11:55', null);
@@ -310,6 +354,7 @@ INSERT INTO `gen_table` VALUES ('18', 'music_curriculum_details', '课程详情'
 INSERT INTO `gen_table` VALUES ('19', 'music_curriculum_practice', '课程练习', null, null, 'CurriculumPractice', 'crud', 'com.instrument.music', 'music', 'practice', '课程练习', 'maple', '0', '/', '{\"parentMenuId\":2075}', 'admin', '2024-04-28 01:07:23', '', '2024-04-28 01:09:23', null);
 INSERT INTO `gen_table` VALUES ('20', 'music_my_curriculum', '我的课程', null, null, 'MusicMyCurriculum', 'crud', 'com.instrument.music', 'music', 'curriculum', '我的课程', 'maple', '0', '/', '{\"parentMenuId\":2075}', 'admin', '2024-04-28 01:07:23', '', '2024-04-28 01:10:15', null);
 INSERT INTO `gen_table` VALUES ('21', 'music_recognition', '识别记录', null, null, 'MusicRecognition', 'crud', 'com.instrument.music', 'music', 'recognition', 'recognition', 'maple', '0', '/', '{}', 'admin', '2024-05-02 16:33:20', '', '2024-05-05 23:36:34', null);
+INSERT INTO `gen_table` VALUES ('22', 'music_instrument_category', '乐器分类', null, null, 'InstrumentCategory', 'crud', 'com.instrument.music', 'music', 'category', '乐器分类', 'maple', '0', '/', '{\"parentMenuId\":2166}', 'admin', '2024-05-14 23:22:13', '', '2024-05-14 23:26:01', null);
 
 -- ----------------------------
 -- Table structure for gen_table_column
@@ -339,7 +384,7 @@ CREATE TABLE `gen_table_column` (
   `update_by` varchar(64) DEFAULT '' COMMENT '更新者',
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`column_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=215 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='代码生成业务表字段';
+) ENGINE=InnoDB AUTO_INCREMENT=223 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='代码生成业务表字段';
 
 -- ----------------------------
 -- Records of gen_table_column
@@ -373,13 +418,13 @@ INSERT INTO `gen_table_column` VALUES ('136', '13', 'close_time', '交易关闭�
 INSERT INTO `gen_table_column` VALUES ('137', '13', 'is_deleted', null, 'tinyint(4)', 'Integer', 'isDeleted', '0', '0', null, '1', '1', null, null, 'EQ', 'input', '', '18', 'admin', '2024-04-20 17:18:56', '', '2024-04-20 17:46:13');
 INSERT INTO `gen_table_column` VALUES ('138', '13', 'update_by', '更新者', 'varchar(64)', 'String', 'updateBy', '0', '0', null, '1', '1', '1', null, 'EQ', 'input', '', '19', 'admin', '2024-04-20 17:18:56', '', '2024-04-20 17:46:13');
 INSERT INTO `gen_table_column` VALUES ('139', '13', 'create_by', '创建者', 'varchar(64)', 'String', 'createBy', '0', '0', null, '1', null, '1', null, 'EQ', 'input', '', '20', 'admin', '2024-04-20 17:18:56', '', '2024-04-20 17:46:13');
-INSERT INTO `gen_table_column` VALUES ('140', '14', 'id', 'ID', 'bigint(20)', 'Long', 'id', '1', '1', null, '1', null, null, null, 'EQ', 'input', '', '1', 'admin', '2024-04-20 17:19:06', '', '2024-04-20 18:03:14');
-INSERT INTO `gen_table_column` VALUES ('141', '14', 'create_by', '创建者', 'varchar(64)', 'String', 'createBy', '0', '0', null, '1', null, '1', null, 'EQ', 'input', '', '2', 'admin', '2024-04-20 17:19:06', '', '2024-04-20 18:03:14');
-INSERT INTO `gen_table_column` VALUES ('142', '14', 'create_time', '创建时间', 'datetime', 'Date', 'createTime', '0', '0', null, '1', null, '1', null, 'EQ', 'datetime', '', '3', 'admin', '2024-04-20 17:19:06', '', '2024-04-20 18:03:14');
-INSERT INTO `gen_table_column` VALUES ('143', '14', 'update_by', '更新者', 'varchar(64)', 'String', 'updateBy', '0', '0', null, '1', '1', '1', null, 'EQ', 'input', '', '4', 'admin', '2024-04-20 17:19:06', '', '2024-04-20 18:03:14');
-INSERT INTO `gen_table_column` VALUES ('144', '14', 'update_time', '更新时间', 'datetime', 'Date', 'updateTime', '0', '0', null, '1', '1', '1', null, 'EQ', 'datetime', '', '5', 'admin', '2024-04-20 17:19:06', '', '2024-04-20 18:03:14');
-INSERT INTO `gen_table_column` VALUES ('145', '14', 'name', '乐器名', 'varchar(50)', 'String', 'name', '0', '0', '1', '1', '1', '1', '1', 'LIKE', 'input', '', '6', 'admin', '2024-04-20 17:19:06', '', '2024-04-20 18:03:14');
-INSERT INTO `gen_table_column` VALUES ('146', '14', 'content', '介绍内容', 'varchar(1000)', 'String', 'content', '0', '0', null, '1', '1', '1', '1', 'EQ', 'textarea', '', '7', 'admin', '2024-04-20 17:19:06', '', '2024-04-20 18:03:14');
+INSERT INTO `gen_table_column` VALUES ('140', '14', 'id', 'ID', 'bigint(20)', 'Long', 'id', '1', '1', null, '1', null, null, null, 'EQ', 'input', '', '1', 'admin', '2024-04-20 17:19:06', '', '2024-05-14 23:21:27');
+INSERT INTO `gen_table_column` VALUES ('141', '14', 'create_by', '创建者', 'varchar(64)', 'String', 'createBy', '0', '0', null, '1', null, '1', null, 'EQ', 'input', '', '2', 'admin', '2024-04-20 17:19:06', '', '2024-05-14 23:21:27');
+INSERT INTO `gen_table_column` VALUES ('142', '14', 'create_time', '创建时间', 'datetime', 'Date', 'createTime', '0', '0', null, '1', null, '1', null, 'EQ', 'datetime', '', '3', 'admin', '2024-04-20 17:19:06', '', '2024-05-14 23:21:27');
+INSERT INTO `gen_table_column` VALUES ('143', '14', 'update_by', '更新者', 'varchar(64)', 'String', 'updateBy', '0', '0', null, '1', '1', '1', null, 'EQ', 'input', '', '4', 'admin', '2024-04-20 17:19:06', '', '2024-05-14 23:21:27');
+INSERT INTO `gen_table_column` VALUES ('144', '14', 'update_time', '更新时间', 'datetime', 'Date', 'updateTime', '0', '0', null, '1', '1', '1', null, 'EQ', 'datetime', '', '5', 'admin', '2024-04-20 17:19:06', '', '2024-05-14 23:21:27');
+INSERT INTO `gen_table_column` VALUES ('145', '14', 'name', '乐器名', 'varchar(50)', 'String', 'name', '0', '0', '1', '1', '1', '1', '1', 'LIKE', 'input', '', '6', 'admin', '2024-04-20 17:19:06', '', '2024-05-14 23:21:27');
+INSERT INTO `gen_table_column` VALUES ('146', '14', 'content', '介绍内容', 'varchar(1000)', 'String', 'content', '0', '0', null, '1', '1', '1', '1', 'EQ', 'textarea', '', '7', 'admin', '2024-04-20 17:19:06', '', '2024-05-14 23:21:27');
 INSERT INTO `gen_table_column` VALUES ('147', '15', 'id', 'ID', 'bigint(20)', 'Long', 'id', '1', '1', null, '1', null, null, null, 'EQ', 'input', '', '1', 'admin', '2024-04-20 17:20:06', '', '2024-04-20 18:06:33');
 INSERT INTO `gen_table_column` VALUES ('148', '15', 'create_by', '创建者', 'varchar(64)', 'String', 'createBy', '0', '0', null, '1', null, '1', null, 'EQ', 'input', '', '2', 'admin', '2024-04-20 17:20:06', '', '2024-04-20 18:06:33');
 INSERT INTO `gen_table_column` VALUES ('149', '15', 'create_time', '创建时间', 'datetime', 'Date', 'createTime', '0', '0', null, '1', null, '1', null, 'EQ', 'datetime', '', '3', 'admin', '2024-04-20 17:20:06', '', '2024-04-20 18:06:33');
@@ -448,6 +493,14 @@ INSERT INTO `gen_table_column` VALUES ('211', '21', 'create_by', '创建者', 'v
 INSERT INTO `gen_table_column` VALUES ('212', '21', 'create_time', '创建时间', 'datetime', 'Date', 'createTime', '0', '0', null, '1', null, '1', null, 'EQ', 'datetime', '', '6', 'admin', '2024-05-02 16:33:20', '', '2024-05-05 23:36:34');
 INSERT INTO `gen_table_column` VALUES ('213', '21', 'update_by', '更新者', 'varchar(64)', 'String', 'updateBy', '0', '0', null, '1', '1', '1', null, 'EQ', 'input', '', '7', 'admin', '2024-05-02 16:33:20', '', '2024-05-05 23:36:34');
 INSERT INTO `gen_table_column` VALUES ('214', '21', 'update_time', '更新时间', 'datetime', 'Date', 'updateTime', '0', '0', null, '1', '1', '1', null, 'EQ', 'datetime', '', '8', 'admin', '2024-05-02 16:33:20', '', '2024-05-05 23:36:34');
+INSERT INTO `gen_table_column` VALUES ('215', '14', 'url', '图片', 'varchar(255)', 'String', 'url', '0', '0', null, '1', '1', '1', '1', 'EQ', 'imageUpload', '', '8', '', '2024-05-14 16:46:26', '', '2024-05-14 23:21:27');
+INSERT INTO `gen_table_column` VALUES ('216', '14', 'category_id', '分类', 'bigint(20)', 'Long', 'categoryId', '0', '0', null, '1', '1', '1', '1', 'EQ', 'select', '', '9', '', '2024-05-14 16:46:26', '', '2024-05-14 23:21:27');
+INSERT INTO `gen_table_column` VALUES ('217', '22', 'id', 'id', 'bigint(20) unsigned', 'Long', 'id', '1', '1', null, '1', null, null, null, 'EQ', 'input', '', '1', 'admin', '2024-05-14 23:22:13', '', '2024-05-14 23:26:01');
+INSERT INTO `gen_table_column` VALUES ('218', '22', 'name', '分类名', 'varchar(255)', 'String', 'name', '0', '0', null, '1', '1', '1', '1', 'LIKE', 'input', '', '2', 'admin', '2024-05-14 23:22:13', '', '2024-05-14 23:26:01');
+INSERT INTO `gen_table_column` VALUES ('219', '22', 'create_by', '创建者', 'varchar(64)', 'String', 'createBy', '0', '0', null, '1', null, '1', null, 'EQ', 'input', '', '3', 'admin', '2024-05-14 23:22:13', '', '2024-05-14 23:26:01');
+INSERT INTO `gen_table_column` VALUES ('220', '22', 'create_time', '创建时间', 'datetime', 'Date', 'createTime', '0', '0', null, '1', null, '1', null, 'EQ', 'datetime', '', '4', 'admin', '2024-05-14 23:22:13', '', '2024-05-14 23:26:01');
+INSERT INTO `gen_table_column` VALUES ('221', '22', 'update_by', '更新者', 'varchar(64)', 'String', 'updateBy', '0', '0', null, '1', '1', '1', null, 'EQ', 'input', '', '5', 'admin', '2024-05-14 23:22:13', '', '2024-05-14 23:26:01');
+INSERT INTO `gen_table_column` VALUES ('222', '22', 'update_time', '更新时间', 'datetime', 'Date', 'updateTime', '0', '0', null, '1', '1', '1', null, 'EQ', 'datetime', '', '6', 'admin', '2024-05-14 23:22:13', '', '2024-05-14 23:26:01');
 
 -- ----------------------------
 -- Table structure for mall_goods
@@ -594,13 +647,15 @@ CREATE TABLE `music_curriculum_practice` (
   `update_by` varchar(64) DEFAULT NULL COMMENT '更新者',
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='课程练习';
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='课程练习';
 
 -- ----------------------------
 -- Records of music_curriculum_practice
 -- ----------------------------
 INSERT INTO `music_curriculum_practice` VALUES ('25', '0', '24', '1', '/profile/upload/2024/04/28/07a48041-4ba2-4c14-8041-f69dd76e31cd.jpg', 'admin', '2024-04-28 02:05:12', 'admin', '2024-04-28 02:17:49');
 INSERT INTO `music_curriculum_practice` VALUES ('26', '0', '24', '1', '/profile/upload/2024/04/28/250649ed-cfdf-4b23-a007-4fc08faeb9f8.jpg', 'admin', '2024-04-28 02:17:31', null, null);
+INSERT INTO `music_curriculum_practice` VALUES ('27', '0', '24', '1', '/profile/upload/2024/05/08/7b400151-a363-44bb-be8c-6435892f0313.mp4', 'maple', '2024-05-08 23:24:37', null, null);
+INSERT INTO `music_curriculum_practice` VALUES ('28', '0', '24', '4', '/profile/upload/2024/05/08/b1275946-d7fb-42bd-b1ac-b2a074097d47.jpg', 'maple', '2024-05-08 23:25:06', null, null);
 
 -- ----------------------------
 -- Table structure for music_instrument
@@ -614,13 +669,35 @@ CREATE TABLE `music_instrument` (
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `name` varchar(50) NOT NULL COMMENT '乐器名',
   `content` varchar(1000) DEFAULT NULL COMMENT '介绍内容',
+  `url` varchar(255) DEFAULT NULL,
+  `category_id` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='乐器';
 
 -- ----------------------------
 -- Records of music_instrument
 -- ----------------------------
-INSERT INTO `music_instrument` VALUES ('23', 'admin', '2024-04-20 18:49:06', 'admin', '2024-04-27 18:39:08', '吉他', '吉他（意大利语：Chitarra），又译为结他或六弦琴。是一种弹拨乐器，通常有六条弦，形状与提琴相似。吉他在流行音乐、摇滚音乐、蓝调、民歌、佛朗明哥中，常被视为主要乐器。而在古典音乐的领域里，吉他常以独奏或二重奏的型式演出；当然，在室内乐和管弦乐中，吉他亦扮演着相当程度的陪衬角色。古典吉他与小提琴、钢琴并列为世界著名三大乐器。\n\n吉他主要有民谣吉他、古典吉他和电吉他三种，民谣吉他最常见也最容易上手。三种类型的吉他各有千秋，喜欢听弹唱的一般是民谣吉他；喜欢独奏的一般是古典吉他；喜欢摇滚的，电吉他必不可少。');
+INSERT INTO `music_instrument` VALUES ('23', 'admin', '2024-04-20 18:49:06', 'admin', '2024-05-15 02:35:48', '吉他', '吉他（意大利语：Chitarra），又译为结他或六弦琴。是一种弹拨乐器，通常有六条弦，形状与提琴相似。吉他在流行音乐、摇滚音乐、蓝调、民歌、佛朗明哥中，常被视为主要乐器。而在古典音乐的领域里，吉他常以独奏或二重奏的型式演出；当然，在室内乐和管弦乐中，吉他亦扮演着相当程度的陪衬角色。古典吉他与小提琴、钢琴并列为世界著名三大乐器。\n\n吉他主要有民谣吉他、古典吉他和电吉他三种，民谣吉他最常见也最容易上手。三种类型的吉他各有千秋，喜欢听弹唱的一般是民谣吉他；喜欢独奏的一般是古典吉他；喜欢摇滚的，电吉他必不可少。', '/profile/upload/2024/05/15/d76fd118-98fe-441f-81b4-0a71529336d9.jpg', '1');
+
+-- ----------------------------
+-- Table structure for music_instrument_category
+-- ----------------------------
+DROP TABLE IF EXISTS `music_instrument_category`;
+CREATE TABLE `music_instrument_category` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL COMMENT '分类名',
+  `create_by` varchar(64) CHARACTER SET utf8mb4 DEFAULT NULL COMMENT '创建者',
+  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+  `update_by` varchar(64) CHARACTER SET utf8mb4 DEFAULT NULL COMMENT '更新者',
+  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='乐器分类';
+
+-- ----------------------------
+-- Records of music_instrument_category
+-- ----------------------------
+INSERT INTO `music_instrument_category` VALUES ('1', '拉弦乐器', null, '2024-05-14 23:54:09', null, '2024-05-14 23:54:32');
+INSERT INTO `music_instrument_category` VALUES ('2', '打击乐器', null, '2024-05-14 23:54:25', null, null);
 
 -- ----------------------------
 -- Table structure for music_my_curriculum
@@ -634,11 +711,12 @@ CREATE TABLE `music_my_curriculum` (
   `update_by` varchar(64) DEFAULT NULL COMMENT '更新者',
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='我的课程';
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='我的课程';
 
 -- ----------------------------
 -- Records of music_my_curriculum
 -- ----------------------------
+INSERT INTO `music_my_curriculum` VALUES ('27', '24', 'maple', '2024-05-09 01:15:52', null, null);
 
 -- ----------------------------
 -- Table structure for music_recognition
@@ -843,7 +921,7 @@ CREATE TABLE `sys_file_info` (
   `update_by` varchar(64) DEFAULT '' COMMENT '更新者',
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`file_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='文件信息表';
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='文件信息表';
 
 -- ----------------------------
 -- Records of sys_file_info
@@ -859,6 +937,11 @@ INSERT INTO `sys_file_info` VALUES ('46', '1.jpg', 'jpg', '191.71 kB', '07a48041
 INSERT INTO `sys_file_info` VALUES ('47', '1.jpg', 'jpg', '191.71 kB', '250649ed-cfdf-4b23-a007-4fc08faeb9f8.jpg', '/profile/upload/2024/04/28/250649ed-cfdf-4b23-a007-4fc08faeb9f8.jpg', 'N', 'admin', '2024-04-28 02:17:29', '', null);
 INSERT INTO `sys_file_info` VALUES ('48', '施雨凡 - 起风了 (抒情女声版).mp3', 'mp3', '4.97 MB', '4eaccaae-f7a6-406a-bf62-15f6159ac7a8.mp3', '/profile/upload/2024/05/05/4eaccaae-f7a6-406a-bf62-15f6159ac7a8.mp3', 'N', 'admin', '2024-05-05 23:43:17', '', null);
 INSERT INTO `sys_file_info` VALUES ('49', '施雨凡 - 起风了 (抒情女声版).mp3', 'mp3', '4.97 MB', 'd10164f7-21b6-4557-9c75-5f6ffd9e676a.mp3', '/profile/upload/2024/05/08/d10164f7-21b6-4557-9c75-5f6ffd9e676a.mp3', 'N', 'maple', '2024-05-08 22:25:01', '', null);
+INSERT INTO `sys_file_info` VALUES ('50', '58633509-1-208.mp4', 'mp4', '19.72 MB', '9a897ca6-6739-4c7f-9c22-b4a8bb1dbbb3.mp4', '/profile/upload/2024/05/08/9a897ca6-6739-4c7f-9c22-b4a8bb1dbbb3.mp4', 'N', 'maple', '2024-05-08 23:22:32', '', null);
+INSERT INTO `sys_file_info` VALUES ('51', '58633509-1-208.mp4', 'mp4', '19.72 MB', '29ee9867-2cc5-470b-9b97-06d1600c7bed.mp4', '/profile/upload/2024/05/08/29ee9867-2cc5-470b-9b97-06d1600c7bed.mp4', 'N', 'maple', '2024-05-08 23:23:43', '', null);
+INSERT INTO `sys_file_info` VALUES ('52', '58633509-1-208.mp4', 'mp4', '19.72 MB', '7b400151-a363-44bb-be8c-6435892f0313.mp4', '/profile/upload/2024/05/08/7b400151-a363-44bb-be8c-6435892f0313.mp4', 'N', 'maple', '2024-05-08 23:24:35', '', null);
+INSERT INTO `sys_file_info` VALUES ('53', '07a48041-4ba2-4c14-8041-f69dd76e31cd.jpg', 'jpg', '191.71 kB', 'b1275946-d7fb-42bd-b1ac-b2a074097d47.jpg', '/profile/upload/2024/05/08/b1275946-d7fb-42bd-b1ac-b2a074097d47.jpg', 'N', 'maple', '2024-05-08 23:25:04', '', null);
+INSERT INTO `sys_file_info` VALUES ('54', '8468093.jpg', 'jpg', '228.63 kB', 'd76fd118-98fe-441f-81b4-0a71529336d9.jpg', '/profile/upload/2024/05/15/d76fd118-98fe-441f-81b4-0a71529336d9.jpg', 'N', 'admin', '2024-05-15 02:25:01', '', null);
 
 -- ----------------------------
 -- Table structure for sys_job
@@ -923,7 +1006,7 @@ CREATE TABLE `sys_logininfor` (
   `msg` varchar(255) DEFAULT '' COMMENT '提示消息',
   `login_time` datetime DEFAULT NULL COMMENT '访问时间',
   PRIMARY KEY (`info_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=189 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统访问记录';
+) ENGINE=InnoDB AUTO_INCREMENT=201 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统访问记录';
 
 -- ----------------------------
 -- Records of sys_logininfor
@@ -1116,6 +1199,18 @@ INSERT INTO `sys_logininfor` VALUES ('185', 'maple', '127.0.0.1', '内网IP', 'C
 INSERT INTO `sys_logininfor` VALUES ('186', 'maple', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '退出成功', '2024-05-08 23:05:12');
 INSERT INTO `sys_logininfor` VALUES ('187', 'maple', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '1', '用户不存在/密码错误', '2024-05-08 23:05:27');
 INSERT INTO `sys_logininfor` VALUES ('188', 'maple', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '登录成功', '2024-05-08 23:05:54');
+INSERT INTO `sys_logininfor` VALUES ('189', 'maple', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '退出成功', '2024-05-08 23:23:53');
+INSERT INTO `sys_logininfor` VALUES ('190', 'maple', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '登录成功', '2024-05-08 23:24:14');
+INSERT INTO `sys_logininfor` VALUES ('191', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '登录成功', '2024-05-11 09:53:13');
+INSERT INTO `sys_logininfor` VALUES ('192', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '退出成功', '2024-05-11 11:43:04');
+INSERT INTO `sys_logininfor` VALUES ('193', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '登录成功', '2024-05-14 00:38:25');
+INSERT INTO `sys_logininfor` VALUES ('194', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '退出成功', '2024-05-14 01:00:03');
+INSERT INTO `sys_logininfor` VALUES ('195', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '登录成功', '2024-05-14 01:00:09');
+INSERT INTO `sys_logininfor` VALUES ('196', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '退出成功', '2024-05-14 01:07:53');
+INSERT INTO `sys_logininfor` VALUES ('197', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '登录成功', '2024-05-14 01:08:03');
+INSERT INTO `sys_logininfor` VALUES ('198', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '登录成功', '2024-05-14 16:43:18');
+INSERT INTO `sys_logininfor` VALUES ('199', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '退出成功', '2024-05-14 23:52:22');
+INSERT INTO `sys_logininfor` VALUES ('200', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '登录成功', '2024-05-14 23:52:56');
 
 -- ----------------------------
 -- Table structure for sys_menu
@@ -1142,22 +1237,22 @@ CREATE TABLE `sys_menu` (
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `remark` varchar(500) DEFAULT '' COMMENT '备注',
   PRIMARY KEY (`menu_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2150 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='菜单权限表';
+) ENGINE=InnoDB AUTO_INCREMENT=2179 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='菜单权限表';
 
 -- ----------------------------
 -- Records of sys_menu
 -- ----------------------------
 INSERT INTO `sys_menu` VALUES ('1', '系统管理', '0', '1', 'system', null, '', '1', '0', 'M', '0', '0', '', 'system', 'admin', '2021-12-10 14:12:14', '', null, '系统管理目录');
-INSERT INTO `sys_menu` VALUES ('2', '系统监控', '0', '2', 'monitor', null, '', '1', '0', 'M', '0', '0', '', 'monitor', 'admin', '2021-12-10 14:12:14', '', null, '系统监控目录');
-INSERT INTO `sys_menu` VALUES ('3', '系统工具', '0', '3', 'tool', null, '', '1', '0', 'M', '0', '0', '', 'tool', 'admin', '2021-12-10 14:12:14', '', null, '系统工具目录');
-INSERT INTO `sys_menu` VALUES ('100', '用户管理', '1', '3', 'user', 'system/user/index', '', '1', '0', 'C', '0', '0', 'system:user:list', 'user', 'admin', '2021-12-10 14:12:14', 'admin', '2021-12-10 15:43:44', '用户管理菜单');
-INSERT INTO `sys_menu` VALUES ('101', '角色管理', '1', '4', 'role', 'system/role/index', '', '1', '0', 'C', '0', '0', 'system:role:list', 'peoples', 'admin', '2021-12-10 14:12:14', 'admin', '2021-12-10 15:43:58', '角色管理菜单');
+INSERT INTO `sys_menu` VALUES ('2', '系统监控', '0', '2', 'monitor', null, '', '1', '0', 'M', '0', '1', '', 'monitor', 'admin', '2021-12-10 14:12:14', 'admin', '2024-05-11 11:03:30', '系统监控目录');
+INSERT INTO `sys_menu` VALUES ('3', '系统工具', '0', '3', 'tool', null, '', '1', '0', 'M', '0', '0', '', 'tool', 'admin', '2021-12-10 14:12:14', 'admin', '2024-05-14 16:45:03', '系统工具目录');
+INSERT INTO `sys_menu` VALUES ('100', '用户管理', '0', '3', 'user', 'system/user/index', '', '1', '0', 'C', '0', '0', 'system:user:list', 'user', 'admin', '2021-12-10 14:12:14', 'admin', '2024-05-11 10:45:54', '用户管理菜单');
+INSERT INTO `sys_menu` VALUES ('101', '角色管理', '0', '4', 'role', 'system/role/index', '', '1', '0', 'C', '0', '0', 'system:role:list', 'peoples', 'admin', '2021-12-10 14:12:14', 'admin', '2024-05-11 10:46:03', '角色管理菜单');
 INSERT INTO `sys_menu` VALUES ('102', '菜单管理', '1', '5', 'menu', 'system/menu/index', '', '1', '0', 'C', '0', '0', 'system:menu:list', 'tree-table', 'admin', '2021-12-10 14:12:14', 'admin', '2021-12-10 15:44:17', '菜单管理菜单');
-INSERT INTO `sys_menu` VALUES ('103', '部门管理', '1', '1', 'dept', 'system/dept/index', '', '1', '0', 'C', '0', '0', 'system:dept:list', 'tree', 'admin', '2021-12-10 14:12:14', 'admin', '2021-12-10 15:43:17', '部门管理菜单');
-INSERT INTO `sys_menu` VALUES ('104', '岗位管理', '1', '2', 'post', 'system/post/index', '', '1', '0', 'C', '0', '0', 'system:post:list', 'post', 'admin', '2021-12-10 14:12:14', 'admin', '2021-12-10 15:43:28', '岗位管理菜单');
+INSERT INTO `sys_menu` VALUES ('103', '部门管理', '1', '1', 'dept', 'system/dept/index', '', '1', '0', 'C', '1', '1', 'system:dept:list', 'tree', 'admin', '2021-12-10 14:12:14', 'admin', '2024-05-11 09:55:28', '部门管理菜单');
+INSERT INTO `sys_menu` VALUES ('104', '岗位管理', '1', '2', 'post', 'system/post/index', '', '1', '0', 'C', '1', '1', 'system:post:list', 'post', 'admin', '2021-12-10 14:12:14', 'admin', '2024-05-11 09:54:55', '岗位管理菜单');
 INSERT INTO `sys_menu` VALUES ('105', '字典管理', '1', '6', 'dict', 'system/dict/index', '', '1', '0', 'C', '0', '0', 'system:dict:list', 'dict', 'admin', '2021-12-10 14:12:14', '', null, '字典管理菜单');
 INSERT INTO `sys_menu` VALUES ('106', '参数设置', '1', '7', 'config', 'system/config/index', '', '1', '0', 'C', '0', '0', 'system:config:list', 'edit', 'admin', '2021-12-10 14:12:14', '', null, '参数设置菜单');
-INSERT INTO `sys_menu` VALUES ('107', '通知公告', '1', '8', 'notice', 'system/notice/index', '', '1', '0', 'C', '0', '0', 'system:notice:list', 'message', 'admin', '2021-12-10 14:12:14', '', null, '通知公告菜单');
+INSERT INTO `sys_menu` VALUES ('107', '通知公告', '2152', '8', 'notice', 'system/notice/index', '', '1', '0', 'C', '0', '0', 'system:notice:list', 'message', 'admin', '2021-12-10 14:12:14', 'admin', '2024-05-11 10:55:08', '通知公告菜单');
 INSERT INTO `sys_menu` VALUES ('108', '日志管理', '1', '9', 'log', '', '', '1', '0', 'M', '0', '0', '', 'log', 'admin', '2021-12-10 14:12:14', '', null, '日志管理菜单');
 INSERT INTO `sys_menu` VALUES ('109', '在线用户', '2', '1', 'online', 'monitor/online/index', '', '1', '0', 'C', '0', '0', 'monitor:online:list', 'online', 'admin', '2021-12-10 14:12:14', '', null, '在线用户菜单');
 INSERT INTO `sys_menu` VALUES ('110', '定时任务', '2', '2', 'job', 'monitor/job/index', '', '1', '0', 'C', '0', '0', 'monitor:job:list', 'job', 'admin', '2021-12-10 14:12:14', '', null, '定时任务菜单');
@@ -1242,7 +1337,7 @@ INSERT INTO `sys_menu` VALUES ('2034', '文章管理新增', '2032', '2', '#', '
 INSERT INTO `sys_menu` VALUES ('2035', '文章管理修改', '2032', '3', '#', '', null, '1', '0', 'F', '0', '0', 'cms:blog:edit', '#', 'admin', '2022-01-01 22:25:42', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2036', '文章管理删除', '2032', '4', '#', '', null, '1', '0', 'F', '0', '0', 'cms:blog:remove', '#', 'admin', '2022-01-01 22:25:42', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2037', '文章管理导出', '2032', '5', '#', '', null, '1', '0', 'F', '0', '0', 'cms:blog:export', '#', 'admin', '2022-01-01 22:25:42', '', null, '');
-INSERT INTO `sys_menu` VALUES ('2038', '随笔管理', '2007', '2', 'essay', 'cms/blog/essay', null, '1', '0', 'C', '0', '0', 'cms:blog:list', '#', 'admin', '2022-01-02 02:48:37', '', null, '随笔管理菜单');
+INSERT INTO `sys_menu` VALUES ('2038', '随笔管理', '2150', '2', 'essay', 'cms/blog/essay', null, '1', '0', 'C', '0', '0', 'cms:blog:list', '#', 'admin', '2022-01-02 02:48:37', 'admin', '2024-05-11 10:51:28', '随笔管理菜单');
 INSERT INTO `sys_menu` VALUES ('2039', '随笔管理查询', '2038', '1', '#', '', null, '1', '0', 'F', '0', '0', 'cms:blog:query', '#', 'admin', '2022-01-02 02:48:37', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2040', '随笔管理新增', '2038', '2', '#', '', null, '1', '0', 'F', '0', '0', 'cms:blog:add', '#', 'admin', '2022-01-02 02:48:37', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2041', '随笔管理修改', '2038', '3', '#', '', null, '1', '0', 'F', '0', '0', 'cms:blog:edit', '#', 'admin', '2022-01-02 02:48:37', '', null, '');
@@ -1266,7 +1361,7 @@ INSERT INTO `sys_menu` VALUES ('2058', '分类管理新增', '2056', '2', '#', '
 INSERT INTO `sys_menu` VALUES ('2059', '分类管理修改', '2056', '3', '#', '', null, '1', '0', 'F', '0', '0', 'cms:type:edit', '#', 'admin', '2022-01-02 15:04:23', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2060', '分类管理删除', '2056', '4', '#', '', null, '1', '0', 'F', '0', '0', 'cms:type:remove', '#', 'admin', '2022-01-02 15:04:23', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2061', '分类管理导出', '2056', '5', '#', '', null, '1', '0', 'F', '0', '0', 'cms:type:export', '#', 'admin', '2022-01-02 15:04:23', '', null, '');
-INSERT INTO `sys_menu` VALUES ('2062', '留言管理', '2007', '6', 'message', 'cms/message/index', null, '1', '0', 'C', '0', '0', 'cms:message:list', '#', 'admin', '2022-01-15 13:47:29', 'admin', '2022-01-15 13:49:11', '留言管理菜单');
+INSERT INTO `sys_menu` VALUES ('2062', '留言管理', '2152', '6', 'message', 'cms/message/index', null, '1', '0', 'C', '0', '0', 'cms:message:list', '#', 'admin', '2022-01-15 13:47:29', 'admin', '2024-05-11 10:54:53', '留言管理菜单');
 INSERT INTO `sys_menu` VALUES ('2063', '留言管理查询', '2062', '1', '#', '', null, '1', '0', 'F', '0', '0', 'cms:message:query', '#', 'admin', '2022-01-15 13:47:29', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2064', '留言管理新增', '2062', '2', '#', '', null, '1', '0', 'F', '0', '0', 'cms:message:add', '#', 'admin', '2022-01-15 13:47:29', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2065', '留言管理修改', '2062', '3', '#', '', null, '1', '0', 'F', '0', '0', 'cms:message:edit', '#', 'admin', '2022-01-15 13:47:29', '', null, '');
@@ -1278,8 +1373,8 @@ INSERT INTO `sys_menu` VALUES ('2070', '评论管理新增', '2068', '2', '#', '
 INSERT INTO `sys_menu` VALUES ('2071', '评论管理修改', '2068', '3', '#', '', null, '1', '0', 'F', '0', '0', 'cms:comment:edit', '#', 'admin', '2022-01-21 10:27:25', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2072', '评论管理删除', '2068', '4', '#', '', null, '1', '0', 'F', '0', '0', 'cms:comment:remove', '#', 'admin', '2022-01-21 10:27:25', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2073', '评论管理导出', '2068', '5', '#', '', null, '1', '0', 'F', '0', '0', 'cms:comment:export', '#', 'admin', '2022-01-21 10:27:25', '', null, '');
-INSERT INTO `sys_menu` VALUES ('2074', '电商', '0', '6', 'mall', '', null, '1', '0', 'M', '0', '0', '', 'shopping', 'admin', '2024-04-20 17:24:21', 'admin', '2024-04-20 17:26:31', '');
-INSERT INTO `sys_menu` VALUES ('2075', '学习', '0', '5', 'instrument', null, null, '1', '0', 'M', '0', '0', null, 'education', 'admin', '2024-04-20 17:26:22', '', null, '');
+INSERT INTO `sys_menu` VALUES ('2074', '乐器购买管理', '0', '6', 'mall', '', null, '1', '0', 'M', '0', '0', '', 'shopping', 'admin', '2024-04-20 17:24:21', 'admin', '2024-05-11 10:52:52', '');
+INSERT INTO `sys_menu` VALUES ('2075', '课程管理', '0', '5', 'instrument', null, null, '1', '0', 'M', '0', '0', '', 'education', 'admin', '2024-04-20 17:26:22', 'admin', '2024-05-15 00:23:41', '');
 INSERT INTO `sys_menu` VALUES ('2076', '课程详情', '2075', '1', 'curriculumDetails', 'music/curriculumDetails/index', null, '1', '0', 'C', '1', '0', 'music:curriculumDetails:list', '#', 'admin', '2024-04-20 18:35:45', 'admin', '2024-04-27 00:13:39', '课程详情菜单');
 INSERT INTO `sys_menu` VALUES ('2077', '课程详情查询', '2076', '1', '#', '', null, '1', '0', 'F', '0', '0', 'music:curriculumDetails:query', '#', 'admin', '2024-04-20 18:35:45', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2078', '课程详情新增', '2076', '2', '#', '', null, '1', '0', 'F', '0', '0', 'music:curriculumDetails:add', '#', 'admin', '2024-04-20 18:35:45', '', null, '');
@@ -1292,19 +1387,19 @@ INSERT INTO `sys_menu` VALUES ('2084', '课程新增', '2082', '2', '#', '', nul
 INSERT INTO `sys_menu` VALUES ('2085', '课程修改', '2082', '3', '#', '', null, '1', '0', 'F', '0', '0', 'music:curriculum:edit', '#', 'admin', '2024-04-20 18:35:56', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2086', '课程删除', '2082', '4', '#', '', null, '1', '0', 'F', '0', '0', 'music:curriculum:remove', '#', 'admin', '2024-04-20 18:35:56', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2087', '课程导出', '2082', '5', '#', '', null, '1', '0', 'F', '0', '0', 'music:curriculum:export', '#', 'admin', '2024-04-20 18:35:56', '', null, '');
-INSERT INTO `sys_menu` VALUES ('2088', '论坛', '2007', '1', 'forum', 'cms/forum/index', null, '1', '0', 'C', '0', '0', 'cms:forum:list', '#', 'admin', '2024-04-20 18:36:07', '', null, '论坛菜单');
+INSERT INTO `sys_menu` VALUES ('2088', '论坛', '2150', '1', 'forum', 'cms/forum/index', null, '1', '0', 'C', '0', '0', 'cms:forum:list', '#', 'admin', '2024-04-20 18:36:07', 'admin', '2024-05-11 10:51:14', '论坛菜单');
 INSERT INTO `sys_menu` VALUES ('2089', '论坛查询', '2088', '1', '#', '', null, '1', '0', 'F', '0', '0', 'cms:forum:query', '#', 'admin', '2024-04-20 18:36:07', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2090', '论坛新增', '2088', '2', '#', '', null, '1', '0', 'F', '0', '0', 'cms:forum:add', '#', 'admin', '2024-04-20 18:36:07', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2091', '论坛修改', '2088', '3', '#', '', null, '1', '0', 'F', '0', '0', 'cms:forum:edit', '#', 'admin', '2024-04-20 18:36:07', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2092', '论坛删除', '2088', '4', '#', '', null, '1', '0', 'F', '0', '0', 'cms:forum:remove', '#', 'admin', '2024-04-20 18:36:07', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2093', '论坛导出', '2088', '5', '#', '', null, '1', '0', 'F', '0', '0', 'cms:forum:export', '#', 'admin', '2024-04-20 18:36:07', '', null, '');
-INSERT INTO `sys_menu` VALUES ('2100', '商品', '2074', '1', 'goods', 'mall/goods/index', null, '1', '0', 'C', '0', '0', 'mall:goods:list', '#', 'admin', '2024-04-20 18:36:32', '', null, '商品菜单');
+INSERT INTO `sys_menu` VALUES ('2100', '商品信息', '2074', '1', 'goods', 'mall/goods/index', null, '1', '0', 'C', '0', '0', 'mall:goods:list', '#', 'admin', '2024-04-20 18:36:32', 'admin', '2024-05-11 10:53:10', '商品菜单');
 INSERT INTO `sys_menu` VALUES ('2101', '商品查询', '2100', '1', '#', '', null, '1', '0', 'F', '0', '0', 'mall:goods:query', '#', 'admin', '2024-04-20 18:36:32', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2102', '商品新增', '2100', '2', '#', '', null, '1', '0', 'F', '0', '0', 'mall:goods:add', '#', 'admin', '2024-04-20 18:36:32', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2103', '商品修改', '2100', '3', '#', '', null, '1', '0', 'F', '0', '0', 'mall:goods:edit', '#', 'admin', '2024-04-20 18:36:32', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2104', '商品删除', '2100', '4', '#', '', null, '1', '0', 'F', '0', '0', 'mall:goods:remove', '#', 'admin', '2024-04-20 18:36:32', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2105', '商品导出', '2100', '5', '#', '', null, '1', '0', 'F', '0', '0', 'mall:goods:export', '#', 'admin', '2024-04-20 18:36:32', '', null, '');
-INSERT INTO `sys_menu` VALUES ('2106', '乐器', '2075', '1', 'instrument', 'music/instrument/index', null, '1', '0', 'C', '0', '0', 'music:instrument:list', '#', 'admin', '2024-04-20 18:36:44', '', null, '乐器菜单');
+INSERT INTO `sys_menu` VALUES ('2106', '乐器信息', '2166', '1', 'instrument', 'music/instrument/index', null, '1', '0', 'C', '0', '0', 'music:instrument:list', '#', 'admin', '2024-04-20 18:36:44', 'admin', '2024-05-14 23:25:31', '乐器菜单');
 INSERT INTO `sys_menu` VALUES ('2107', '乐器查询', '2106', '1', '#', '', null, '1', '0', 'F', '0', '0', 'music:instrument:query', '#', 'admin', '2024-04-20 18:36:44', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2108', '乐器新增', '2106', '2', '#', '', null, '1', '0', 'F', '0', '0', 'music:instrument:add', '#', 'admin', '2024-04-20 18:36:44', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2109', '乐器修改', '2106', '3', '#', '', null, '1', '0', 'F', '0', '0', 'music:instrument:edit', '#', 'admin', '2024-04-20 18:36:44', '', null, '');
@@ -1316,7 +1411,7 @@ INSERT INTO `sys_menu` VALUES ('2114', '订单详情新增', '2112', '2', '#', '
 INSERT INTO `sys_menu` VALUES ('2115', '订单详情修改', '2112', '3', '#', '', null, '1', '0', 'F', '0', '0', 'mall:mallDetail:edit', '#', 'admin', '2024-04-20 18:36:54', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2116', '订单详情删除', '2112', '4', '#', '', null, '1', '0', 'F', '0', '0', 'mall:mallDetail:remove', '#', 'admin', '2024-04-20 18:36:54', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2117', '订单详情导出', '2112', '5', '#', '', null, '1', '0', 'F', '0', '0', 'mall:mallDetail:export', '#', 'admin', '2024-04-20 18:36:54', '', null, '');
-INSERT INTO `sys_menu` VALUES ('2118', '订单', '2074', '1', 'order', 'mall/order/index', null, '1', '0', 'C', '0', '0', 'mall:order:list', '#', 'admin', '2024-04-20 18:37:06', '', null, '订单菜单');
+INSERT INTO `sys_menu` VALUES ('2118', '订单管理', '2074', '1', 'order', 'mall/order/index', null, '1', '0', 'C', '0', '0', 'mall:order:list', '#', 'admin', '2024-04-20 18:37:06', 'admin', '2024-05-11 10:53:19', '订单菜单');
 INSERT INTO `sys_menu` VALUES ('2119', '订单查询', '2124', '1', '#', '', null, '1', '0', 'F', '0', '0', 'mall:order:query', '#', 'admin', '2024-04-20 18:37:06', 'admin', '2024-05-08 22:40:08', '');
 INSERT INTO `sys_menu` VALUES ('2120', '订单新增', '2124', '2', '#', '', null, '1', '0', 'F', '0', '0', 'mall:order:add', '#', 'admin', '2024-04-20 18:37:06', 'admin', '2024-05-08 22:39:06', '');
 INSERT INTO `sys_menu` VALUES ('2121', '订单修改', '2124', '3', '#', '', null, '1', '0', 'F', '0', '0', 'mall:order:edit', '#', 'admin', '2024-04-20 18:37:06', 'admin', '2024-05-08 22:39:22', '');
@@ -1329,25 +1424,53 @@ INSERT INTO `sys_menu` VALUES ('2127', '我的课程新增', '2125', '2', '#', '
 INSERT INTO `sys_menu` VALUES ('2128', '我的课程修改', '2125', '3', '#', '', null, '1', '0', 'F', '0', '0', 'music:myCurriculum:edit', '#', 'admin', '2024-04-28 01:19:46', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2129', '我的课程删除', '2125', '4', '#', '', null, '1', '0', 'F', '0', '0', 'music:myCurriculum:remove', '#', 'admin', '2024-04-28 01:19:46', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2130', '我的课程导出', '2125', '5', '#', '', null, '1', '0', 'F', '0', '0', 'music:myCurriculum:export', '#', 'admin', '2024-04-28 01:19:46', '', null, '');
-INSERT INTO `sys_menu` VALUES ('2131', '课程练习', '2075', '1', 'practice', 'music/practice/index', null, '1', '0', 'C', '0', '0', 'music:practice:list', '#', 'admin', '2024-04-28 01:20:13', '', null, '课程练习菜单');
+INSERT INTO `sys_menu` VALUES ('2131', '课程练习', '0', '1', 'practice', 'music/practice/index', null, '1', '0', 'C', '0', '0', 'music:practice:list', '#', 'admin', '2024-04-28 01:20:13', 'admin', '2024-05-11 11:05:26', '课程练习菜单');
 INSERT INTO `sys_menu` VALUES ('2132', '课程练习查询', '2137', '1', '#', '', null, '1', '0', 'F', '0', '0', 'music:practice:query', '#', 'admin', '2024-04-28 01:20:14', 'admin', '2024-05-08 22:35:20', '');
 INSERT INTO `sys_menu` VALUES ('2133', '课程练习新增', '2137', '2', '#', '', null, '1', '0', 'F', '0', '0', 'music:practice:add', '#', 'admin', '2024-04-28 01:20:14', 'admin', '2024-05-08 22:34:27', '');
 INSERT INTO `sys_menu` VALUES ('2134', '课程练习修改', '2137', '3', '#', '', null, '1', '0', 'F', '0', '0', 'music:practice:edit', '#', 'admin', '2024-04-28 01:20:14', 'admin', '2024-05-08 22:35:41', '');
 INSERT INTO `sys_menu` VALUES ('2135', '课程练习删除', '2137', '4', '#', '', null, '1', '0', 'F', '0', '0', 'music:practice:remove', '#', 'admin', '2024-04-28 01:20:14', 'admin', '2024-05-08 22:35:53', '');
 INSERT INTO `sys_menu` VALUES ('2136', '课程练习导出', '2131', '5', '#', '', null, '1', '0', 'F', '0', '0', 'music:practice:export', '#', 'admin', '2024-04-28 01:20:14', '', null, '');
-INSERT INTO `sys_menu` VALUES ('2137', '我的练习', '0', '13', 'myPracticeList', 'music/practice/myList', null, '1', '0', 'C', '0', '0', 'music:practice:myList', '#', 'admin', '2024-04-28 01:23:51', '', null, '');
-INSERT INTO `sys_menu` VALUES ('2138', '乐器识别', '2075', '1', 'recognition', 'music/recognition/index', null, '1', '0', 'C', '1', '0', 'music:recognition:list', '#', 'admin', '2024-05-04 12:03:52', 'admin', '2024-05-08 22:04:49', 'recognition菜单');
-INSERT INTO `sys_menu` VALUES ('2139', 'recognition查询', '2138', '1', '#', '', null, '1', '0', 'F', '0', '0', 'music:recognition:query', '#', 'admin', '2024-05-04 12:03:53', '', null, '');
-INSERT INTO `sys_menu` VALUES ('2140', 'recognition新增', '2138', '2', '#', '', null, '1', '0', 'F', '0', '0', 'music:recognition:add', '#', 'admin', '2024-05-04 12:03:53', '', null, '');
-INSERT INTO `sys_menu` VALUES ('2141', 'recognition修改', '2138', '3', '#', '', null, '1', '0', 'F', '0', '0', 'music:recognition:edit', '#', 'admin', '2024-05-04 12:03:53', '', null, '');
-INSERT INTO `sys_menu` VALUES ('2142', 'recognition删除', '2138', '4', '#', '', null, '1', '0', 'F', '0', '0', 'music:recognition:remove', '#', 'admin', '2024-05-04 12:03:53', '', null, '');
-INSERT INTO `sys_menu` VALUES ('2143', 'recognition导出', '2138', '5', '#', '', null, '1', '0', 'F', '0', '0', 'music:recognition:export', '#', 'admin', '2024-05-04 12:03:53', '', null, '');
+INSERT INTO `sys_menu` VALUES ('2137', '练习管理', '0', '13', 'myPracticeList', 'music/practice/myList', null, '1', '0', 'C', '0', '0', 'music:practice:myList', '#', 'admin', '2024-04-28 01:23:51', 'admin', '2024-05-11 10:59:18', '');
+INSERT INTO `sys_menu` VALUES ('2138', '乐器识别', '0', '1', 'recognition', 'music/recognition/index', null, '1', '0', 'C', '1', '0', 'music:recognition:list', '#', 'admin', '2024-05-04 12:03:52', 'admin', '2024-05-11 11:25:50', 'recognition菜单');
+INSERT INTO `sys_menu` VALUES ('2139', '乐器识别查询', '2138', '1', '#', '', null, '1', '0', 'F', '0', '0', 'music:recognition:query', '#', 'admin', '2024-05-04 12:03:53', '', null, '');
+INSERT INTO `sys_menu` VALUES ('2140', '乐器识别新增', '2138', '2', '#', '', null, '1', '0', 'F', '0', '0', 'music:recognition:add', '#', 'admin', '2024-05-04 12:03:53', '', null, '');
+INSERT INTO `sys_menu` VALUES ('2141', '乐器识别修改', '2138', '3', '#', '', null, '1', '0', 'F', '0', '0', 'music:recognition:edit', '#', 'admin', '2024-05-04 12:03:53', '', null, '');
+INSERT INTO `sys_menu` VALUES ('2142', '乐器识别删除', '2138', '4', '#', '', null, '1', '0', 'F', '0', '0', 'music:recognition:remove', '#', 'admin', '2024-05-04 12:03:53', '', null, '');
+INSERT INTO `sys_menu` VALUES ('2143', '乐器识别导出', '2138', '5', '#', '', null, '1', '0', 'F', '0', '0', 'music:recognition:export', '#', 'admin', '2024-05-04 12:03:53', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2144', '首页商品', '2074', '2', 'goods', 'mall/goods/goodsList', null, '1', '0', 'C', '1', '0', 'mall:goods:customerListGoods', '#', 'admin', '2024-05-08 21:37:31', 'admin', '2024-05-08 21:54:41', '');
-INSERT INTO `sys_menu` VALUES ('2145', '首页乐器', '2075', '5', 'customerinstrument', 'music/instrument/customerListInstrument', null, '1', '0', 'C', '1', '0', 'music:instrument:customerListInstrument', '#', 'admin', '2024-05-08 21:53:50', 'admin', '2024-05-08 22:30:15', '');
+INSERT INTO `sys_menu` VALUES ('2145', '首页乐器', '0', '5', 'customerinstrument', 'music/instrument/customerListInstrument', null, '1', '0', 'C', '1', '0', 'music:instrument:customerListInstrument', '#', 'admin', '2024-05-08 21:53:50', 'admin', '2024-05-11 11:26:00', '');
 INSERT INTO `sys_menu` VALUES ('2146', '首页课程', '2075', '5', 'customercurriculum', 'curriculum/list', null, '1', '0', 'C', '1', '0', 'music:curriculum:customerListCurriculum', '#', 'admin', '2024-05-08 22:01:39', 'admin', '2024-05-08 22:30:24', '');
 INSERT INTO `sys_menu` VALUES ('2147', '课程详情查询', '2146', '1', '', null, null, '1', '0', 'F', '0', '0', 'music:curriculum:query', '#', 'admin', '2024-05-08 23:03:48', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2148', '乐器详情查询', '2145', '2', '', null, null, '1', '0', 'F', '0', '0', 'music:instrument:query', '#', 'admin', '2024-05-08 23:04:24', '', null, '');
-INSERT INTO `sys_menu` VALUES ('2149', '首页文章', '2007', '9', 'blog', 'cms/blog/index', null, '1', '0', 'C', '1', '0', 'cms:blog:list', '#', 'admin', '2024-05-08 23:09:58', 'admin', '2024-05-08 23:10:35', '');
+INSERT INTO `sys_menu` VALUES ('2149', '首页文章', '0', '9', 'blog', 'cms/blog/index', null, '1', '0', 'C', '1', '0', 'cms:blog:list', '#', 'admin', '2024-05-08 23:09:58', 'admin', '2024-05-11 11:35:05', '');
+INSERT INTO `sys_menu` VALUES ('2150', '用户交流管理', '0', '8', 'sdfhdsf', null, null, '1', '0', 'M', '0', '0', 'jiaoliu', '#', 'admin', '2024-05-11 10:49:47', 'admin', '2024-05-11 10:58:36', '');
+INSERT INTO `sys_menu` VALUES ('2152', '其他', '0', '9', 'qita', '', null, '1', '0', 'M', '0', '0', 'qita', '#', 'admin', '2024-05-11 10:54:29', 'admin', '2024-05-11 10:58:43', '');
+INSERT INTO `sys_menu` VALUES ('2153', '课程练习查询', '2131', '2', '', null, null, '1', '0', 'F', '0', '0', 'music:practice:query', '#', 'admin', '2024-05-11 11:06:33', '', null, '');
+INSERT INTO `sys_menu` VALUES ('2154', '论坛', '1', '3', 'forum', 'cms/forum/list', null, '1', '0', 'C', '0', '0', 'cms:forum:list', '#', 'admin', '2024-05-11 11:14:26', '', null, '');
+INSERT INTO `sys_menu` VALUES ('2155', '随笔管理', '1', '5', 'essay', 'cms/blog/essay', null, '1', '0', 'C', '0', '0', 'cms:blog:list', '#', 'admin', '2024-05-11 11:16:33', '', null, '');
+INSERT INTO `sys_menu` VALUES ('2156', '论坛查询', '2154', '1', '#', '', null, '1', '0', 'F', '0', '0', 'cms:forum:query', '#', 'admin', '2024-04-20 18:36:07', '', null, '');
+INSERT INTO `sys_menu` VALUES ('2157', '论坛新增', '2154', '2', '#', '', null, '1', '0', 'F', '0', '0', 'cms:forum:add', '#', 'admin', '2024-04-20 18:36:07', '', null, '');
+INSERT INTO `sys_menu` VALUES ('2158', '论坛修改', '2154', '3', '#', '', null, '1', '0', 'F', '0', '0', 'cms:forum:edit', '#', 'admin', '2024-04-20 18:36:07', '', null, '');
+INSERT INTO `sys_menu` VALUES ('2159', '论坛删除', '2154', '4', '#', '', null, '1', '0', 'F', '0', '0', 'cms:forum:remove', '#', 'admin', '2024-04-20 18:36:07', '', null, '');
+INSERT INTO `sys_menu` VALUES ('2160', '论坛导出', '2154', '5', '#', '', null, '1', '0', 'F', '0', '0', 'cms:forum:export', '#', 'admin', '2024-04-20 18:36:07', '', null, '');
+INSERT INTO `sys_menu` VALUES ('2161', '随笔管理查询', '2155', '1', '#', '', null, '1', '0', 'F', '0', '0', 'cms:blog:query', '#', 'admin', '2022-01-02 02:48:37', '', null, '');
+INSERT INTO `sys_menu` VALUES ('2162', '随笔管理新增', '2155', '2', '#', '', null, '1', '0', 'F', '0', '0', 'cms:blog:add', '#', 'admin', '2022-01-02 02:48:37', '', null, '');
+INSERT INTO `sys_menu` VALUES ('2163', '随笔管理修改', '2155', '3', '#', '', null, '1', '0', 'F', '0', '0', 'cms:blog:edit', '#', 'admin', '2022-01-02 02:48:37', '', null, '');
+INSERT INTO `sys_menu` VALUES ('2164', '随笔管理删除', '2155', '4', '#', '', null, '1', '0', 'F', '0', '0', 'cms:blog:remove', '#', 'admin', '2022-01-02 02:48:37', '', null, '');
+INSERT INTO `sys_menu` VALUES ('2165', '随笔管理导出', '2155', '5', '#', '', null, '1', '0', 'F', '0', '0', 'cms:blog:export', '#', 'admin', '2022-01-02 02:48:37', '', null, '');
+INSERT INTO `sys_menu` VALUES ('2166', '乐器管理', '0', '5', 'musicMange', null, null, '1', '0', 'M', '0', '0', '', '#', 'admin', '2024-05-14 23:24:58', 'admin', '2024-05-14 23:25:45', '');
+INSERT INTO `sys_menu` VALUES ('2167', '乐器分类', '2166', '1', 'category', 'music/category/index', null, '1', '0', 'C', '0', '0', 'music:category:list', '#', 'admin', '2024-05-14 23:30:00', '', null, '乐器分类菜单');
+INSERT INTO `sys_menu` VALUES ('2168', '乐器分类查询', '2167', '1', '#', '', null, '1', '0', 'F', '0', '0', 'music:category:query', '#', 'admin', '2024-05-14 23:30:00', '', null, '');
+INSERT INTO `sys_menu` VALUES ('2169', '乐器分类新增', '2167', '2', '#', '', null, '1', '0', 'F', '0', '0', 'music:category:add', '#', 'admin', '2024-05-14 23:30:00', '', null, '');
+INSERT INTO `sys_menu` VALUES ('2170', '乐器分类修改', '2167', '3', '#', '', null, '1', '0', 'F', '0', '0', 'music:category:edit', '#', 'admin', '2024-05-14 23:30:00', '', null, '');
+INSERT INTO `sys_menu` VALUES ('2171', '乐器分类删除', '2167', '4', '#', '', null, '1', '0', 'F', '0', '0', 'music:category:remove', '#', 'admin', '2024-05-14 23:30:00', '', null, '');
+INSERT INTO `sys_menu` VALUES ('2172', '乐器分类导出', '2167', '5', '#', '', null, '1', '0', 'F', '0', '0', 'music:category:export', '#', 'admin', '2024-05-14 23:30:00', '', null, '');
+INSERT INTO `sys_menu` VALUES ('2173', '评论管理', '2075', '7', 'comment', 'curriculum/comment/index', null, '1', '0', 'C', '0', '0', 'curriculum:comment:list', '#', 'admin', '2022-01-21 10:27:25', 'admin', '2022-01-21 10:28:24', '评论管理菜单');
+INSERT INTO `sys_menu` VALUES ('2174', '评论管理查询', '2173', '1', '#', '', null, '1', '0', 'F', '0', '0', 'curriculum:comment:query', '#', 'admin', '2022-01-21 10:27:25', '', null, '');
+INSERT INTO `sys_menu` VALUES ('2175', '评论管理新增', '2173', '2', '#', '', null, '1', '0', 'F', '0', '0', 'curriculum:comment:add', '#', 'admin', '2022-01-21 10:27:25', '', null, '');
+INSERT INTO `sys_menu` VALUES ('2176', '评论管理修改', '2173', '3', '#', '', null, '1', '0', 'F', '0', '0', 'curriculum:comment:edit', '#', 'admin', '2022-01-21 10:27:25', '', null, '');
+INSERT INTO `sys_menu` VALUES ('2177', '评论管理删除', '2173', '4', '#', '', null, '1', '0', 'F', '0', '0', 'curriculum:comment:remove', '#', 'admin', '2022-01-21 10:27:25', '', null, '');
+INSERT INTO `sys_menu` VALUES ('2178', '评论管理导出', '2173', '5', '#', '', null, '1', '0', 'F', '0', '0', 'curriculum:comment:export', '#', 'admin', '2022-01-21 10:27:25', '', null, '');
 
 -- ----------------------------
 -- Table structure for sys_notice
@@ -1409,7 +1532,7 @@ CREATE TABLE `sys_oper_log` (
   `error_msg` varchar(2000) DEFAULT '' COMMENT '错误消息',
   `oper_time` datetime DEFAULT NULL COMMENT '操作时间',
   PRIMARY KEY (`oper_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=378 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='操作日志记录';
+) ENGINE=InnoDB AUTO_INCREMENT=454 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='操作日志记录';
 
 -- ----------------------------
 -- Records of sys_oper_log
@@ -1791,6 +1914,82 @@ INSERT INTO `sys_oper_log` VALUES ('374', '菜单管理', '2', 'com.instrument.w
 INSERT INTO `sys_oper_log` VALUES ('375', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"1\",\"icon\":\"#\",\"orderNum\":\"9\",\"menuName\":\"首页文章\",\"params\":{},\"parentId\":2007,\"isCache\":\"0\",\"path\":\"cms:blog:list\",\"component\":\"cms/blog/index\",\"children\":[],\"createTime\":1715180998000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":2149,\"menuType\":\"C\",\"perms\":\"cms:blog:list\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-08 23:10:21');
 INSERT INTO `sys_oper_log` VALUES ('376', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"1\",\"icon\":\"#\",\"orderNum\":\"9\",\"menuName\":\"首页文章\",\"params\":{},\"parentId\":2007,\"isCache\":\"0\",\"path\":\"blog\",\"component\":\"cms/blog/index\",\"children\":[],\"createTime\":1715180998000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":2149,\"menuType\":\"C\",\"perms\":\"cms:blog:list\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-08 23:10:35');
 INSERT INTO `sys_oper_log` VALUES ('377', '角色管理', '2', 'com.instrument.web.controller.system.SysRoleController.edit()', 'PUT', '1', 'admin', null, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":4,\"admin\":false,\"dataScope\":\"1\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"0\",\"deptCheckStrictly\":true,\"createTime\":1714226890000,\"updateBy\":\"admin\",\"menuCheckStrictly\":true,\"roleKey\":\"customer\",\"roleName\":\"客户\",\"menuIds\":[1,107,2007,2056,2050,2075,2076,2074,2112,2124,1036,2088,2089,2090,2091,2092,2093,2038,2039,2040,2041,2042,2043,2057,2051,2062,2063,2064,2065,2066,2067,2068,2069,2070,2071,2072,2073,2149,2077,2125,2126,2127,2128,2129,2130,2138,2139,2140,2141,2142,2143,2145,2148,2146,2147,2113,2114,2144,2120,2137],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-08 23:10:56');
+INSERT INTO `sys_oper_log` VALUES ('378', '论坛', '3', 'com.instrument.cms.forum.controller.CmsForumController.remove()', 'DELETE', '1', 'maple', null, '/cms/forum/1', '127.0.0.1', '内网IP', '{ids=1}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-08 23:18:39');
+INSERT INTO `sys_oper_log` VALUES ('379', '论坛', '1', 'com.instrument.cms.forum.controller.CmsForumController.add()', 'POST', '1', 'maple', null, '/cms/forum', '127.0.0.1', '内网IP', '{\"blogPicType\":\"0\",\"params\":{},\"title\":\"测试\",\"content\":\"<p>啊饿的氛围</p>\",\"createBy\":\"maple\",\"top\":\"1\",\"createTime\":1715181610081,\"blogDesc\":\"少吃点\",\"id\":2,\"contentType\":\"1\",\"status\":\"1\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-08 23:20:10');
+INSERT INTO `sys_oper_log` VALUES ('380', '我的课程', '1', 'com.instrument.music.controller.MusicMyCurriculumController.add()', 'POST', '1', 'maple', null, '/music/MyCurriculum', '127.0.0.1', '内网IP', '{\"createBy\":\"maple\",\"createTime\":1715181694879,\"id\":26,\"params\":{}}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-08 23:21:34');
+INSERT INTO `sys_oper_log` VALUES ('381', '角色管理', '2', 'com.instrument.web.controller.system.SysRoleController.edit()', 'PUT', '1', 'admin', null, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":4,\"admin\":false,\"dataScope\":\"1\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"0\",\"deptCheckStrictly\":true,\"createTime\":1714226890000,\"updateBy\":\"admin\",\"menuCheckStrictly\":true,\"roleKey\":\"customer\",\"roleName\":\"客户\",\"menuIds\":[1,107,2007,2056,2050,2075,2076,2074,2112,2124,1036,2088,2089,2090,2091,2092,2093,2038,2039,2040,2041,2042,2043,2057,2051,2062,2063,2064,2065,2066,2067,2068,2069,2070,2071,2072,2073,2149,2077,2125,2126,2127,2128,2129,2130,2138,2139,2140,2141,2142,2143,2145,2148,2146,2147,2113,2114,2144,2120,2137,2132,2133,2134,2135],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-08 23:23:16');
+INSERT INTO `sys_oper_log` VALUES ('382', '课程练习', '1', 'com.instrument.music.controller.CurriculumPracticeController.add()', 'POST', '1', 'maple', null, '/music/practice', '127.0.0.1', '内网IP', '{\"curriculumDetailsId\":1,\"createBy\":\"maple\",\"createTime\":1715181876675,\"id\":27,\"curriculumId\":24,\"params\":{},\"type\":\"0\",\"url\":\"/profile/upload/2024/05/08/7b400151-a363-44bb-be8c-6435892f0313.mp4\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-08 23:24:36');
+INSERT INTO `sys_oper_log` VALUES ('383', '课程练习', '1', 'com.instrument.music.controller.CurriculumPracticeController.add()', 'POST', '1', 'maple', null, '/music/practice', '127.0.0.1', '内网IP', '{\"curriculumDetailsId\":4,\"createBy\":\"maple\",\"createTime\":1715181905611,\"id\":28,\"curriculumId\":24,\"params\":{},\"type\":\"0\",\"url\":\"/profile/upload/2024/05/08/b1275946-d7fb-42bd-b1ac-b2a074097d47.jpg\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-08 23:25:05');
+INSERT INTO `sys_oper_log` VALUES ('384', '我的课程', '3', 'com.instrument.music.controller.MusicMyCurriculumController.remove()', 'DELETE', '1', 'maple', null, '/music/MyCurriculum/26', '127.0.0.1', '内网IP', '{ids=26}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-09 01:15:46');
+INSERT INTO `sys_oper_log` VALUES ('385', '我的课程', '1', 'com.instrument.music.controller.MusicMyCurriculumController.add()', 'POST', '1', 'maple', null, '/music/MyCurriculum', '127.0.0.1', '内网IP', '{\"createBy\":\"maple\",\"createTime\":1715188551691,\"id\":27,\"curriculumId\":24,\"params\":{}}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-09 01:15:51');
+INSERT INTO `sys_oper_log` VALUES ('386', '我的课程', '1', 'com.instrument.music.controller.MusicMyCurriculumController.add()', 'POST', '1', 'maple', null, '/music/MyCurriculum', '127.0.0.1', '内网IP', '{\"createBy\":\"maple\",\"createTime\":1715188569736,\"curriculumId\":24,\"params\":{}}', null, '1', '已经添加到我的课程了', '2024-05-09 01:16:09');
+INSERT INTO `sys_oper_log` VALUES ('387', '角色管理', '2', 'com.instrument.web.controller.system.SysRoleController.edit()', 'PUT', '1', 'admin', null, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":4,\"admin\":false,\"dataScope\":\"1\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"0\",\"deptCheckStrictly\":true,\"createTime\":1714226890000,\"updateBy\":\"admin\",\"menuCheckStrictly\":true,\"roleKey\":\"customer\",\"roleName\":\"客户\",\"menuIds\":[1,107,2007,2075,2076,2074,2112,2124,1036,2088,2089,2090,2091,2092,2093,2038,2039,2040,2041,2042,2043,2062,2063,2064,2065,2066,2067,2068,2069,2070,2071,2072,2073,2149,2077,2125,2126,2127,2128,2129,2130,2138,2139,2140,2141,2142,2143,2145,2148,2146,2147,2113,2114,2144,2120,2137,2132,2133,2134,2135],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-09 01:18:52');
+INSERT INTO `sys_oper_log` VALUES ('388', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"1\",\"query\":\"\",\"icon\":\"post\",\"orderNum\":\"2\",\"menuName\":\"岗位管理\",\"params\":{},\"parentId\":1,\"isCache\":\"0\",\"path\":\"post\",\"component\":\"system/post/index\",\"children\":[],\"createTime\":1639116734000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":104,\"menuType\":\"C\",\"perms\":\"system:post:list\",\"status\":\"1\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 09:54:55');
+INSERT INTO `sys_oper_log` VALUES ('389', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"1\",\"query\":\"\",\"icon\":\"tree\",\"orderNum\":\"1\",\"menuName\":\"部门管理\",\"params\":{},\"parentId\":1,\"isCache\":\"0\",\"path\":\"dept\",\"component\":\"system/dept/index\",\"children\":[],\"createTime\":1639116734000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":103,\"menuType\":\"C\",\"perms\":\"system:dept:list\",\"status\":\"1\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 09:55:28');
+INSERT INTO `sys_oper_log` VALUES ('390', '角色管理', '2', 'com.instrument.web.controller.system.SysRoleController.edit()', 'PUT', '1', 'admin', null, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":2,\"admin\":false,\"remark\":\"普通角色\",\"dataScope\":\"2\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"2\",\"deptCheckStrictly\":true,\"createTime\":1639116734000,\"updateBy\":\"admin\",\"menuCheckStrictly\":true,\"roleKey\":\"teacher\",\"roleName\":\"教师\",\"menuIds\":[],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 10:33:32');
+INSERT INTO `sys_oper_log` VALUES ('391', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"query\":\"\",\"icon\":\"user\",\"orderNum\":\"3\",\"menuName\":\"用户管理\",\"params\":{},\"parentId\":0,\"isCache\":\"0\",\"path\":\"user\",\"component\":\"system/user/index\",\"children\":[],\"createTime\":1639116734000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":100,\"menuType\":\"C\",\"perms\":\"system:user:list\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 10:45:54');
+INSERT INTO `sys_oper_log` VALUES ('392', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"query\":\"\",\"icon\":\"peoples\",\"orderNum\":\"4\",\"menuName\":\"角色管理\",\"params\":{},\"parentId\":0,\"isCache\":\"0\",\"path\":\"role\",\"component\":\"system/role/index\",\"children\":[],\"createTime\":1639116734000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":101,\"menuType\":\"C\",\"perms\":\"system:role:list\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 10:46:03');
+INSERT INTO `sys_oper_log` VALUES ('393', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"#\",\"orderNum\":\"1\",\"menuName\":\"乐器管理\",\"params\":{},\"parentId\":0,\"isCache\":\"0\",\"path\":\"instrument\",\"component\":\"music/instrument/index\",\"children\":[],\"createTime\":1713609404000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":2106,\"menuType\":\"C\",\"perms\":\"music:instrument:list\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 10:46:26');
+INSERT INTO `sys_oper_log` VALUES ('394', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"#\",\"orderNum\":\"1\",\"menuName\":\"课程练习\",\"params\":{},\"parentId\":0,\"isCache\":\"0\",\"path\":\"practice\",\"component\":\"music/practice/index\",\"children\":[],\"createTime\":1714238413000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":2131,\"menuType\":\"C\",\"perms\":\"music:practice:list\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 10:48:40');
+INSERT INTO `sys_oper_log` VALUES ('395', '菜单管理', '1', 'com.instrument.web.controller.system.SysMenuController.add()', 'POST', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"orderNum\":\"8\",\"menuName\":\"用户交流管理\",\"params\":{},\"parentId\":0,\"isCache\":\"0\",\"path\":\"sdfhdsf\",\"createBy\":\"admin\",\"children\":[],\"isFrame\":\"1\",\"menuType\":\"C\",\"perms\":\"jiaoliu\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 10:49:47');
+INSERT INTO `sys_oper_log` VALUES ('396', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"#\",\"orderNum\":\"1\",\"menuName\":\"论坛\",\"params\":{},\"parentId\":2150,\"isCache\":\"0\",\"path\":\"forum\",\"component\":\"cms/forum/index\",\"children\":[],\"createTime\":1713609367000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":2088,\"menuType\":\"C\",\"perms\":\"cms:forum:list\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 10:51:14');
+INSERT INTO `sys_oper_log` VALUES ('397', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"#\",\"orderNum\":\"2\",\"menuName\":\"随笔管理\",\"params\":{},\"parentId\":2150,\"isCache\":\"0\",\"path\":\"essay\",\"component\":\"cms/blog/essay\",\"children\":[],\"createTime\":1641062917000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":2038,\"menuType\":\"C\",\"perms\":\"cms:blog:list\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 10:51:28');
+INSERT INTO `sys_oper_log` VALUES ('398', '菜单管理', '1', 'com.instrument.web.controller.system.SysMenuController.add()', 'POST', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"orderNum\":\"9\",\"menuName\":\"乐器购买管理\",\"params\":{},\"parentId\":0,\"isCache\":\"0\",\"path\":\"yueqiugoumai\",\"createBy\":\"admin\",\"children\":[],\"isFrame\":\"1\",\"menuType\":\"C\",\"perms\":\"yueqiugoumai\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 10:52:17');
+INSERT INTO `sys_oper_log` VALUES ('399', '菜单管理', '3', 'com.instrument.web.controller.system.SysMenuController.remove()', 'DELETE', '1', 'admin', null, '/system/menu/2151', '127.0.0.1', '内网IP', '{menuId=2151}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 10:52:35');
+INSERT INTO `sys_oper_log` VALUES ('400', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"shopping\",\"orderNum\":\"6\",\"menuName\":\"乐器购买管理\",\"params\":{},\"parentId\":0,\"isCache\":\"0\",\"path\":\"mall\",\"component\":\"\",\"children\":[],\"createTime\":1713605061000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":2074,\"menuType\":\"M\",\"perms\":\"\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 10:52:52');
+INSERT INTO `sys_oper_log` VALUES ('401', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"#\",\"orderNum\":\"1\",\"menuName\":\"商品信息\",\"params\":{},\"parentId\":2074,\"isCache\":\"0\",\"path\":\"goods\",\"component\":\"mall/goods/index\",\"children\":[],\"createTime\":1713609392000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":2100,\"menuType\":\"C\",\"perms\":\"mall:goods:list\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 10:53:10');
+INSERT INTO `sys_oper_log` VALUES ('402', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"#\",\"orderNum\":\"1\",\"menuName\":\"订单管理\",\"params\":{},\"parentId\":2074,\"isCache\":\"0\",\"path\":\"order\",\"component\":\"mall/order/index\",\"children\":[],\"createTime\":1713609426000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":2118,\"menuType\":\"C\",\"perms\":\"mall:order:list\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 10:53:19');
+INSERT INTO `sys_oper_log` VALUES ('403', '菜单管理', '1', 'com.instrument.web.controller.system.SysMenuController.add()', 'POST', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"orderNum\":\"9\",\"menuName\":\"其他\",\"params\":{},\"parentId\":0,\"isCache\":\"0\",\"path\":\"qita\",\"component\":\"qita\",\"createBy\":\"admin\",\"children\":[],\"isFrame\":\"1\",\"menuType\":\"C\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 10:54:29');
+INSERT INTO `sys_oper_log` VALUES ('404', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"#\",\"orderNum\":\"6\",\"menuName\":\"留言管理\",\"params\":{},\"parentId\":2152,\"isCache\":\"0\",\"path\":\"message\",\"component\":\"cms/message/index\",\"children\":[],\"createTime\":1642225649000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":2062,\"menuType\":\"C\",\"perms\":\"cms:message:list\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 10:54:53');
+INSERT INTO `sys_oper_log` VALUES ('405', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"query\":\"\",\"icon\":\"message\",\"orderNum\":\"8\",\"menuName\":\"通知公告\",\"params\":{},\"parentId\":2152,\"isCache\":\"0\",\"path\":\"notice\",\"component\":\"system/notice/index\",\"children\":[],\"createTime\":1639116734000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":107,\"menuType\":\"C\",\"perms\":\"system:notice:list\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 10:55:08');
+INSERT INTO `sys_oper_log` VALUES ('406', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"#\",\"orderNum\":\"9\",\"menuName\":\"其他\",\"params\":{},\"parentId\":0,\"isCache\":\"0\",\"path\":\"qita\",\"component\":\"\",\"children\":[],\"createTime\":1715396069000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":2152,\"menuType\":\"C\",\"perms\":\"qita\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 10:57:55');
+INSERT INTO `sys_oper_log` VALUES ('407', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"#\",\"orderNum\":\"8\",\"menuName\":\"用户交流管理\",\"params\":{},\"parentId\":0,\"isCache\":\"0\",\"path\":\"sdfhdsf\",\"children\":[],\"createTime\":1715395787000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":2150,\"menuType\":\"C\",\"perms\":\"jiaoliu\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 10:58:07');
+INSERT INTO `sys_oper_log` VALUES ('408', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"#\",\"orderNum\":\"8\",\"menuName\":\"用户交流管理\",\"params\":{},\"parentId\":0,\"isCache\":\"0\",\"path\":\"sdfhdsf\",\"children\":[],\"createTime\":1715395787000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":2150,\"menuType\":\"M\",\"perms\":\"jiaoliu\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 10:58:36');
+INSERT INTO `sys_oper_log` VALUES ('409', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"#\",\"orderNum\":\"9\",\"menuName\":\"其他\",\"params\":{},\"parentId\":0,\"isCache\":\"0\",\"path\":\"qita\",\"component\":\"\",\"children\":[],\"createTime\":1715396069000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":2152,\"menuType\":\"M\",\"perms\":\"qita\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 10:58:43');
+INSERT INTO `sys_oper_log` VALUES ('410', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"#\",\"orderNum\":\"13\",\"menuName\":\"练习管理\",\"params\":{},\"parentId\":0,\"isCache\":\"0\",\"path\":\"myPracticeList\",\"component\":\"music/practice/myList\",\"children\":[],\"createTime\":1714238631000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":2137,\"menuType\":\"C\",\"perms\":\"music:practice:myList\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 10:59:18');
+INSERT INTO `sys_oper_log` VALUES ('411', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"query\":\"\",\"icon\":\"tool\",\"orderNum\":\"3\",\"menuName\":\"系统工具\",\"params\":{},\"parentId\":0,\"isCache\":\"0\",\"path\":\"tool\",\"children\":[],\"createTime\":1639116734000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":3,\"menuType\":\"M\",\"perms\":\"\",\"status\":\"1\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 11:03:23');
+INSERT INTO `sys_oper_log` VALUES ('412', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"query\":\"\",\"icon\":\"monitor\",\"orderNum\":\"2\",\"menuName\":\"系统监控\",\"params\":{},\"parentId\":0,\"isCache\":\"0\",\"path\":\"monitor\",\"children\":[],\"createTime\":1639116734000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":2,\"menuType\":\"M\",\"perms\":\"\",\"status\":\"1\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 11:03:30');
+INSERT INTO `sys_oper_log` VALUES ('413', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"#\",\"orderNum\":\"1\",\"menuName\":\"练习管理\",\"params\":{},\"parentId\":0,\"isCache\":\"0\",\"path\":\"practice\",\"component\":\"music/practice/index\",\"children\":[],\"createTime\":1714238413000,\"isFrame\":\"1\",\"menuId\":2131,\"menuType\":\"C\",\"perms\":\"music:practice:list\",\"status\":\"0\"}', '{\"msg\":\"修改菜单\'练习管理\'失败，菜单名称已存在\",\"code\":500}', '0', null, '2024-05-11 11:05:18');
+INSERT INTO `sys_oper_log` VALUES ('414', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"#\",\"orderNum\":\"1\",\"menuName\":\"课程练习\",\"params\":{},\"parentId\":0,\"isCache\":\"0\",\"path\":\"practice\",\"component\":\"music/practice/index\",\"children\":[],\"createTime\":1714238413000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":2131,\"menuType\":\"C\",\"perms\":\"music:practice:list\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 11:05:26');
+INSERT INTO `sys_oper_log` VALUES ('415', '菜单管理', '1', 'com.instrument.web.controller.system.SysMenuController.add()', 'POST', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"orderNum\":\"2\",\"menuName\":\"课程练习查询\",\"params\":{},\"parentId\":2131,\"isCache\":\"0\",\"createBy\":\"admin\",\"children\":[],\"isFrame\":\"1\",\"menuType\":\"F\",\"perms\":\"music:practice:query\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 11:06:33');
+INSERT INTO `sys_oper_log` VALUES ('416', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"education\",\"orderNum\":\"5\",\"menuName\":\"课程管理\",\"params\":{},\"parentId\":0,\"isCache\":\"0\",\"path\":\"instrument\",\"children\":[],\"createTime\":1713605182000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":2075,\"menuType\":\"M\",\"perms\":\"\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 11:07:25');
+INSERT INTO `sys_oper_log` VALUES ('417', '菜单管理', '1', 'com.instrument.web.controller.system.SysMenuController.add()', 'POST', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"orderNum\":\"3\",\"menuName\":\"论坛\",\"params\":{},\"parentId\":1,\"isCache\":\"0\",\"path\":\"forum\",\"component\":\"cms/forum/list\",\"createBy\":\"admin\",\"children\":[],\"isFrame\":\"1\",\"menuType\":\"C\",\"perms\":\"cms:forum:list\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 11:14:26');
+INSERT INTO `sys_oper_log` VALUES ('418', '菜单管理', '1', 'com.instrument.web.controller.system.SysMenuController.add()', 'POST', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"orderNum\":\"5\",\"menuName\":\"随笔管理\",\"params\":{},\"parentId\":1,\"isCache\":\"0\",\"path\":\"essay\",\"component\":\"cms/blog/essay\",\"createBy\":\"admin\",\"children\":[],\"isFrame\":\"1\",\"menuType\":\"C\",\"perms\":\"cms:blog:list\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 11:16:33');
+INSERT INTO `sys_oper_log` VALUES ('419', '角色管理', '2', 'com.instrument.web.controller.system.SysRoleController.edit()', 'PUT', '1', 'admin', null, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":4,\"admin\":false,\"dataScope\":\"1\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"0\",\"deptCheckStrictly\":true,\"createTime\":1714226890000,\"updateBy\":\"admin\",\"menuCheckStrictly\":true,\"roleKey\":\"customer\",\"roleName\":\"学生\",\"menuIds\":[2007,2075,2076,2074,2112,2124,2152,107,1,2068,2069,2070,2071,2072,2073,2149,2077,2125,2126,2127,2128,2129,2130,2138,2139,2140,2141,2142,2143,2145,2148,2146,2147,2113,2114,2144,2120,2150,2088,2089,2090,2091,2092,2093,2038,2039,2040,2041,2042,2043,2062,2063,2064,2065,2066,2067,1036,2137,2132,2133,2134,2135],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 11:23:36');
+INSERT INTO `sys_oper_log` VALUES ('420', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"1\",\"icon\":\"#\",\"orderNum\":\"1\",\"menuName\":\"乐器识别\",\"params\":{},\"parentId\":0,\"isCache\":\"0\",\"path\":\"recognition\",\"component\":\"music/recognition/index\",\"children\":[],\"createTime\":1714795432000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":2138,\"menuType\":\"C\",\"perms\":\"music:recognition:list\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 11:25:50');
+INSERT INTO `sys_oper_log` VALUES ('421', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"1\",\"icon\":\"#\",\"orderNum\":\"5\",\"menuName\":\"首页乐器\",\"params\":{},\"parentId\":0,\"isCache\":\"0\",\"path\":\"customerinstrument\",\"component\":\"music/instrument/customerListInstrument\",\"children\":[],\"createTime\":1715176430000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":2145,\"menuType\":\"C\",\"perms\":\"music:instrument:customerListInstrument\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 11:26:00');
+INSERT INTO `sys_oper_log` VALUES ('422', '角色管理', '1', 'com.instrument.web.controller.system.SysRoleController.add()', 'POST', '1', 'admin', null, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":5,\"admin\":false,\"params\":{},\"roleSort\":\"0\",\"deptCheckStrictly\":true,\"createBy\":\"admin\",\"menuCheckStrictly\":true,\"roleKey\":\"comAdmin\",\"roleName\":\"普通管理员\",\"deptIds\":[],\"menuIds\":[2138,2075,2074,2137,2106,2107,2108,2109,2110,2111,2139,100,1001,1002,1003,1004,1005,1006,1007,101,1008,1009,1010,1011,1012,2076,2077,2078,2079,2080,2081,2082,2083,2084,2085,2086,2087,2146,2147,2100,2101,2102,2103,2104,2105,2112,2113,2114,2115,2116,2117,2118,2123,2144,2150,2088,2089,2090,2091,2092,2093,2038,2039,2040,2041,2042,2043,2152,2062,2063,2064,2065,2066,2067,107,1036,1037,1038,1039,2132],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 11:31:11');
+INSERT INTO `sys_oper_log` VALUES ('423', '角色管理', '2', 'com.instrument.web.controller.system.SysRoleController.edit()', 'PUT', '1', 'admin', null, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":4,\"admin\":false,\"dataScope\":\"1\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"0\",\"deptCheckStrictly\":true,\"createTime\":1714226890000,\"updateBy\":\"admin\",\"menuCheckStrictly\":true,\"roleKey\":\"customer\",\"roleName\":\"学生\",\"menuIds\":[1,2007,2075,2076,2074,2112,2124,2154,2156,2157,2158,2159,2160,2155,2161,2162,2163,2164,2165,2138,2139,2140,2141,2142,2143,2149,2077,2125,2126,2127,2128,2129,2130,2146,2147,2145,2148,2113,2114,2144,2120,2137,2132,2133,2134,2135],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 11:33:51');
+INSERT INTO `sys_oper_log` VALUES ('424', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"1\",\"icon\":\"#\",\"orderNum\":\"9\",\"menuName\":\"首页文章\",\"params\":{},\"parentId\":0,\"isCache\":\"0\",\"path\":\"blog\",\"component\":\"cms/blog/index\",\"children\":[],\"createTime\":1715180998000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":2149,\"menuType\":\"C\",\"perms\":\"cms:blog:list\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 11:35:05');
+INSERT INTO `sys_oper_log` VALUES ('425', '角色管理', '2', 'com.instrument.web.controller.system.SysRoleController.edit()', 'PUT', '1', 'admin', null, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":2,\"admin\":false,\"remark\":\"普通角色\",\"dataScope\":\"2\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"2\",\"deptCheckStrictly\":true,\"createTime\":1639116734000,\"updateBy\":\"admin\",\"menuCheckStrictly\":true,\"roleKey\":\"teacher\",\"roleName\":\"教师\",\"menuIds\":[1,2075,2074,2152,2137,2154,2156,2157,2158,2159,2160,2155,2161,2162,2163,2164,2165,2076,2077,2078,2079,2080,2081,2082,2083,2084,2085,2086,2087,2146,2147,2112,2113,2114,2115,2116,2117,2118,2123,2144,2062,2063,2064,2065,2066,2067,2132],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-11 11:37:29');
+INSERT INTO `sys_oper_log` VALUES ('426', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"query\":\"\",\"icon\":\"tool\",\"orderNum\":\"3\",\"menuName\":\"系统工具\",\"params\":{},\"parentId\":0,\"isCache\":\"0\",\"path\":\"tool\",\"children\":[],\"createTime\":1639116734000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":3,\"menuType\":\"M\",\"perms\":\"\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-14 16:45:02');
+INSERT INTO `sys_oper_log` VALUES ('427', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"query\":\"\",\"icon\":\"tool\",\"orderNum\":\"3\",\"menuName\":\"系统工具\",\"params\":{},\"parentId\":0,\"isCache\":\"0\",\"path\":\"tool\",\"children\":[],\"createTime\":1639116734000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":3,\"menuType\":\"M\",\"perms\":\"\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-14 16:45:03');
+INSERT INTO `sys_oper_log` VALUES ('428', '代码生成', '2', 'com.instrument.generator.controller.GenController.synchDb()', 'GET', '1', 'admin', null, '/tool/gen/synchDb/music_instrument', '127.0.0.1', '内网IP', '{tableName=music_instrument}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-14 16:46:26');
+INSERT INTO `sys_oper_log` VALUES ('429', '代码生成', '2', 'com.instrument.generator.controller.GenController.synchDb()', 'GET', '1', 'admin', null, '/tool/gen/synchDb/music_instrument', '127.0.0.1', '内网IP', '{tableName=music_instrument}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-14 16:46:30');
+INSERT INTO `sys_oper_log` VALUES ('430', '代码生成', '2', 'com.instrument.generator.controller.GenController.editSave()', 'PUT', '1', 'admin', null, '/tool/gen', '127.0.0.1', '内网IP', '{\"sub\":false,\"functionAuthor\":\"maple\",\"columns\":[{\"capJavaField\":\"Id\",\"usableColumn\":false,\"columnId\":140,\"isIncrement\":\"1\",\"increment\":true,\"insert\":true,\"dictType\":\"\",\"required\":false,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"id\",\"htmlType\":\"input\",\"edit\":false,\"query\":false,\"columnComment\":\"ID\",\"updateTime\":1713607394000,\"sort\":1,\"list\":false,\"params\":{},\"javaType\":\"Long\",\"queryType\":\"EQ\",\"columnType\":\"bigint(20)\",\"createBy\":\"admin\",\"isPk\":\"1\",\"createTime\":1713604746000,\"tableId\":14,\"pk\":true,\"columnName\":\"id\"},{\"capJavaField\":\"CreateBy\",\"usableColumn\":false,\"columnId\":141,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"isList\":\"1\",\"dictType\":\"\",\"required\":false,\"superColumn\":true,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"createBy\",\"htmlType\":\"input\",\"edit\":false,\"query\":false,\"columnComment\":\"创建者\",\"updateTime\":1713607394000,\"sort\":2,\"list\":true,\"params\":{},\"javaType\":\"String\",\"queryType\":\"EQ\",\"columnType\":\"varchar(64)\",\"createBy\":\"admin\",\"isPk\":\"0\",\"createTime\":1713604746000,\"tableId\":14,\"pk\":false,\"columnName\":\"create_by\"},{\"capJavaField\":\"CreateTime\",\"usableColumn\":false,\"columnId\":142,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"isList\":\"1\",\"dictType\":\"\",\"required\":false,\"superColumn\":true,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"createTime\",\"htmlType\":\"datetime\",\"edit\":false,\"query\":false,\"columnComment\":\"创建时间\",\"updateTime\":1713607394000,\"sort\":3,\"list\":true,\"params\":{},\"javaType\":\"Date\",\"queryType\":\"EQ\",\"columnType\":\"datetime\",\"createBy\":\"admin\",\"isPk\":\"0\",\"createTime\":1713604746000,\"tableId\":14,\"pk\":false,\"columnName\":\"create_time\"},{\"capJavaField\":\"UpdateBy\",\"usableColumn\":false,\"columnId\":143,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"isList\":\"1\",\"dictType\":\"\",\"required\":false,\"superColumn\":true,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"updateBy\",\"htmlType\":\"input\",\"edit\":true,\"query\":false,\"columnComment\":\"更新者\",\"updateTime\":1713607394000,\"sort\":4,\"list\":true,\"params\":{},\"javaType\":\"String\",\"queryType\":\"EQ\",\"columnTy', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-14 16:49:05');
+INSERT INTO `sys_oper_log` VALUES ('431', '代码生成', '2', 'com.instrument.generator.controller.GenController.editSave()', 'PUT', '1', 'admin', null, '/tool/gen', '127.0.0.1', '内网IP', '{\"sub\":false,\"functionAuthor\":\"maple\",\"columns\":[{\"capJavaField\":\"Id\",\"usableColumn\":false,\"columnId\":140,\"isIncrement\":\"1\",\"increment\":true,\"insert\":true,\"dictType\":\"\",\"required\":false,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"id\",\"htmlType\":\"input\",\"edit\":false,\"query\":false,\"columnComment\":\"ID\",\"updateTime\":1715676545000,\"sort\":1,\"list\":false,\"params\":{},\"javaType\":\"Long\",\"queryType\":\"EQ\",\"columnType\":\"bigint(20)\",\"createBy\":\"admin\",\"isPk\":\"1\",\"createTime\":1713604746000,\"tableId\":14,\"pk\":true,\"columnName\":\"id\"},{\"capJavaField\":\"CreateBy\",\"usableColumn\":false,\"columnId\":141,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"isList\":\"1\",\"dictType\":\"\",\"required\":false,\"superColumn\":true,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"createBy\",\"htmlType\":\"input\",\"edit\":false,\"query\":false,\"columnComment\":\"创建者\",\"updateTime\":1715676545000,\"sort\":2,\"list\":true,\"params\":{},\"javaType\":\"String\",\"queryType\":\"EQ\",\"columnType\":\"varchar(64)\",\"createBy\":\"admin\",\"isPk\":\"0\",\"createTime\":1713604746000,\"tableId\":14,\"pk\":false,\"columnName\":\"create_by\"},{\"capJavaField\":\"CreateTime\",\"usableColumn\":false,\"columnId\":142,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"isList\":\"1\",\"dictType\":\"\",\"required\":false,\"superColumn\":true,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"createTime\",\"htmlType\":\"datetime\",\"edit\":false,\"query\":false,\"columnComment\":\"创建时间\",\"updateTime\":1715676545000,\"sort\":3,\"list\":true,\"params\":{},\"javaType\":\"Date\",\"queryType\":\"EQ\",\"columnType\":\"datetime\",\"createBy\":\"admin\",\"isPk\":\"0\",\"createTime\":1713604746000,\"tableId\":14,\"pk\":false,\"columnName\":\"create_time\"},{\"capJavaField\":\"UpdateBy\",\"usableColumn\":false,\"columnId\":143,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"isList\":\"1\",\"dictType\":\"\",\"required\":false,\"superColumn\":true,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"updateBy\",\"htmlType\":\"input\",\"edit\":true,\"query\":false,\"columnComment\":\"更新者\",\"updateTime\":1715676545000,\"sort\":4,\"list\":true,\"params\":{},\"javaType\":\"String\",\"queryType\":\"EQ\",\"columnTy', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-14 23:21:27');
+INSERT INTO `sys_oper_log` VALUES ('432', '代码生成', '6', 'com.instrument.generator.controller.GenController.importTableSave()', 'POST', '1', 'admin', null, '/tool/gen/importTable', '127.0.0.1', '内网IP', 'music_instrument_category', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-14 23:22:14');
+INSERT INTO `sys_oper_log` VALUES ('433', '代码生成', '2', 'com.instrument.generator.controller.GenController.editSave()', 'PUT', '1', 'admin', null, '/tool/gen', '127.0.0.1', '内网IP', '{\"sub\":false,\"functionAuthor\":\"maple\",\"columns\":[{\"capJavaField\":\"Id\",\"usableColumn\":false,\"columnId\":217,\"isIncrement\":\"1\",\"increment\":true,\"insert\":true,\"dictType\":\"\",\"required\":false,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"id\",\"htmlType\":\"input\",\"edit\":false,\"query\":false,\"columnComment\":\"id\",\"sort\":1,\"list\":false,\"params\":{},\"javaType\":\"Long\",\"queryType\":\"EQ\",\"columnType\":\"bigint(20) unsigned\",\"createBy\":\"admin\",\"isPk\":\"1\",\"createTime\":1715700133000,\"tableId\":22,\"pk\":true,\"columnName\":\"id\"},{\"capJavaField\":\"Name\",\"usableColumn\":false,\"columnId\":218,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"isList\":\"1\",\"dictType\":\"\",\"required\":false,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"name\",\"htmlType\":\"input\",\"edit\":true,\"query\":true,\"columnComment\":\"分类名\",\"isQuery\":\"1\",\"sort\":2,\"list\":true,\"params\":{},\"javaType\":\"String\",\"queryType\":\"LIKE\",\"columnType\":\"varchar(255)\",\"createBy\":\"admin\",\"isPk\":\"0\",\"createTime\":1715700133000,\"isEdit\":\"1\",\"tableId\":22,\"pk\":false,\"columnName\":\"name\"},{\"capJavaField\":\"CreateBy\",\"usableColumn\":false,\"columnId\":219,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"isList\":\"1\",\"dictType\":\"\",\"required\":false,\"superColumn\":true,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"createBy\",\"htmlType\":\"input\",\"edit\":false,\"query\":false,\"columnComment\":\"创建者\",\"sort\":3,\"list\":true,\"params\":{},\"javaType\":\"String\",\"queryType\":\"EQ\",\"columnType\":\"varchar(64)\",\"createBy\":\"admin\",\"isPk\":\"0\",\"createTime\":1715700133000,\"tableId\":22,\"pk\":false,\"columnName\":\"create_by\"},{\"capJavaField\":\"CreateTime\",\"usableColumn\":false,\"columnId\":220,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"isList\":\"1\",\"dictType\":\"\",\"required\":false,\"superColumn\":true,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"createTime\",\"htmlType\":\"datetime\",\"edit\":false,\"query\":false,\"columnComment\":\"创建时间\",\"sort\":4,\"list\":true,\"params\":{},\"javaType\":\"Date\",\"queryType\":\"EQ\",\"columnType\":\"datetime\",\"createBy\":\"admin\",\"isPk\":\"0\",\"createTime\":1715700133000,\"tableId\"', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-14 23:24:03');
+INSERT INTO `sys_oper_log` VALUES ('434', '菜单管理', '1', 'com.instrument.web.controller.system.SysMenuController.add()', 'POST', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"orderNum\":\"5\",\"menuName\":\"乐器管理\",\"params\":{},\"parentId\":0,\"isCache\":\"0\",\"path\":\"musicMange\",\"children\":[],\"isFrame\":\"1\",\"menuType\":\"M\",\"status\":\"0\"}', '{\"msg\":\"新增菜单\'乐器管理\'失败，菜单名称已存在\",\"code\":500}', '0', null, '2024-05-14 23:24:54');
+INSERT INTO `sys_oper_log` VALUES ('435', '菜单管理', '1', 'com.instrument.web.controller.system.SysMenuController.add()', 'POST', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"orderNum\":\"5\",\"menuName\":\"乐器管理1\",\"params\":{},\"parentId\":0,\"isCache\":\"0\",\"path\":\"musicMange\",\"createBy\":\"admin\",\"children\":[],\"isFrame\":\"1\",\"menuType\":\"M\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-14 23:24:58');
+INSERT INTO `sys_oper_log` VALUES ('436', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"#\",\"orderNum\":\"1\",\"menuName\":\"乐器信息\",\"params\":{},\"parentId\":2166,\"isCache\":\"0\",\"path\":\"instrument\",\"component\":\"music/instrument/index\",\"children\":[],\"createTime\":1713609404000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":2106,\"menuType\":\"C\",\"perms\":\"music:instrument:list\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-14 23:25:31');
+INSERT INTO `sys_oper_log` VALUES ('437', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"#\",\"orderNum\":\"5\",\"menuName\":\"乐器管理\",\"params\":{},\"parentId\":0,\"isCache\":\"0\",\"path\":\"musicMange\",\"children\":[],\"createTime\":1715700298000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":2166,\"menuType\":\"M\",\"perms\":\"\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-14 23:25:45');
+INSERT INTO `sys_oper_log` VALUES ('438', '代码生成', '2', 'com.instrument.generator.controller.GenController.editSave()', 'PUT', '1', 'admin', null, '/tool/gen', '127.0.0.1', '内网IP', '{\"sub\":false,\"functionAuthor\":\"maple\",\"columns\":[{\"capJavaField\":\"Id\",\"usableColumn\":false,\"columnId\":217,\"isIncrement\":\"1\",\"increment\":true,\"insert\":true,\"dictType\":\"\",\"required\":false,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"id\",\"htmlType\":\"input\",\"edit\":false,\"query\":false,\"columnComment\":\"id\",\"updateTime\":1715700243000,\"sort\":1,\"list\":false,\"params\":{},\"javaType\":\"Long\",\"queryType\":\"EQ\",\"columnType\":\"bigint(20) unsigned\",\"createBy\":\"admin\",\"isPk\":\"1\",\"createTime\":1715700133000,\"tableId\":22,\"pk\":true,\"columnName\":\"id\"},{\"capJavaField\":\"Name\",\"usableColumn\":false,\"columnId\":218,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"isList\":\"1\",\"dictType\":\"\",\"required\":false,\"superColumn\":false,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"name\",\"htmlType\":\"input\",\"edit\":true,\"query\":true,\"columnComment\":\"分类名\",\"isQuery\":\"1\",\"updateTime\":1715700243000,\"sort\":2,\"list\":true,\"params\":{},\"javaType\":\"String\",\"queryType\":\"LIKE\",\"columnType\":\"varchar(255)\",\"createBy\":\"admin\",\"isPk\":\"0\",\"createTime\":1715700133000,\"isEdit\":\"1\",\"tableId\":22,\"pk\":false,\"columnName\":\"name\"},{\"capJavaField\":\"CreateBy\",\"usableColumn\":false,\"columnId\":219,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"isList\":\"1\",\"dictType\":\"\",\"required\":false,\"superColumn\":true,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"createBy\",\"htmlType\":\"input\",\"edit\":false,\"query\":false,\"columnComment\":\"创建者\",\"updateTime\":1715700243000,\"sort\":3,\"list\":true,\"params\":{},\"javaType\":\"String\",\"queryType\":\"EQ\",\"columnType\":\"varchar(64)\",\"createBy\":\"admin\",\"isPk\":\"0\",\"createTime\":1715700133000,\"tableId\":22,\"pk\":false,\"columnName\":\"create_by\"},{\"capJavaField\":\"CreateTime\",\"usableColumn\":false,\"columnId\":220,\"isIncrement\":\"0\",\"increment\":false,\"insert\":true,\"isList\":\"1\",\"dictType\":\"\",\"required\":false,\"superColumn\":true,\"updateBy\":\"\",\"isInsert\":\"1\",\"javaField\":\"createTime\",\"htmlType\":\"datetime\",\"edit\":false,\"query\":false,\"columnComment\":\"创建时间\",\"updateTime\":1715700243000,\"sort\":4,\"list\":true,\"params\":{},\"javaType\":\"Date\"', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-14 23:26:01');
+INSERT INTO `sys_oper_log` VALUES ('439', '乐器分类', '1', 'com.instrument.music.controller.InstrumentCategoryController.add()', 'POST', '1', 'admin', null, '/music/category', '127.0.0.1', '内网IP', '{\"createTime\":1715702048774,\"name\":\"拉弦\",\"id\":1,\"params\":{}}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-14 23:54:08');
+INSERT INTO `sys_oper_log` VALUES ('440', '乐器分类', '1', 'com.instrument.music.controller.InstrumentCategoryController.add()', 'POST', '1', 'admin', null, '/music/category', '127.0.0.1', '内网IP', '{\"createTime\":1715702064597,\"name\":\"打击乐器\",\"id\":2,\"params\":{}}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-14 23:54:24');
+INSERT INTO `sys_oper_log` VALUES ('441', '乐器分类', '2', 'com.instrument.music.controller.InstrumentCategoryController.edit()', 'PUT', '1', 'admin', null, '/music/category', '127.0.0.1', '内网IP', '{\"createTime\":1715702049000,\"name\":\"拉弦乐器\",\"updateTime\":1715702071857,\"id\":1,\"params\":{}}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-14 23:54:31');
+INSERT INTO `sys_oper_log` VALUES ('442', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"education\",\"orderNum\":\"5\",\"menuName\":\"课程信息\",\"params\":{},\"parentId\":0,\"isCache\":\"0\",\"path\":\"instrument\",\"children\":[],\"createTime\":1713605182000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":2075,\"menuType\":\"M\",\"perms\":\"\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-15 00:16:44');
+INSERT INTO `sys_oper_log` VALUES ('443', '菜单管理', '1', 'com.instrument.web.controller.system.SysMenuController.add()', 'POST', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"orderNum\":\"7\",\"menuName\":\"课程管理\",\"params\":{},\"parentId\":0,\"isCache\":\"0\",\"path\":\"curriculumMange\",\"createBy\":\"admin\",\"children\":[],\"isFrame\":\"1\",\"menuType\":\"M\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-15 00:17:35');
+INSERT INTO `sys_oper_log` VALUES ('444', '菜单管理', '1', 'com.instrument.web.controller.system.SysMenuController.add()', 'POST', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"orderNum\":\"7\",\"menuName\":\"课程管理\",\"params\":{},\"parentId\":0,\"isCache\":\"0\",\"path\":\"curriculumMange\",\"children\":[],\"isFrame\":\"1\",\"menuType\":\"M\",\"status\":\"0\"}', '{\"msg\":\"新增菜单\'课程管理\'失败，菜单名称已存在\",\"code\":500}', '0', null, '2024-05-15 00:17:36');
+INSERT INTO `sys_oper_log` VALUES ('445', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"education\",\"orderNum\":\"5\",\"menuName\":\"课程信息\",\"params\":{},\"parentId\":2173,\"isCache\":\"0\",\"path\":\"instrument\",\"children\":[],\"createTime\":1713605182000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":2075,\"menuType\":\"M\",\"perms\":\"\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-15 00:18:15');
+INSERT INTO `sys_oper_log` VALUES ('446', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"education\",\"orderNum\":\"5\",\"menuName\":\"课程信息\",\"params\":{},\"parentId\":0,\"isCache\":\"0\",\"path\":\"instrument\",\"children\":[],\"createTime\":1713605182000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":2075,\"menuType\":\"M\",\"perms\":\"\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-15 00:22:53');
+INSERT INTO `sys_oper_log` VALUES ('447', '菜单管理', '3', 'com.instrument.web.controller.system.SysMenuController.remove()', 'DELETE', '1', 'admin', null, '/system/menu/2173', '127.0.0.1', '内网IP', '{menuId=2173}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-15 00:23:15');
+INSERT INTO `sys_oper_log` VALUES ('448', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"education\",\"orderNum\":\"5\",\"menuName\":\"课程管理\",\"params\":{},\"parentId\":0,\"isCache\":\"0\",\"path\":\"instrument\",\"children\":[],\"createTime\":1713605182000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":2075,\"menuType\":\"M\",\"perms\":\"\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-15 00:23:41');
+INSERT INTO `sys_oper_log` VALUES ('449', '乐器', '2', 'com.instrument.music.controller.MusicInstrumentController.edit()', 'PUT', '1', 'admin', null, '/music/instrument', '127.0.0.1', '内网IP', '{\"updateTime\":1715711114494,\"params\":{},\"content\":\"吉他（意大利语：Chitarra），又译为结他或六弦琴。是一种弹拨乐器，通常有六条弦，形状与提琴相似。吉他在流行音乐、摇滚音乐、蓝调、民歌、佛朗明哥中，常被视为主要乐器。而在古典音乐的领域里，吉他常以独奏或二重奏的型式演出；当然，在室内乐和管弦乐中，吉他亦扮演着相当程度的陪衬角色。古典吉他与小提琴、钢琴并列为世界著名三大乐器。\\n\\n吉他主要有民谣吉他、古典吉他和电吉他三种，民谣吉他最常见也最容易上手。三种类型的吉他各有千秋，喜欢听弹唱的一般是民谣吉他；喜欢独奏的一般是古典吉他；喜欢摇滚的，电吉他必不可少。\",\"url\":\"/profile/upload/2024/05/15/d76fd118-98fe-441f-81b4-0a71529336d9.jpg\",\"createBy\":\"admin\",\"createTime\":1713610146000,\"updateBy\":\"admin\",\"name\":\"吉他\",\"id\":23}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-15 02:25:14');
+INSERT INTO `sys_oper_log` VALUES ('450', '乐器', '2', 'com.instrument.music.controller.MusicInstrumentController.edit()', 'PUT', '1', 'admin', null, '/music/instrument', '127.0.0.1', '内网IP', '{\"updateTime\":1715711747956,\"params\":{},\"content\":\"吉他（意大利语：Chitarra），又译为结他或六弦琴。是一种弹拨乐器，通常有六条弦，形状与提琴相似。吉他在流行音乐、摇滚音乐、蓝调、民歌、佛朗明哥中，常被视为主要乐器。而在古典音乐的领域里，吉他常以独奏或二重奏的型式演出；当然，在室内乐和管弦乐中，吉他亦扮演着相当程度的陪衬角色。古典吉他与小提琴、钢琴并列为世界著名三大乐器。\\n\\n吉他主要有民谣吉他、古典吉他和电吉他三种，民谣吉他最常见也最容易上手。三种类型的吉他各有千秋，喜欢听弹唱的一般是民谣吉他；喜欢独奏的一般是古典吉他；喜欢摇滚的，电吉他必不可少。\",\"url\":\"/profile/upload/2024/05/15/d76fd118-98fe-441f-81b4-0a71529336d9.jpg\",\"createBy\":\"admin\",\"createTime\":1713610146000,\"updateBy\":\"admin\",\"name\":\"吉他\",\"id\":23,\"categoryId\":1}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-15 02:35:48');
+INSERT INTO `sys_oper_log` VALUES ('451', '角色管理', '2', 'com.instrument.web.controller.system.SysRoleController.edit()', 'PUT', '1', 'admin', null, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":5,\"admin\":false,\"dataScope\":\"1\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"0\",\"deptCheckStrictly\":true,\"createTime\":1715398271000,\"updateBy\":\"admin\",\"menuCheckStrictly\":true,\"roleKey\":\"comAdmin\",\"roleName\":\"普通管理员\",\"menuIds\":[2138,2007,2075,2166,2074,2137,2139,2032,2033,2034,2035,2036,2037,2056,2057,2058,2059,2060,2061,2050,2051,2052,2053,2054,2055,2068,2069,2070,2071,2072,2073,2026,2027,2028,2029,2030,2031,100,1001,1002,1003,1004,1005,1006,1007,101,1008,1009,1010,1011,1012,2076,2077,2078,2079,2080,2081,2082,2083,2084,2085,2086,2087,2146,2147,2145,2148,2106,2107,2108,2109,2110,2111,2100,2101,2102,2103,2104,2105,2112,2113,2114,2115,2116,2117,2118,2123,2144,2150,2088,2089,2090,2091,2092,2093,2038,2039,2040,2041,2042,2043,2149,2152,2062,2063,2064,2065,2066,2067,107,1036,1037,1038,1039,2132],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-15 02:38:46');
+INSERT INTO `sys_oper_log` VALUES ('452', '角色管理', '2', 'com.instrument.web.controller.system.SysRoleController.edit()', 'PUT', '1', 'admin', null, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":4,\"admin\":false,\"dataScope\":\"1\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"0\",\"deptCheckStrictly\":true,\"createTime\":1714226890000,\"updateBy\":\"admin\",\"menuCheckStrictly\":true,\"roleKey\":\"customer\",\"roleName\":\"学生\",\"menuIds\":[1,2075,2076,2074,2112,2124,2154,2156,2157,2158,2159,2160,2155,2161,2162,2163,2164,2165,2138,2139,2140,2141,2142,2143,2007,2077,2125,2126,2127,2128,2129,2130,2146,2147,2173,2174,2175,2176,2177,2178,2145,2148,2113,2114,2144,2120,2149,2137,2132,2133,2134,2135],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-15 02:39:35');
+INSERT INTO `sys_oper_log` VALUES ('453', '角色管理', '2', 'com.instrument.web.controller.system.SysRoleController.edit()', 'PUT', '1', 'admin', null, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":2,\"admin\":false,\"remark\":\"普通角色\",\"dataScope\":\"2\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"2\",\"deptCheckStrictly\":true,\"createTime\":1639116734000,\"updateBy\":\"admin\",\"menuCheckStrictly\":true,\"roleKey\":\"teacher\",\"roleName\":\"教师\",\"menuIds\":[1,2075,2074,2137,2154,2156,2157,2158,2159,2160,2155,2161,2162,2163,2164,2165,2131,2153,2136,2076,2077,2078,2079,2080,2081,2082,2083,2084,2085,2086,2087,2146,2147,2173,2174,2175,2176,2177,2178,2145,2148,2112,2113,2114,2115,2116,2117,2118,2123,2144,2124,2119,2120,2121,2122,2149,2152,2062,2063,2064,2065,2066,2067,107,1036,1037,1038,1039,2132],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-15 02:41:13');
 
 -- ----------------------------
 -- Table structure for sys_post
@@ -1838,15 +2037,16 @@ CREATE TABLE `sys_role` (
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `remark` varchar(500) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`role_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='角色信息表';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='角色信息表';
 
 -- ----------------------------
 -- Records of sys_role
 -- ----------------------------
 INSERT INTO `sys_role` VALUES ('1', '超级管理员', 'admin', '1', '1', '1', '1', '0', '0', 'admin', '2021-12-10 14:12:14', '', null, '超级管理员');
-INSERT INTO `sys_role` VALUES ('2', '普通角色', 'common', '2', '2', '1', '1', '0', '0', 'admin', '2021-12-10 14:12:14', 'admin', '2024-04-20 17:15:28', '普通角色');
+INSERT INTO `sys_role` VALUES ('2', '教师', 'teacher', '2', '2', '1', '1', '0', '0', 'admin', '2021-12-10 14:12:14', 'admin', '2024-05-15 02:41:13', '普通角色');
 INSERT INTO `sys_role` VALUES ('3', '内容管理员角色', 'cms', '3', '1', '1', '1', '0', '0', 'admin', '2022-01-04 00:32:39', 'admin', '2024-04-20 17:15:34', null);
-INSERT INTO `sys_role` VALUES ('4', '客户', 'customer', '0', '1', '1', '1', '0', '0', 'admin', '2024-04-27 22:08:10', 'admin', '2024-05-08 23:10:56', null);
+INSERT INTO `sys_role` VALUES ('4', '学生', 'customer', '0', '1', '1', '1', '0', '0', 'admin', '2024-04-27 22:08:10', 'admin', '2024-05-15 02:39:35', null);
+INSERT INTO `sys_role` VALUES ('5', '普通管理员', 'comAdmin', '0', '1', '1', '1', '0', '0', 'admin', '2024-05-11 11:31:11', 'admin', '2024-05-15 02:38:46', null);
 
 -- ----------------------------
 -- Table structure for sys_role_dept
@@ -1878,6 +2078,75 @@ CREATE TABLE `sys_role_menu` (
 -- ----------------------------
 -- Records of sys_role_menu
 -- ----------------------------
+INSERT INTO `sys_role_menu` VALUES ('2', '1');
+INSERT INTO `sys_role_menu` VALUES ('2', '107');
+INSERT INTO `sys_role_menu` VALUES ('2', '1036');
+INSERT INTO `sys_role_menu` VALUES ('2', '1037');
+INSERT INTO `sys_role_menu` VALUES ('2', '1038');
+INSERT INTO `sys_role_menu` VALUES ('2', '1039');
+INSERT INTO `sys_role_menu` VALUES ('2', '2062');
+INSERT INTO `sys_role_menu` VALUES ('2', '2063');
+INSERT INTO `sys_role_menu` VALUES ('2', '2064');
+INSERT INTO `sys_role_menu` VALUES ('2', '2065');
+INSERT INTO `sys_role_menu` VALUES ('2', '2066');
+INSERT INTO `sys_role_menu` VALUES ('2', '2067');
+INSERT INTO `sys_role_menu` VALUES ('2', '2074');
+INSERT INTO `sys_role_menu` VALUES ('2', '2075');
+INSERT INTO `sys_role_menu` VALUES ('2', '2076');
+INSERT INTO `sys_role_menu` VALUES ('2', '2077');
+INSERT INTO `sys_role_menu` VALUES ('2', '2078');
+INSERT INTO `sys_role_menu` VALUES ('2', '2079');
+INSERT INTO `sys_role_menu` VALUES ('2', '2080');
+INSERT INTO `sys_role_menu` VALUES ('2', '2081');
+INSERT INTO `sys_role_menu` VALUES ('2', '2082');
+INSERT INTO `sys_role_menu` VALUES ('2', '2083');
+INSERT INTO `sys_role_menu` VALUES ('2', '2084');
+INSERT INTO `sys_role_menu` VALUES ('2', '2085');
+INSERT INTO `sys_role_menu` VALUES ('2', '2086');
+INSERT INTO `sys_role_menu` VALUES ('2', '2087');
+INSERT INTO `sys_role_menu` VALUES ('2', '2112');
+INSERT INTO `sys_role_menu` VALUES ('2', '2113');
+INSERT INTO `sys_role_menu` VALUES ('2', '2114');
+INSERT INTO `sys_role_menu` VALUES ('2', '2115');
+INSERT INTO `sys_role_menu` VALUES ('2', '2116');
+INSERT INTO `sys_role_menu` VALUES ('2', '2117');
+INSERT INTO `sys_role_menu` VALUES ('2', '2118');
+INSERT INTO `sys_role_menu` VALUES ('2', '2119');
+INSERT INTO `sys_role_menu` VALUES ('2', '2120');
+INSERT INTO `sys_role_menu` VALUES ('2', '2121');
+INSERT INTO `sys_role_menu` VALUES ('2', '2122');
+INSERT INTO `sys_role_menu` VALUES ('2', '2123');
+INSERT INTO `sys_role_menu` VALUES ('2', '2124');
+INSERT INTO `sys_role_menu` VALUES ('2', '2131');
+INSERT INTO `sys_role_menu` VALUES ('2', '2132');
+INSERT INTO `sys_role_menu` VALUES ('2', '2136');
+INSERT INTO `sys_role_menu` VALUES ('2', '2137');
+INSERT INTO `sys_role_menu` VALUES ('2', '2144');
+INSERT INTO `sys_role_menu` VALUES ('2', '2145');
+INSERT INTO `sys_role_menu` VALUES ('2', '2146');
+INSERT INTO `sys_role_menu` VALUES ('2', '2147');
+INSERT INTO `sys_role_menu` VALUES ('2', '2148');
+INSERT INTO `sys_role_menu` VALUES ('2', '2149');
+INSERT INTO `sys_role_menu` VALUES ('2', '2152');
+INSERT INTO `sys_role_menu` VALUES ('2', '2153');
+INSERT INTO `sys_role_menu` VALUES ('2', '2154');
+INSERT INTO `sys_role_menu` VALUES ('2', '2155');
+INSERT INTO `sys_role_menu` VALUES ('2', '2156');
+INSERT INTO `sys_role_menu` VALUES ('2', '2157');
+INSERT INTO `sys_role_menu` VALUES ('2', '2158');
+INSERT INTO `sys_role_menu` VALUES ('2', '2159');
+INSERT INTO `sys_role_menu` VALUES ('2', '2160');
+INSERT INTO `sys_role_menu` VALUES ('2', '2161');
+INSERT INTO `sys_role_menu` VALUES ('2', '2162');
+INSERT INTO `sys_role_menu` VALUES ('2', '2163');
+INSERT INTO `sys_role_menu` VALUES ('2', '2164');
+INSERT INTO `sys_role_menu` VALUES ('2', '2165');
+INSERT INTO `sys_role_menu` VALUES ('2', '2173');
+INSERT INTO `sys_role_menu` VALUES ('2', '2174');
+INSERT INTO `sys_role_menu` VALUES ('2', '2175');
+INSERT INTO `sys_role_menu` VALUES ('2', '2176');
+INSERT INTO `sys_role_menu` VALUES ('2', '2177');
+INSERT INTO `sys_role_menu` VALUES ('2', '2178');
 INSERT INTO `sys_role_menu` VALUES ('3', '2007');
 INSERT INTO `sys_role_menu` VALUES ('3', '2026');
 INSERT INTO `sys_role_menu` VALUES ('3', '2027');
@@ -1928,41 +2197,11 @@ INSERT INTO `sys_role_menu` VALUES ('3', '2071');
 INSERT INTO `sys_role_menu` VALUES ('3', '2072');
 INSERT INTO `sys_role_menu` VALUES ('3', '2073');
 INSERT INTO `sys_role_menu` VALUES ('4', '1');
-INSERT INTO `sys_role_menu` VALUES ('4', '107');
-INSERT INTO `sys_role_menu` VALUES ('4', '1036');
 INSERT INTO `sys_role_menu` VALUES ('4', '2007');
-INSERT INTO `sys_role_menu` VALUES ('4', '2038');
-INSERT INTO `sys_role_menu` VALUES ('4', '2039');
-INSERT INTO `sys_role_menu` VALUES ('4', '2040');
-INSERT INTO `sys_role_menu` VALUES ('4', '2041');
-INSERT INTO `sys_role_menu` VALUES ('4', '2042');
-INSERT INTO `sys_role_menu` VALUES ('4', '2043');
-INSERT INTO `sys_role_menu` VALUES ('4', '2050');
-INSERT INTO `sys_role_menu` VALUES ('4', '2051');
-INSERT INTO `sys_role_menu` VALUES ('4', '2056');
-INSERT INTO `sys_role_menu` VALUES ('4', '2057');
-INSERT INTO `sys_role_menu` VALUES ('4', '2062');
-INSERT INTO `sys_role_menu` VALUES ('4', '2063');
-INSERT INTO `sys_role_menu` VALUES ('4', '2064');
-INSERT INTO `sys_role_menu` VALUES ('4', '2065');
-INSERT INTO `sys_role_menu` VALUES ('4', '2066');
-INSERT INTO `sys_role_menu` VALUES ('4', '2067');
-INSERT INTO `sys_role_menu` VALUES ('4', '2068');
-INSERT INTO `sys_role_menu` VALUES ('4', '2069');
-INSERT INTO `sys_role_menu` VALUES ('4', '2070');
-INSERT INTO `sys_role_menu` VALUES ('4', '2071');
-INSERT INTO `sys_role_menu` VALUES ('4', '2072');
-INSERT INTO `sys_role_menu` VALUES ('4', '2073');
 INSERT INTO `sys_role_menu` VALUES ('4', '2074');
 INSERT INTO `sys_role_menu` VALUES ('4', '2075');
 INSERT INTO `sys_role_menu` VALUES ('4', '2076');
 INSERT INTO `sys_role_menu` VALUES ('4', '2077');
-INSERT INTO `sys_role_menu` VALUES ('4', '2088');
-INSERT INTO `sys_role_menu` VALUES ('4', '2089');
-INSERT INTO `sys_role_menu` VALUES ('4', '2090');
-INSERT INTO `sys_role_menu` VALUES ('4', '2091');
-INSERT INTO `sys_role_menu` VALUES ('4', '2092');
-INSERT INTO `sys_role_menu` VALUES ('4', '2093');
 INSERT INTO `sys_role_menu` VALUES ('4', '2112');
 INSERT INTO `sys_role_menu` VALUES ('4', '2113');
 INSERT INTO `sys_role_menu` VALUES ('4', '2114');
@@ -1974,6 +2213,10 @@ INSERT INTO `sys_role_menu` VALUES ('4', '2127');
 INSERT INTO `sys_role_menu` VALUES ('4', '2128');
 INSERT INTO `sys_role_menu` VALUES ('4', '2129');
 INSERT INTO `sys_role_menu` VALUES ('4', '2130');
+INSERT INTO `sys_role_menu` VALUES ('4', '2132');
+INSERT INTO `sys_role_menu` VALUES ('4', '2133');
+INSERT INTO `sys_role_menu` VALUES ('4', '2134');
+INSERT INTO `sys_role_menu` VALUES ('4', '2135');
 INSERT INTO `sys_role_menu` VALUES ('4', '2137');
 INSERT INTO `sys_role_menu` VALUES ('4', '2138');
 INSERT INTO `sys_role_menu` VALUES ('4', '2139');
@@ -1987,6 +2230,139 @@ INSERT INTO `sys_role_menu` VALUES ('4', '2146');
 INSERT INTO `sys_role_menu` VALUES ('4', '2147');
 INSERT INTO `sys_role_menu` VALUES ('4', '2148');
 INSERT INTO `sys_role_menu` VALUES ('4', '2149');
+INSERT INTO `sys_role_menu` VALUES ('4', '2154');
+INSERT INTO `sys_role_menu` VALUES ('4', '2155');
+INSERT INTO `sys_role_menu` VALUES ('4', '2156');
+INSERT INTO `sys_role_menu` VALUES ('4', '2157');
+INSERT INTO `sys_role_menu` VALUES ('4', '2158');
+INSERT INTO `sys_role_menu` VALUES ('4', '2159');
+INSERT INTO `sys_role_menu` VALUES ('4', '2160');
+INSERT INTO `sys_role_menu` VALUES ('4', '2161');
+INSERT INTO `sys_role_menu` VALUES ('4', '2162');
+INSERT INTO `sys_role_menu` VALUES ('4', '2163');
+INSERT INTO `sys_role_menu` VALUES ('4', '2164');
+INSERT INTO `sys_role_menu` VALUES ('4', '2165');
+INSERT INTO `sys_role_menu` VALUES ('4', '2173');
+INSERT INTO `sys_role_menu` VALUES ('4', '2174');
+INSERT INTO `sys_role_menu` VALUES ('4', '2175');
+INSERT INTO `sys_role_menu` VALUES ('4', '2176');
+INSERT INTO `sys_role_menu` VALUES ('4', '2177');
+INSERT INTO `sys_role_menu` VALUES ('4', '2178');
+INSERT INTO `sys_role_menu` VALUES ('5', '100');
+INSERT INTO `sys_role_menu` VALUES ('5', '101');
+INSERT INTO `sys_role_menu` VALUES ('5', '107');
+INSERT INTO `sys_role_menu` VALUES ('5', '1001');
+INSERT INTO `sys_role_menu` VALUES ('5', '1002');
+INSERT INTO `sys_role_menu` VALUES ('5', '1003');
+INSERT INTO `sys_role_menu` VALUES ('5', '1004');
+INSERT INTO `sys_role_menu` VALUES ('5', '1005');
+INSERT INTO `sys_role_menu` VALUES ('5', '1006');
+INSERT INTO `sys_role_menu` VALUES ('5', '1007');
+INSERT INTO `sys_role_menu` VALUES ('5', '1008');
+INSERT INTO `sys_role_menu` VALUES ('5', '1009');
+INSERT INTO `sys_role_menu` VALUES ('5', '1010');
+INSERT INTO `sys_role_menu` VALUES ('5', '1011');
+INSERT INTO `sys_role_menu` VALUES ('5', '1012');
+INSERT INTO `sys_role_menu` VALUES ('5', '1036');
+INSERT INTO `sys_role_menu` VALUES ('5', '1037');
+INSERT INTO `sys_role_menu` VALUES ('5', '1038');
+INSERT INTO `sys_role_menu` VALUES ('5', '1039');
+INSERT INTO `sys_role_menu` VALUES ('5', '2007');
+INSERT INTO `sys_role_menu` VALUES ('5', '2026');
+INSERT INTO `sys_role_menu` VALUES ('5', '2027');
+INSERT INTO `sys_role_menu` VALUES ('5', '2028');
+INSERT INTO `sys_role_menu` VALUES ('5', '2029');
+INSERT INTO `sys_role_menu` VALUES ('5', '2030');
+INSERT INTO `sys_role_menu` VALUES ('5', '2031');
+INSERT INTO `sys_role_menu` VALUES ('5', '2032');
+INSERT INTO `sys_role_menu` VALUES ('5', '2033');
+INSERT INTO `sys_role_menu` VALUES ('5', '2034');
+INSERT INTO `sys_role_menu` VALUES ('5', '2035');
+INSERT INTO `sys_role_menu` VALUES ('5', '2036');
+INSERT INTO `sys_role_menu` VALUES ('5', '2037');
+INSERT INTO `sys_role_menu` VALUES ('5', '2038');
+INSERT INTO `sys_role_menu` VALUES ('5', '2039');
+INSERT INTO `sys_role_menu` VALUES ('5', '2040');
+INSERT INTO `sys_role_menu` VALUES ('5', '2041');
+INSERT INTO `sys_role_menu` VALUES ('5', '2042');
+INSERT INTO `sys_role_menu` VALUES ('5', '2043');
+INSERT INTO `sys_role_menu` VALUES ('5', '2050');
+INSERT INTO `sys_role_menu` VALUES ('5', '2051');
+INSERT INTO `sys_role_menu` VALUES ('5', '2052');
+INSERT INTO `sys_role_menu` VALUES ('5', '2053');
+INSERT INTO `sys_role_menu` VALUES ('5', '2054');
+INSERT INTO `sys_role_menu` VALUES ('5', '2055');
+INSERT INTO `sys_role_menu` VALUES ('5', '2056');
+INSERT INTO `sys_role_menu` VALUES ('5', '2057');
+INSERT INTO `sys_role_menu` VALUES ('5', '2058');
+INSERT INTO `sys_role_menu` VALUES ('5', '2059');
+INSERT INTO `sys_role_menu` VALUES ('5', '2060');
+INSERT INTO `sys_role_menu` VALUES ('5', '2061');
+INSERT INTO `sys_role_menu` VALUES ('5', '2062');
+INSERT INTO `sys_role_menu` VALUES ('5', '2063');
+INSERT INTO `sys_role_menu` VALUES ('5', '2064');
+INSERT INTO `sys_role_menu` VALUES ('5', '2065');
+INSERT INTO `sys_role_menu` VALUES ('5', '2066');
+INSERT INTO `sys_role_menu` VALUES ('5', '2067');
+INSERT INTO `sys_role_menu` VALUES ('5', '2068');
+INSERT INTO `sys_role_menu` VALUES ('5', '2069');
+INSERT INTO `sys_role_menu` VALUES ('5', '2070');
+INSERT INTO `sys_role_menu` VALUES ('5', '2071');
+INSERT INTO `sys_role_menu` VALUES ('5', '2072');
+INSERT INTO `sys_role_menu` VALUES ('5', '2073');
+INSERT INTO `sys_role_menu` VALUES ('5', '2074');
+INSERT INTO `sys_role_menu` VALUES ('5', '2075');
+INSERT INTO `sys_role_menu` VALUES ('5', '2076');
+INSERT INTO `sys_role_menu` VALUES ('5', '2077');
+INSERT INTO `sys_role_menu` VALUES ('5', '2078');
+INSERT INTO `sys_role_menu` VALUES ('5', '2079');
+INSERT INTO `sys_role_menu` VALUES ('5', '2080');
+INSERT INTO `sys_role_menu` VALUES ('5', '2081');
+INSERT INTO `sys_role_menu` VALUES ('5', '2082');
+INSERT INTO `sys_role_menu` VALUES ('5', '2083');
+INSERT INTO `sys_role_menu` VALUES ('5', '2084');
+INSERT INTO `sys_role_menu` VALUES ('5', '2085');
+INSERT INTO `sys_role_menu` VALUES ('5', '2086');
+INSERT INTO `sys_role_menu` VALUES ('5', '2087');
+INSERT INTO `sys_role_menu` VALUES ('5', '2088');
+INSERT INTO `sys_role_menu` VALUES ('5', '2089');
+INSERT INTO `sys_role_menu` VALUES ('5', '2090');
+INSERT INTO `sys_role_menu` VALUES ('5', '2091');
+INSERT INTO `sys_role_menu` VALUES ('5', '2092');
+INSERT INTO `sys_role_menu` VALUES ('5', '2093');
+INSERT INTO `sys_role_menu` VALUES ('5', '2100');
+INSERT INTO `sys_role_menu` VALUES ('5', '2101');
+INSERT INTO `sys_role_menu` VALUES ('5', '2102');
+INSERT INTO `sys_role_menu` VALUES ('5', '2103');
+INSERT INTO `sys_role_menu` VALUES ('5', '2104');
+INSERT INTO `sys_role_menu` VALUES ('5', '2105');
+INSERT INTO `sys_role_menu` VALUES ('5', '2106');
+INSERT INTO `sys_role_menu` VALUES ('5', '2107');
+INSERT INTO `sys_role_menu` VALUES ('5', '2108');
+INSERT INTO `sys_role_menu` VALUES ('5', '2109');
+INSERT INTO `sys_role_menu` VALUES ('5', '2110');
+INSERT INTO `sys_role_menu` VALUES ('5', '2111');
+INSERT INTO `sys_role_menu` VALUES ('5', '2112');
+INSERT INTO `sys_role_menu` VALUES ('5', '2113');
+INSERT INTO `sys_role_menu` VALUES ('5', '2114');
+INSERT INTO `sys_role_menu` VALUES ('5', '2115');
+INSERT INTO `sys_role_menu` VALUES ('5', '2116');
+INSERT INTO `sys_role_menu` VALUES ('5', '2117');
+INSERT INTO `sys_role_menu` VALUES ('5', '2118');
+INSERT INTO `sys_role_menu` VALUES ('5', '2123');
+INSERT INTO `sys_role_menu` VALUES ('5', '2132');
+INSERT INTO `sys_role_menu` VALUES ('5', '2137');
+INSERT INTO `sys_role_menu` VALUES ('5', '2138');
+INSERT INTO `sys_role_menu` VALUES ('5', '2139');
+INSERT INTO `sys_role_menu` VALUES ('5', '2144');
+INSERT INTO `sys_role_menu` VALUES ('5', '2145');
+INSERT INTO `sys_role_menu` VALUES ('5', '2146');
+INSERT INTO `sys_role_menu` VALUES ('5', '2147');
+INSERT INTO `sys_role_menu` VALUES ('5', '2148');
+INSERT INTO `sys_role_menu` VALUES ('5', '2149');
+INSERT INTO `sys_role_menu` VALUES ('5', '2150');
+INSERT INTO `sys_role_menu` VALUES ('5', '2152');
+INSERT INTO `sys_role_menu` VALUES ('5', '2166');
 
 -- ----------------------------
 -- Table structure for sys_user
@@ -2018,9 +2394,9 @@ CREATE TABLE `sys_user` (
 -- ----------------------------
 -- Records of sys_user
 -- ----------------------------
-INSERT INTO `sys_user` VALUES ('1', '103', 'admin', 'admin', '00', 'ry@163.com', '15888888888', '0', '', '$2a$10$7JB720yubVSZvUI0rEqK/.VqGOZTH.ulu33dHOiBE8ByOhJIrdAu2', '0', '0', '127.0.0.1', '2024-05-08 22:08:12', 'admin', '2021-12-10 14:12:14', '', '2024-05-08 22:08:12', '管理员');
+INSERT INTO `sys_user` VALUES ('1', '103', 'admin', 'admin', '00', 'ry@163.com', '15888888888', '0', '', '$2a$10$7JB720yubVSZvUI0rEqK/.VqGOZTH.ulu33dHOiBE8ByOhJIrdAu2', '0', '0', '127.0.0.1', '2024-05-14 23:52:56', 'admin', '2021-12-10 14:12:14', '', '2024-05-14 23:52:56', '管理员');
 INSERT INTO `sys_user` VALUES ('2', '105', '若依', '若依', '00', 'ry@qq.com', '15666666666', '1', '', '$2a$10$824HoRUuGXB3z/.Ei8jVy.LNBinXUc5iZM2alU7zqgWE4RSpFkyuW', '0', '0', '127.0.0.1', '2022-04-22 17:28:20', 'admin', '2021-12-10 14:12:14', 'admin', '2022-07-28 09:57:07', '测试员');
-INSERT INTO `sys_user` VALUES ('3', null, 'maple', 'maple', '00', '', '', '0', '', '$2a$10$bMXck.xcNa2l4Ky6ENiaZuoqQP1MGZkHHAde3J.OrRefx7dMqsmKm', '0', '0', '127.0.0.1', '2024-05-08 23:05:55', '', '2024-05-07 23:38:32', '', '2024-05-08 23:05:54', null);
+INSERT INTO `sys_user` VALUES ('3', null, 'maple', 'maple', '00', '', '', '0', '', '$2a$10$bMXck.xcNa2l4Ky6ENiaZuoqQP1MGZkHHAde3J.OrRefx7dMqsmKm', '0', '0', '127.0.0.1', '2024-05-08 23:24:14', '', '2024-05-07 23:38:32', '', '2024-05-08 23:24:14', null);
 
 -- ----------------------------
 -- Table structure for sys_user_post

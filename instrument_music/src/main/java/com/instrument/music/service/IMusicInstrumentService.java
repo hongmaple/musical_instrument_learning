@@ -59,5 +59,5 @@ public interface IMusicInstrumentService
      */
     public int deleteMusicInstrumentById(Long id);
 
-    List<MusicInstrument> selectMusicInstrumentByIds(List<Long> iIds);
+    List<MusicInstrument> selectMusicInstrumentByIds(List<Long> ids);
 }

@@ -18,6 +18,10 @@
             <groupId>com.instrument</groupId>
             <artifactId>instrument-common</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.instrument</groupId>
+            <artifactId>instrument-framework</artifactId>
+        </dependency>
 
     </dependencies>
 
