@@ -53,9 +53,9 @@ instrument: 管理后台
 
 ## 演示图
 
-不是最新的哈
-[![演示视频](https://i1.hdslb.com/bfs/archive/3e042c552ed002cd36520e37c461352031ad256b.jpg)](https://www.bilibili.com/video/BV1Gf42197vG/)
-
+## 演示视频 
+  不是最新的哈
+ [视频地址](https://www.bilibili.com/video/BV1Gf42197vG/)
 
 ## 完整代码及数据
 ### 提供部署，定制服务，有需要的加v mapleCx331
