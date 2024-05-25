@@ -1,10 +1,10 @@
 <template>
   <div class="app-container">
     <el-form :model="queryParams" ref="queryForm" :inline="true" v-show="showSearch" label-width="68px">
-      <el-form-item label="乐器名" prop="name">
+      <el-form-item label="分类名" prop="name">
         <el-input
           v-model="queryParams.name"
-          placeholder="请输入乐器名"
+          placeholder="请输入分类名"
           clearable
           size="small"
           @keyup.enter.native="handleQuery"
@@ -24,7 +24,7 @@
           icon="el-icon-plus"
           size="mini"
           @click="handleAdd"
-          v-hasPermi="['music:instrument:add']"
+          v-hasPermi="['music:category:add']"
         >新增</el-button>
       </el-col>
       <el-col :span="1.5">
@@ -35,7 +35,7 @@
           size="mini"
           :disabled="single"
           @click="handleUpdate"
-          v-hasPermi="['music:instrument:edit']"
+          v-hasPermi="['music:category:edit']"
         >修改</el-button>
       </el-col>
       <el-col :span="1.5">
@@ -46,7 +46,7 @@
           size="mini"
           :disabled="multiple"
           @click="handleDelete"
-          v-hasPermi="['music:instrument:remove']"
+          v-hasPermi="['music:category:remove']"
         >删除</el-button>
       </el-col>
       <el-col :span="1.5">
@@ -56,15 +56,16 @@
           icon="el-icon-download"
           size="mini"
           @click="handleExport"
-          v-hasPermi="['music:instrument:export']"
+          v-hasPermi="['music:category:export']"
         >导出</el-button>
       </el-col>
       <right-toolbar :showSearch.sync="showSearch" @queryTable="getList"></right-toolbar>
     </el-row>
 
-    <el-table v-loading="loading" :data="instrumentList" @selection-change="handleSelectionChange">
+    <el-table v-loading="loading" :data="categoryList" @selection-change="handleSelectionChange">
       <el-table-column type="selection" width="55" align="center" />
-      <el-table-column label="ID" align="center" prop="id" />
+      <el-table-column label="id" align="center" prop="id" />
+      <el-table-column label="分类名" align="center" prop="name" />
       <el-table-column label="创建者" align="center" prop="createBy" />
       <el-table-column label="创建时间" align="center" prop="createTime" width="180">
         <template slot-scope="scope">
@@ -77,35 +78,21 @@
           <span>{{ parseTime(scope.row.updateTime, '{y}-{m}-{d}') }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="乐器名" align="center" prop="name" />
-<!--      <el-table-column label="介绍内容" align="center" prop="content" />-->
-      <el-table-column label="图片" align="center" prop="url" >
-        <template slot-scope="scope">
-          <ImagePreview :width="100" :height="100" :src="scope.row.url"/>
-        </template>
-      </el-table-column>
-      <el-table-column label="分类" align="center" prop="instrumentCategory.name" />
       <el-table-column label="操作" align="center" class-name="small-padding fixed-width">
         <template slot-scope="scope">
           <el-button
             size="mini"
             type="text"
-            icon="el-icon-download"
-            @click="handleDownload(scope.row)"
-          >下载音频</el-button>
-          <el-button
-            size="mini"
-            type="text"
             icon="el-icon-edit"
             @click="handleUpdate(scope.row)"
-            v-hasPermi="['music:instrument:edit']"
+            v-hasPermi="['music:category:edit']"
           >修改</el-button>
           <el-button
             size="mini"
             type="text"
             icon="el-icon-delete"
             @click="handleDelete(scope.row)"
-            v-hasPermi="['music:instrument:remove']"
+            v-hasPermi="['music:category:remove']"
           >删除</el-button>
         </template>
       </el-table-column>
@@ -119,27 +106,11 @@
       @pagination="getList"
     />
 
-    <!-- 添加或修改乐器对话框 -->
+    <!-- 添加或修改乐器分类对话框 -->
     <el-dialog :title="title" :visible.sync="open" width="500px" append-to-body>
       <el-form ref="form" :model="form" :rules="rules" label-width="80px">
-        <el-form-item label="乐器名" prop="name">
-          <el-input v-model="form.name" placeholder="请输入乐器名" />
-        </el-form-item>
-        <el-form-item label="介绍内容" prop="content">
-          <el-input v-model="form.content" type="textarea" placeholder="请输入内容" />
-        </el-form-item>
-        <el-form-item label="图片">
-          <imageUpload v-model="form.url"/>
-        </el-form-item>
-        <el-form-item label="分类">
-          <el-select v-model="form.categoryId" placeholder="请选择">
-            <el-option
-              v-for="item in categoryList"
-              :key="item.id"
-              :label="item.name"
-              :value="item.id">
-            </el-option>
-          </el-select>
+        <el-form-item label="分类名" prop="name">
+          <el-input v-model="form.name" placeholder="请输入分类名" />
         </el-form-item>
       </el-form>
       <div slot="footer" class="dialog-footer">
@@ -151,11 +122,10 @@
 </template>
 
 <script>
-import { listInstrument, getInstrument, delInstrument, addInstrument, updateInstrument } from "@/api/music/instrument";
-import {listCategory} from "@/api/music/category";
+import { listCategory, getCategory, delCategory, addCategory, updateCategory } from "@/api/music/category";
 
 export default {
-  name: "Instrument",
+  name: "Category",
   data() {
     return {
       // 遮罩层
@@ -170,8 +140,8 @@ export default {
       showSearch: true,
       // 总条数
       total: 0,
-      // 乐器表格数据
-      instrumentList: [],
+      // 乐器分类表格数据
+      categoryList: [],
       // 弹出层标题
       title: "",
       // 是否显示弹出层
@@ -181,35 +151,23 @@ export default {
         pageNum: 1,
         pageSize: 10,
         name: null,
-        content: null
       },
       // 表单参数
       form: {},
       // 表单校验
       rules: {
-        name: [
-          { required: true, message: "乐器名不能为空", trigger: "blur" }
-        ],
-      },
-      categoryList: []
+      }
     };
   },
   created() {
-    const queryParams = {
-      pageNum: 1,
-      pageSize: 9999,
-    }
-    listCategory(queryParams).then(response => {
-      this.categoryList = response.rows;
-    });
     this.getList();
   },
   methods: {
-    /** 查询乐器列表 */
+    /** 查询乐器分类列表 */
     getList() {
       this.loading = true;
-      listInstrument(this.queryParams).then(response => {
-        this.instrumentList = response.rows;
+      listCategory(this.queryParams).then(response => {
+        this.categoryList = response.rows;
         this.total = response.total;
         this.loading = false;
       });
@@ -223,13 +181,11 @@ export default {
     reset() {
       this.form = {
         id: null,
+        name: null,
         createBy: null,
         createTime: null,
         updateBy: null,
-        updateTime: null,
-        name: null,
-        content: null,
-        categoryId: null
+        updateTime: null
       };
       this.resetForm("form");
     },
@@ -253,16 +209,16 @@ export default {
     handleAdd() {
       this.reset();
       this.open = true;
-      this.title = "添加乐器";
+      this.title = "添加乐器分类";
     },
     /** 修改按钮操作 */
     handleUpdate(row) {
       this.reset();
       const id = row.id || this.ids
-      getInstrument(id).then(response => {
+      getCategory(id).then(response => {
         this.form = response.data;
         this.open = true;
-        this.title = "修改乐器";
+        this.title = "修改乐器分类";
       });
     },
     /** 提交按钮 */
@@ -270,13 +226,13 @@ export default {
       this.$refs["form"].validate(valid => {
         if (valid) {
           if (this.form.id != null) {
-            updateInstrument(this.form).then(response => {
+            updateCategory(this.form).then(response => {
               this.$modal.msgSuccess("修改成功");
               this.open = false;
               this.getList();
             });
           } else {
-            addInstrument(this.form).then(response => {
+            addCategory(this.form).then(response => {
               this.$modal.msgSuccess("新增成功");
               this.open = false;
               this.getList();
@@ -288,8 +244,8 @@ export default {
     /** 删除按钮操作 */
     handleDelete(row) {
       const ids = row.id || this.ids;
-      this.$modal.confirm('是否确认删除乐器编号为"' + ids + '"的数据项？').then(function() {
-        return delInstrument(ids);
+      this.$modal.confirm('是否确认删除乐器分类编号为"' + ids + '"的数据项？').then(function() {
+        return delCategory(ids);
       }).then(() => {
         this.getList();
         this.$modal.msgSuccess("删除成功");
@@ -297,21 +253,10 @@ export default {
     },
     /** 导出按钮操作 */
     handleExport() {
-      this.download('music/instrument/export', {
+      this.download('music/category/export', {
         ...this.queryParams
-      }, `instrument_${new Date().getTime()}.xlsx`)
-    },
-    // 文件下载处理
-    handleDownload(row) {
-      var name = row.result;
-      var url = row.url;
-      var suffix = url.substring(url.lastIndexOf("."), url.length);
-      const a = document.createElement('a')
-      a.setAttribute('download', name)
-      a.setAttribute('target', '_blank')
-      a.setAttribute('href', process.env.VUE_APP_BASE_API + url)
-      a.click()
-    },
+      }, `category_${new Date().getTime()}.xlsx`)
+    }
   }
 };
 </script>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper
-PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.instrument.music.mapper.MusicInstrumentMapper">
-    
+
     <resultMap type="MusicInstrument" id="MusicInstrumentResult">
         <result property="id"    column="id"    />
         <result property="createBy"    column="create_by"    />
@@ -12,25 +12,29 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result property="updateTime"    column="update_time"    />
         <result property="name"    column="name"    />
         <result property="content"    column="content"    />
+        <result property="url"    column="url"    />
+        <result property="categoryId"    column="category_id"    />
     </resultMap>
 
     <sql id="selectMusicInstrumentVo">
-        select id, create_by, create_time, update_by, update_time, name, content from music_instrument
+        select id, create_by, create_time, update_by, update_time, name, content, url, category_id from music_instrument
     </sql>
 
     <select id="selectMusicInstrumentList" parameterType="MusicInstrument" resultMap="MusicInstrumentResult">
         <include refid="selectMusicInstrumentVo"/>
-        <where>  
+        <where>
             <if test="name != null  and name != ''"> and name like concat('%', #{name}, '%')</if>
             <if test="content != null  and content != ''"> and content = #{content}</if>
+            <if test="url != null  and url != ''"> and url = #{url}</if>
+            <if test="categoryId != null "> and category_id = #{categoryId}</if>
         </where>
     </select>
-    
+
     <select id="selectMusicInstrumentById" parameterType="Long" resultMap="MusicInstrumentResult">
         <include refid="selectMusicInstrumentVo"/>
         where id = #{id}
     </select>
-    <select id="selectMusicInstrumentByIds" resultType="com.instrument.music.domain.MusicInstrument">
+    <select id="selectMusicInstrumentByIds" resultMap="MusicInstrumentResult">
         <include refid="selectMusicInstrumentVo"/>
         where id in
         <foreach item="id" collection="ids" open="(" separator="," close=")">
@@ -47,7 +51,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="updateTime != null">update_time,</if>
             <if test="name != null and name != ''">name,</if>
             <if test="content != null">content,</if>
-         </trim>
+            <if test="url != null">url,</if>
+            <if test="categoryId != null">category_id,</if>
+        </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
             <if test="createBy != null">#{createBy},</if>
             <if test="createTime != null">#{createTime},</if>
@@ -55,7 +61,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="updateTime != null">#{updateTime},</if>
             <if test="name != null and name != ''">#{name},</if>
             <if test="content != null">#{content},</if>
-         </trim>
+            <if test="url != null">#{url},</if>
+            <if test="categoryId != null">#{categoryId},</if>
+        </trim>
     </insert>
 
     <update id="updateMusicInstrument" parameterType="MusicInstrument">
@@ -67,6 +75,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
             <if test="updateTime != null">update_time = #{updateTime},</if>
             <if test="name != null and name != ''">name = #{name},</if>
             <if test="content != null">content = #{content},</if>
+            <if test="url != null">url = #{url},</if>
+            <if test="categoryId != null">category_id = #{categoryId},</if>
         </trim>
         where id = #{id}
     </update>
@@ -76,7 +86,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </delete>
 
     <delete id="deleteMusicInstrumentByIds" parameterType="String">
-        delete from music_instrument where id in 
+        delete from music_instrument where id in
         <foreach item="id" collection="array" open="(" separator="," close=")">
             #{id}
         </foreach>

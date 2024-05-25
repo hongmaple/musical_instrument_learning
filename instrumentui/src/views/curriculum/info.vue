@@ -34,6 +34,12 @@
               v-hasPermi="['music:myCurriculum:add']"
             >上传练习</el-button>
           </el-col>
+          <el-card shadow="never" class="comments">
+            <div class="header" style="padding-bottom: 10px;">
+              评论
+            </div>
+            <comment></comment>
+          </el-card>
         </el-card>
       </el-col>
 
@@ -58,6 +64,23 @@
       </el-col>
       <el-col :sm="2" class="hidden-xs-only" style="opacity:0;">右侧占位</el-col>
 
+      <!-- 设置底部距离的 -->
+      <el-backtop :bottom="60">
+        <div
+          style="{
+            height: 50px;
+            width: 50px;
+            background-color: rgba(240,239,241,1);
+            box-shadow: 0 0 6px rgba(0,0,0, .12);
+            text-align: center;
+            line-height: 40px;
+            border-radius:2px;
+            color: #1989fa;
+          }"
+        >
+          <svg-icon icon-class="top" />
+        </div>
+      </el-backtop>
     </el-row>
 
     <!-- 添加或修改课程练习对话框 -->
@@ -78,13 +101,20 @@
 </template>
 
 <script>
+//使用prism.js代码高亮
+import '@/views/cms/plugins/prism.js'
+import '@/views/cms/plugins/prism.css'
 import {listCurriculumDetails} from "@/api/music/curriculumDetails";
 import {getCurriculum} from "@/api/music/curriculum";
 import { addMyCurriculum } from "@/api/music/myCurriculum";
 import {addPractice} from "@/api/music/practice";
+import comment from "./components/comment/Ipcomment"
 
 export default {
   name: "CurriculumInfo",
+  components: {
+    comment,
+  },
   data() {
     return {
       // 遮罩层
@@ -118,6 +148,9 @@ export default {
       // 是否显示弹出层
       open: false,
       fileTypes: ['jpg', 'png','txt','doc','docx','xls','xlsx','ppt','zip','pdf','mp4'],
+      commentForm: {
+        content: ''
+      },
     };
   },
   created() {

@@ -27,7 +27,7 @@
             <div @click="getinstrumentInfo(instrument.id)">
               <el-col class="img" :xs="24" :sm="6">
                 <div slot="error" class="image-slot">
-                  <el-image src="/errorImg.jpg" fit="cover" class="blogPic">></el-image>
+                  <el-image :src="instrument.url" fit="cover" class="blogPic">></el-image>
                 </div>
               </el-col>
               <el-col :xs="24" :sm="18"
@@ -47,6 +47,9 @@
                     <div class="blog-date">
                       <i class="el-icon-date"></i>
                       <span> {{ instrument.createTime }}</span>
+                    </div>
+                    <div class="blog-date">
+                      <span>分类 {{ instrument.instrumentCategory.name }}</span>
                     </div>
                   </div>
                 </div>

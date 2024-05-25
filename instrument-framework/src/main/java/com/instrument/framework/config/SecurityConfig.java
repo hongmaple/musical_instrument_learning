@@ -102,7 +102,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter
                 // 首页获取文章信息 允许匿名访问
                 .antMatchers("/cms/blog/cms/**").permitAll()
                 // 首页获取留言,评论信息 允许匿名访问
-                .antMatchers("/cms/message/cms/**","/cms/comment/cms/**").permitAll()
+                .antMatchers("/cms/message/cms/**","/cms/comment/cms/**","/curriculum/comment/curriculum/**").permitAll()
                 .antMatchers(
                         HttpMethod.GET,
                         "/",

@@ -60,5 +60,5 @@ public interface MusicInstrumentMapper
      */
     public int deleteMusicInstrumentByIds(Long[] ids);
 
-    List<MusicInstrument> selectMusicInstrumentByIds(@Param("ids") List<Long> iIds);
+    List<MusicInstrument> selectMusicInstrumentByIds(@Param("ids") List<Long> ids);
 }

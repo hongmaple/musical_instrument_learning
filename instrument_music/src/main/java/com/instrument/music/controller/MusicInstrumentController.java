@@ -1,7 +1,11 @@
 package com.instrument.music.controller;
 
 import java.util.List;
+import java.util.stream.Collectors;
 import javax.servlet.http.HttpServletResponse;
+
+import com.instrument.music.domain.InstrumentCategory;
+import com.instrument.music.service.IInstrumentCategoryService;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,6 +37,8 @@ public class MusicInstrumentController extends BaseController
 {
     @Autowired
     private IMusicInstrumentService musicInstrumentService;
+    @Autowired
+    private IInstrumentCategoryService instrumentCategoryService;
 
     /**
      * 查询乐器列表
@@ -43,6 +49,10 @@ public class MusicInstrumentController extends BaseController
     {
         startPage();
         List<MusicInstrument> list = musicInstrumentService.selectMusicInstrumentList(musicInstrument);
+        List<InstrumentCategory> instrumentCategories = instrumentCategoryService.selectInstrumentCategoryByIds(list.stream().map(MusicInstrument::getCategoryId).collect(Collectors.toList()));
+        list.forEach(m -> m.setInstrumentCategory(instrumentCategories.stream()
+                .filter(i -> i.getId().equals(m.getCategoryId()))
+                .findFirst().orElse(new InstrumentCategory())));
         return getDataTable(list);
     }
 
@@ -55,6 +65,10 @@ public class MusicInstrumentController extends BaseController
     {
         startPage();
         List<MusicInstrument> list = musicInstrumentService.selectMusicInstrumentList(musicInstrument);
+        List<InstrumentCategory> instrumentCategories = instrumentCategoryService.selectInstrumentCategoryByIds(list.stream().map(MusicInstrument::getCategoryId).collect(Collectors.toList()));
+        list.forEach(m -> m.setInstrumentCategory(instrumentCategories.stream()
+                .filter(i -> i.getId().equals(m.getCategoryId()))
+                .findFirst().orElse(new InstrumentCategory())));
         return getDataTable(list);
     }
 
@@ -78,7 +92,9 @@ public class MusicInstrumentController extends BaseController
     @GetMapping(value = "/{id}")
     public AjaxResult getInfo(@PathVariable("id") Long id)
     {
-        return AjaxResult.success(musicInstrumentService.selectMusicInstrumentById(id));
+        MusicInstrument musicInstrument = musicInstrumentService.selectMusicInstrumentById(id);
+        musicInstrument.setInstrumentCategory(instrumentCategoryService.selectInstrumentCategoryById(musicInstrument.getCategoryId()));
+        return AjaxResult.success(musicInstrument);
     }
 
     /**
