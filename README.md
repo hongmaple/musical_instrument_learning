@@ -54,8 +54,14 @@ instrument: 管理后台
 ## 演示图
 
 不是最新的哈
-https://www.bilibili.com/video/BV1Gf42197vG/
 
+<video id="video" controls="" preload="none">
+      <source id="mp4" src="https://www.bilibili.com/video/BV1Gf42197vG/" type="video/mp4">
+</video>
+
+<div>
+<iframe src="//player.bilibili.com/player.html?bvid=BV1Gf42197vG&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+</div>
 
 ## 完整代码及数据
 ### 提供部署，定制服务，有需要的加v mapleCx331
