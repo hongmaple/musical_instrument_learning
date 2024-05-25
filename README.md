@@ -54,7 +54,7 @@ instrument: 管理后台
 ## 演示图
 
 不是最新的哈
-[![演示视频](https://i1.hdslb.com/bfs/archive/3e042c552ed002cd36520e37c461352031ad256b.jpg@320w_200h)](https://www.bilibili.com/video/BV1Gf42197vG/)
+[![演示视频](https://i1.hdslb.com/bfs/archive/3e042c552ed002cd36520e37c461352031ad256b.jpg)](https://www.bilibili.com/video/BV1Gf42197vG/)
 
 
 ## 完整代码及数据
