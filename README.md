@@ -54,7 +54,7 @@ instrument: 管理后台
 ## 演示图
 
 不是最新的哈
-<iframe src="//player.bilibili.com/player.html?bvid=BV1Gf42197vG&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+https://www.bilibili.com/video/BV1Gf42197vG/
 
 
 ## 完整代码及数据
