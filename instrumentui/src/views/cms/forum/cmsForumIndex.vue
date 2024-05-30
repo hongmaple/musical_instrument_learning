@@ -73,9 +73,9 @@
   import {
     cmsListRecommend,
   } from "@/api/cms/blog";
-  import { listForum, getForum } from "@/api/cms/forum";
+  import { homelist } from "@/api/cms/forum";
   export default {
-    name: 'cmsIndex',
+    name: 'cmsForumIndex',
     data() {
       return {
         totalcount: 100,
@@ -158,7 +158,7 @@
         let loadingInstance = Loading.service({
           target: ".left-item"
         });
-        listForum(this.queryParams).then(response => {
+        homelist(this.queryParams).then(response => {
           this.blogList = this.picSrc(response.rows);
           this.total = response.total;
         }).finally(()=>{
@@ -205,11 +205,11 @@
         });
       },
       // 跳转到博客详情页
-      getBlogInfo(blogId) {
+      getBlogInfo(forumId) {
         let routeUrl = this.$router.resolve({
           path: '/cms/main/forum',
           query: {
-            id: blogId
+            id: forumId
           }
         });
         window.open(routeUrl.href, '_blank');

@@ -50,7 +50,7 @@
           <span v-else>登 录 中...</span>
         </el-button>
         <div style="float: right;" v-if="register">
-          <router-link class="link-type" :to="'/cmsRegister'">学生注册</router-link> | 
+          <router-link class="link-type" :to="'/cmsRegister'">学生注册</router-link> |
           <router-link class="link-type" :to="'/teacherRegister'">教师注册</router-link>
         </div>
       </el-form-item>

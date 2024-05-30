@@ -1,12 +1,14 @@
 package com.instrument.cms.forum.controller;
 
 import java.util.List;
+import java.util.Set;
 import javax.servlet.http.HttpServletResponse;
 
 import com.instrument.cms.forum.domain.CmsForum;
 import com.instrument.cms.forum.service.ICmsForumService;
 import com.instrument.common.utils.SecurityUtils;
 import com.instrument.common.utils.poi.ExcelUtil;
+import com.instrument.framework.web.service.SysPermissionService;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,12 +38,32 @@ public class CmsForumController extends BaseController
     @Autowired
     private ICmsForumService cmsForumService;
 
+    @Autowired
+    private SysPermissionService permissionService;
+
     /**
      * 查询论坛列表
      */
     @PreAuthorize("@ss.hasPermi('cms:forum:list')")
     @GetMapping("/list")
     public TableDataInfo list(CmsForum cmsForum)
+    {
+        startPage();
+        // 角色集合
+        Set<String> roles = permissionService.getRolePermission(getLoginUser().getUser());
+        if (!SecurityUtils.isAdmin(getUserId())&&!roles.contains("admin")&&!roles.contains("comAdmin")){
+            cmsForum.setCreateBy(getUsername());
+        }
+        List<CmsForum> list = cmsForumService.selectCmsForumList(cmsForum);
+        return getDataTable(list);
+    }
+
+    /**
+     * 查询首页论坛列表
+     */
+    @PreAuthorize("@ss.hasPermi('cms:forum:homelist')")
+    @GetMapping("/homelist")
+    public TableDataInfo homelist(CmsForum cmsForum)
     {
         startPage();
         List<CmsForum> list = cmsForumService.selectCmsForumList(cmsForum);

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.instrument.cms.forum.comment.mapper.ForumCommentMapper">
+    
+    <resultMap type="ForumComment" id="ForumCommentResult">
+        <result property="id"    column="id"    />
+        <result property="parentId"    column="parent_id"    />
+        <result property="mainId"    column="main_id"    />
+        <result property="likeNum"    column="like_num"    />
+        <result property="content"    column="content"    />
+        <result property="type"    column="type"    />
+        <result property="forumId"    column="forum_id"    />
+        <result property="delFlag"    column="del_flag"    />
+        <result property="userId"    column="user_id"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+    </resultMap>
+
+    <sql id="selectCmsCommentVo">
+        select id, parent_id, main_id, like_num, content, type, forum_id, del_flag, user_id, create_by, create_time, update_by, update_time from forum_comment
+    </sql>
+
+    <select id="selectForumCommentList" parameterType="CmsComment" resultMap="ForumCommentResult">
+        select c.id, c.parent_id, c.main_id, c.like_num, c.content, c.type, c.forum_id, c.del_flag, c.user_id, c.create_by, c.create_time, c.update_by, c.update_time from forum_comment c LEFT JOIN cms_forum b ON c.forum_id = b.id
+        <where>  
+            <if test="parentId != null "> and c.parent_id = #{parentId}</if>
+            <if test="mainId != null "> and c.main_id = #{mainId}</if>
+            <if test="likeNum != null "> and c.like_num = #{likeNum}</if>
+            <if test="content != null  and content != ''"> and c.content like concat('%', #{content}, '%')</if>
+            <if test="type != null  and type != ''"> and c.type = #{type}</if>
+            <if test="forumId != null "> and c.forum_id = #{forumId}</if>
+            <if test="userId != null "> and c.user_id = #{userId}</if>
+            <if test="delFlag != null  and delFlag != ''"> and c.del_flag = #{delFlag}</if>
+            <if test="createBy != null  and createBy != ''"> and c.create_by = #{createBy}</if>
+            <if test="forumTitle != null  and forumTitle != ''">
+                and b.title like concat('%', #{forumTitle}, '%')
+            </if>
+        </where>
+        ORDER BY c.create_time DESC
+    </select>
+    
+    <select id="selectForumCommentById" parameterType="Long" resultMap="ForumCommentResult">
+        <include refid="selectCmsCommentVo"/>
+        where id = #{id}
+    </select>
+    <select id="selectChildCommentList" parameterType="CmsComment" resultMap="ForumCommentResult">
+        <include refid="selectCmsCommentVo"/>
+        <where>
+            <if test="parentId != null "> and parent_id = #{parentId}</if>
+            <if test="mainId != null "> and main_id = #{mainId}</if>
+            <if test="likeNum != null "> and like_num = #{likeNum}</if>
+            <if test="content != null  and content != ''"> and content like concat('%', #{content}, '%')</if>
+            <if test="type != null  and type != ''"> and type = #{type}</if>
+            <if test="forumId != null "> and forum_id = #{forumId}</if>
+            <if test="userId != null "> and user_id = #{userId}</if>
+            <if test="delFlag != null  and delFlag != ''"> and del_flag = #{delFlag}</if>
+            <if test="createBy != null  and createBy != ''"> and create_by = #{createBy}</if>
+        </where>
+        ORDER BY create_time ASC
+    </select>
+    <select id="selectForumCommentListBetweenCreateTime" resultType="com.instrument.cms.forum.comment.domain.ForumComment">
+        <include refid="selectCmsCommentVo"/>
+        <where>
+            <if test="type != null  and type != ''"> and type = #{type}</if>
+            <if test="delFlag != null  and delFlag != ''"> and del_flag = #{delFlag}</if>
+            <if test="createTimeBegin != null  and createTimeBegin != ''"> and create_time >= #{createTimeBegin}</if>
+            <if test="createTimeEnd != null  and createTimeEnd != ''"> and create_time &lt;= #{createTimeEnd}</if>
+        </where>
+    </select>
+
+    <insert id="insertForumComment" parameterType="CmsComment" useGeneratedKeys="true" keyProperty="id">
+        insert into forum_comment
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="parentId != null">parent_id,</if>
+            <if test="mainId != null">main_id,</if>
+            <if test="likeNum != null">like_num,</if>
+            <if test="content != null">content,</if>
+            <if test="type != null">type,</if>
+            <if test="forumId != null">forum_id,</if>
+            <if test="delFlag != null">del_flag,</if>
+            <if test="userId != null">user_id,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="parentId != null">#{parentId},</if>
+            <if test="mainId != null">#{mainId},</if>
+            <if test="likeNum != null">#{likeNum},</if>
+            <if test="content != null">#{content},</if>
+            <if test="type != null">#{type},</if>
+            <if test="forumId != null">#{forumId},</if>
+            <if test="delFlag != null">#{delFlag},</if>
+            <if test="userId != null">#{userId},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+         </trim>
+    </insert>
+
+    <update id="updateForumComment" parameterType="CmsComment">
+        update forum_comment
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="parentId != null">parent_id = #{parentId},</if>
+            <if test="mainId != null">main_id = #{mainId},</if>
+            <if test="likeNum != null">like_num = #{likeNum},</if>
+            <if test="content != null">content = #{content},</if>
+            <if test="type != null">type = #{type},</if>
+            <if test="forumId != null">forum_id = #{forumId},</if>
+            <if test="delFlag != null">del_flag = #{delFlag},</if>
+            <if test="userId != null">user_id = #{userId},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+    <update id="updateDelFlagById" parameterType="Long">
+        Update forum_comment Set del_flag = '1' where id = #{id}
+    </update>
+    <update id="updateDelFlagByIds" parameterType="Long">
+        Update forum_comment Set del_flag = '1' where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+
+    <delete id="deleteForumCommentById" parameterType="Long">
+        delete from forum_comment where id = #{id}
+    </delete>
+
+    <delete id="deleteForumCommentByIds" parameterType="String">
+        delete from forum_comment where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

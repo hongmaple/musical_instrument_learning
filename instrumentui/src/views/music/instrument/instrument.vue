@@ -24,21 +24,17 @@
           <el-row type="flex" align="middle" style="flex-wrap: wrap" :gutter="20" v-for="instrument in instrumentList"
                   :key="instrument.id"
                   shadow="never" class="blog-content">
-            <div @click="getinstrumentInfo(instrument.id)">
+            <div @click="getInstrumentInfo(instrument.id)">
               <el-col class="img" :xs="24" :sm="6">
-                <div slot="error" class="image-slot">
-                  <el-image :src="instrument.url" fit="cover" class="blogPic">></el-image>
-                </div>
+                <ImagePreview :width="120" :height="120" :src="instrument.url"/>
               </el-col>
-              <el-col :xs="24" :sm="18"
-                      style="padding-left: 10px;padding-right: 10px;margin-bottom: 5px;margin-top: -5px;">
+              <el-col :xs="24" :sm="15"
+                      style="padding-left: 10px;padding-right: 260px;margin-bottom: 5px;margin-top: -5px;">
                 <div>
                   <h3>
                     {{ instrument.name }}
                   </h3>
-                  <div style="margin-bottom: 10px;">
-                    <span style="color: rgba(0, 0, 0, .4);"> {{ instrument.content }}</span>
-                  </div>
+                  <span style="color: rgba(0, 0, 0, .4);">分类 {{ instrument.instrumentCategory.name }}</span>
                   <div class="blog-info">
                     <div class="user-info">
                       <i class="el-icon-user"></i>
@@ -47,9 +43,6 @@
                     <div class="blog-date">
                       <i class="el-icon-date"></i>
                       <span> {{ instrument.createTime }}</span>
-                    </div>
-                    <div class="blog-date">
-                      <span>分类 {{ instrument.instrumentCategory.name }}</span>
                     </div>
                   </div>
                 </div>
@@ -115,11 +108,11 @@ export default {
       this.handleQuery();
     },
     //跳转详情页
-    getCurriculumInfo(id) {
+    getInstrumentInfo(id) {
       let routeUrl = this.$router.resolve({
-        path: '/curriculum/main/info',
+        path: '/curriculum/main/instrumentInfo',
         query: {
-          cId: id
+          id: id
         }
       });
       window.open(routeUrl.href, '_blank');

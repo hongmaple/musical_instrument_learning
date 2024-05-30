@@ -46,7 +46,7 @@
                       style="padding-left: 10px;padding-right: 10px;margin-bottom: 5px;margin-top: -5px;">
                 <div>
                   <h3>
-                    <svg-icon icon-class="Topping" v-show="curriculum.top==1"/>
+                    <svg-icon icon-class="Topping" v-show="curriculum.top===1"/>
                     {{ curriculum.title }}
                   </h3>
                   <div style="margin-bottom: 10px;">

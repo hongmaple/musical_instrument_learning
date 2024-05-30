@@ -1,6 +1,15 @@
 import request from '@/utils/request'
 
 // 查询论坛列表
+export function homelist(query) {
+  return request({
+    url: '/cms/forum/homelist',
+    method: 'get',
+    params: query
+  })
+}
+
+// 查询论坛列表
 export function listForum(query) {
   return request({
     url: '/cms/forum/list',

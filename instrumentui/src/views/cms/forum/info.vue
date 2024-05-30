@@ -49,7 +49,7 @@
             <li>发表时间 {{blog.createTime}}</li>
           </ul>
         </div>
-        <el-card shadow="never" class="comments" style="display: none">
+        <el-card shadow="never" class="comments">
           <div class="header" style="padding-bottom: 10px;">
             评论
           </div>
@@ -84,11 +84,7 @@
 //使用prism.js代码高亮
 import '@/views/cms/plugins/prism.js'
 import '@/views/cms/plugins/prism.css'
-import comment from "./comment/Ipcomment"
-import {
-    getBlogDetail,
-    addBlogViews,
-  } from "@/api/cms/blog";
+import comment from "@/views/cms/forum/comment/ForumIpcomment"
 import {getForum } from "@/api/cms/forum";
 import {mapState} from 'vuex'
 import CherryMarkdown from '@/components/CherryMarkdown'
@@ -121,7 +117,7 @@ export default {
     ])
   },
   methods: {
-    // 获取博客详情信息
+    // 获取论坛详情信息
     async getBlogInfomation() {
       // 增加阅读量
       //addBlogViews(this.$route.query.id);

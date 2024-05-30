@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.instrument.cms.comment.mapper.CmsCommentLikeMapper">
+<mapper namespace="com.instrument.cms.forum.comment.mapper.ForumCommentLikeMapper">
     <resultMap type="CmsCommentLike" id="commentLikeResult">
         <result property="createBy"    column="create_by"    />
         <result property="createTime"    column="create_time"    />
@@ -11,10 +11,10 @@
     </resultMap>
 
     <sql id="selectCmsMessageLikeVo">
-        select create_by, create_time, update_by, update_time, comment_id, user_id from cms_comment_like
+        select create_by, create_time, update_by, update_time, comment_id, user_id from forum_comment_like
     </sql>
 
-    <select id="selectCmsCommentLikeList" parameterType="CmsCommentLike" resultMap="commentLikeResult">
+    <select id="selectForumCommentLikeList" parameterType="CmsCommentLike" resultMap="commentLikeResult">
         <include refid="selectCmsMessageLikeVo"/>
         <where>
             <if test="commentId != null"> and comment_id = #{commentId}</if>
@@ -22,8 +22,8 @@
         </where>
     </select>
 
-    <insert id="addCmsCommentLike" parameterType="CmsCommentLike">
-        insert into cms_comment_like
+    <insert id="addForumCommentLike" parameterType="CmsCommentLike">
+        insert into forum_comment_like
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="createBy != null">create_by,</if>
             <if test="createTime != null">create_time,</if>
@@ -42,8 +42,8 @@
         </trim>
     </insert>
 
-    <delete id="deleteCmsCommentLike" parameterType="CmsCommentLike">
-        delete from cms_comment_like
+    <delete id="deleteForumCommentLike" parameterType="CmsCommentLike">
+        delete from forum_comment_like
         <where>
             <if test="commentId != null"> and comment_id = #{commentId}</if>
             <if test="userId != null"> and user_id = #{userId}</if>

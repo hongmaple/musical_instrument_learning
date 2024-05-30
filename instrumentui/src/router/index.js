@@ -57,7 +57,7 @@ export const constantRoutes = [{
           },
           {
             path: 'cmsForumIndex',
-            component: (resolve) => require(['@/views/cms/components/cmsForumIndex'], resolve),
+            component: (resolve) => require(['@/views/cms/forum/cmsForumIndex'], resolve),
             name: 'cmsForumIndex',
             meta: {
               title: '论坛',
@@ -89,10 +89,10 @@ export const constantRoutes = [{
           },
           {
             path: 'forum',
-            component: (resolve) => require(['@/views/cms/components/forum'], resolve),
+            component: (resolve) => require(['@/views/cms/forum/info'], resolve),
             name: 'forum',
             meta: {
-              title: '博客详情',
+              title: '论坛详情',
             }
           }
         ]
@@ -128,6 +128,11 @@ export const constantRoutes = [{
   {
     path: '/register',
     component: (resolve) => require(['@/views/register'], resolve),
+    hidden: true
+  },
+  {
+    path: '/teacherRegister',
+    component: (resolve) => require(['@/views/teacherRegister'], resolve),
     hidden: true
   },
   {
@@ -278,7 +283,7 @@ export const constantRoutes = [{
             component: (resolve) => require(['@/views/curriculum/info'], resolve),
             name: 'info',
             meta: {
-              title: '课程列表'
+              title: '课程详情'
             }
           },
           {
@@ -304,7 +309,15 @@ export const constantRoutes = [{
             meta: {
               title: '乐器识别'
             }
-          }
+          },
+          {
+            path: 'instrumentInfo',
+            component: (resolve) => require(['@/views/music/instrument/instrumentInfo'], resolve),
+            name: 'instrumentInfo',
+            meta: {
+              title: '乐器详情'
+            }
+          },
         ]
       }
     ]

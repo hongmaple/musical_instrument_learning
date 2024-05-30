@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50744
 File Encoding         : 65001
 
-Date: 2024-05-15 02:44:56
+Date: 2024-05-31 01:13:03
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -314,6 +314,52 @@ CREATE TABLE `curriculum_comment_like` (
 -- ----------------------------
 
 -- ----------------------------
+-- Table structure for forum_comment
+-- ----------------------------
+DROP TABLE IF EXISTS `forum_comment`;
+CREATE TABLE `forum_comment` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'ID',
+  `parent_id` bigint(20) DEFAULT NULL COMMENT '父评论id',
+  `main_id` bigint(20) DEFAULT NULL COMMENT '主评论id(第一级评论)',
+  `like_num` int(11) DEFAULT NULL COMMENT '点赞数量',
+  `content` varchar(255) DEFAULT NULL COMMENT '内容',
+  `type` char(1) DEFAULT NULL COMMENT '评论类型：对人评论，对项目评论，对资源评论',
+  `forum_id` bigint(20) DEFAULT NULL COMMENT '被评论者id，可以是人、项目、资源',
+  `del_flag` char(1) DEFAULT '0' COMMENT '删除标志（0代表存在 1代表删除）',
+  `user_id` bigint(20) DEFAULT NULL COMMENT '评论者id',
+  `create_by` varchar(64) DEFAULT '' COMMENT '创建者',
+  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+  `update_by` varchar(64) DEFAULT '' COMMENT '更新者',
+  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='评论表';
+
+-- ----------------------------
+-- Records of forum_comment
+-- ----------------------------
+INSERT INTO `forum_comment` VALUES ('5', null, null, '1', '测试', '0', '2', '0', '1', 'admin', '2024-05-31 00:16:24', '', null);
+INSERT INTO `forum_comment` VALUES ('6', '5', '5', null, '啊啊啊', '1', '2', '0', '1', 'admin', '2024-05-31 00:16:30', '', null);
+
+-- ----------------------------
+-- Table structure for forum_comment_like
+-- ----------------------------
+DROP TABLE IF EXISTS `forum_comment_like`;
+CREATE TABLE `forum_comment_like` (
+  `comment_id` bigint(20) NOT NULL COMMENT '点赞评论ID',
+  `user_id` bigint(20) NOT NULL COMMENT '用户ID',
+  `create_by` varchar(64) DEFAULT '' COMMENT '创建者',
+  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
+  `update_by` varchar(64) DEFAULT '' COMMENT '更新者',
+  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
+  PRIMARY KEY (`comment_id`,`user_id`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='留言点赞表';
+
+-- ----------------------------
+-- Records of forum_comment_like
+-- ----------------------------
+INSERT INTO `forum_comment_like` VALUES ('5', '1', 'admin', null, '', null);
+
+-- ----------------------------
 -- Table structure for gen_table
 -- ----------------------------
 DROP TABLE IF EXISTS `gen_table`;
@@ -571,7 +617,7 @@ CREATE TABLE `mall_order_detail` (
   `image` varchar(128) DEFAULT '' COMMENT '商品图片',
   PRIMARY KEY (`id`) USING BTREE,
   KEY `key_order_id` (`order_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=155 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='订单详情表';
+) ENGINE=InnoDB AUTO_INCREMENT=154 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='订单详情表';
 
 -- ----------------------------
 -- Records of mall_order_detail
@@ -1006,7 +1052,7 @@ CREATE TABLE `sys_logininfor` (
   `msg` varchar(255) DEFAULT '' COMMENT '提示消息',
   `login_time` datetime DEFAULT NULL COMMENT '访问时间',
   PRIMARY KEY (`info_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=201 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统访问记录';
+) ENGINE=InnoDB AUTO_INCREMENT=245 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='系统访问记录';
 
 -- ----------------------------
 -- Records of sys_logininfor
@@ -1211,6 +1257,50 @@ INSERT INTO `sys_logininfor` VALUES ('197', 'admin', '127.0.0.1', '内网IP', 'C
 INSERT INTO `sys_logininfor` VALUES ('198', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '登录成功', '2024-05-14 16:43:18');
 INSERT INTO `sys_logininfor` VALUES ('199', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '退出成功', '2024-05-14 23:52:22');
 INSERT INTO `sys_logininfor` VALUES ('200', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '登录成功', '2024-05-14 23:52:56');
+INSERT INTO `sys_logininfor` VALUES ('201', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '登录成功', '2024-05-26 22:07:45');
+INSERT INTO `sys_logininfor` VALUES ('202', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '退出成功', '2024-05-26 22:44:21');
+INSERT INTO `sys_logininfor` VALUES ('203', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '登录成功', '2024-05-26 23:19:36');
+INSERT INTO `sys_logininfor` VALUES ('204', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '登录成功', '2024-05-26 23:20:02');
+INSERT INTO `sys_logininfor` VALUES ('205', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '退出成功', '2024-05-26 23:30:35');
+INSERT INTO `sys_logininfor` VALUES ('206', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '登录成功', '2024-05-26 23:52:28');
+INSERT INTO `sys_logininfor` VALUES ('207', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '退出成功', '2024-05-26 23:59:55');
+INSERT INTO `sys_logininfor` VALUES ('208', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '登录成功', '2024-05-27 00:00:04');
+INSERT INTO `sys_logininfor` VALUES ('209', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '退出成功', '2024-05-27 00:18:24');
+INSERT INTO `sys_logininfor` VALUES ('210', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '登录成功', '2024-05-30 22:23:30');
+INSERT INTO `sys_logininfor` VALUES ('211', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '退出成功', '2024-05-30 22:26:57');
+INSERT INTO `sys_logininfor` VALUES ('212', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '登录成功', '2024-05-30 22:27:05');
+INSERT INTO `sys_logininfor` VALUES ('213', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '退出成功', '2024-05-30 22:35:24');
+INSERT INTO `sys_logininfor` VALUES ('214', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '登录成功', '2024-05-30 22:35:28');
+INSERT INTO `sys_logininfor` VALUES ('215', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '退出成功', '2024-05-30 22:35:45');
+INSERT INTO `sys_logininfor` VALUES ('216', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '登录成功', '2024-05-30 22:35:52');
+INSERT INTO `sys_logininfor` VALUES ('217', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '1', '验证码错误', '2024-05-30 22:37:39');
+INSERT INTO `sys_logininfor` VALUES ('218', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '登录成功', '2024-05-30 22:37:43');
+INSERT INTO `sys_logininfor` VALUES ('219', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '退出成功', '2024-05-30 22:50:18');
+INSERT INTO `sys_logininfor` VALUES ('220', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '登录成功', '2024-05-30 22:50:27');
+INSERT INTO `sys_logininfor` VALUES ('221', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '退出成功', '2024-05-31 00:34:11');
+INSERT INTO `sys_logininfor` VALUES ('222', 'jiaoshi1', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '1', '验证码错误', '2024-05-31 00:34:43');
+INSERT INTO `sys_logininfor` VALUES ('223', 'jiaoshi1', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '1', '登录用户：jiaoshi1 不存在', '2024-05-31 00:34:47');
+INSERT INTO `sys_logininfor` VALUES ('224', 'jiaoshi1', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '注册成功', '2024-05-31 00:38:39');
+INSERT INTO `sys_logininfor` VALUES ('225', 'jiaoshi1', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '登录成功', '2024-05-31 00:38:50');
+INSERT INTO `sys_logininfor` VALUES ('226', 'jiaoshi1', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '退出成功', '2024-05-31 00:45:36');
+INSERT INTO `sys_logininfor` VALUES ('227', 'jiaoshi1', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '注册成功', '2024-05-31 00:50:39');
+INSERT INTO `sys_logininfor` VALUES ('228', 'jiaoshi1', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '登录成功', '2024-05-31 00:50:48');
+INSERT INTO `sys_logininfor` VALUES ('229', 'jiaoshi1', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '退出成功', '2024-05-31 00:53:18');
+INSERT INTO `sys_logininfor` VALUES ('230', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '1', '用户不存在/密码错误', '2024-05-31 00:53:32');
+INSERT INTO `sys_logininfor` VALUES ('231', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '1', '用户不存在/密码错误', '2024-05-31 00:53:36');
+INSERT INTO `sys_logininfor` VALUES ('232', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '登录成功', '2024-05-31 00:53:45');
+INSERT INTO `sys_logininfor` VALUES ('233', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '退出成功', '2024-05-31 00:56:24');
+INSERT INTO `sys_logininfor` VALUES ('234', 'jiaoshi1', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '1', '验证码错误', '2024-05-31 00:56:39');
+INSERT INTO `sys_logininfor` VALUES ('235', 'jiaoshi1', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '登录成功', '2024-05-31 00:56:44');
+INSERT INTO `sys_logininfor` VALUES ('236', 'jiaoshi1', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '退出成功', '2024-05-31 01:06:31');
+INSERT INTO `sys_logininfor` VALUES ('237', 'jiaoshi1', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '登录成功', '2024-05-31 01:06:37');
+INSERT INTO `sys_logininfor` VALUES ('238', 'jiaoshi1', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '退出成功', '2024-05-31 01:07:12');
+INSERT INTO `sys_logininfor` VALUES ('239', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '登录成功', '2024-05-31 01:07:32');
+INSERT INTO `sys_logininfor` VALUES ('240', 'admin', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '退出成功', '2024-05-31 01:11:01');
+INSERT INTO `sys_logininfor` VALUES ('241', 'jiaoshi', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '1', '登录用户：jiaoshi 不存在', '2024-05-31 01:11:14');
+INSERT INTO `sys_logininfor` VALUES ('242', 'jiaoshi1', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '1', '验证码错误', '2024-05-31 01:11:18');
+INSERT INTO `sys_logininfor` VALUES ('243', 'jiaoshi1', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '登录成功', '2024-05-31 01:11:22');
+INSERT INTO `sys_logininfor` VALUES ('244', 'jiaoshi1', '127.0.0.1', '内网IP', 'Chrome 12', 'Windows 10', '0', '退出成功', '2024-05-31 01:11:49');
 
 -- ----------------------------
 -- Table structure for sys_menu
@@ -1237,7 +1327,7 @@ CREATE TABLE `sys_menu` (
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `remark` varchar(500) DEFAULT '' COMMENT '备注',
   PRIMARY KEY (`menu_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2179 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='菜单权限表';
+) ENGINE=InnoDB AUTO_INCREMENT=2186 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='菜单权限表';
 
 -- ----------------------------
 -- Records of sys_menu
@@ -1245,7 +1335,7 @@ CREATE TABLE `sys_menu` (
 INSERT INTO `sys_menu` VALUES ('1', '系统管理', '0', '1', 'system', null, '', '1', '0', 'M', '0', '0', '', 'system', 'admin', '2021-12-10 14:12:14', '', null, '系统管理目录');
 INSERT INTO `sys_menu` VALUES ('2', '系统监控', '0', '2', 'monitor', null, '', '1', '0', 'M', '0', '1', '', 'monitor', 'admin', '2021-12-10 14:12:14', 'admin', '2024-05-11 11:03:30', '系统监控目录');
 INSERT INTO `sys_menu` VALUES ('3', '系统工具', '0', '3', 'tool', null, '', '1', '0', 'M', '0', '0', '', 'tool', 'admin', '2021-12-10 14:12:14', 'admin', '2024-05-14 16:45:03', '系统工具目录');
-INSERT INTO `sys_menu` VALUES ('100', '用户管理', '0', '3', 'user', 'system/user/index', '', '1', '0', 'C', '0', '0', 'system:user:list', 'user', 'admin', '2021-12-10 14:12:14', 'admin', '2024-05-11 10:45:54', '用户管理菜单');
+INSERT INTO `sys_menu` VALUES ('100', '用户管理', '0', '3', 'userList', 'system/user/index', '', '1', '0', 'C', '0', '0', 'system:user:list', 'user', 'admin', '2021-12-10 14:12:14', 'admin', '2024-05-27 00:17:29', '用户管理菜单');
 INSERT INTO `sys_menu` VALUES ('101', '角色管理', '0', '4', 'role', 'system/role/index', '', '1', '0', 'C', '0', '0', 'system:role:list', 'peoples', 'admin', '2021-12-10 14:12:14', 'admin', '2024-05-11 10:46:03', '角色管理菜单');
 INSERT INTO `sys_menu` VALUES ('102', '菜单管理', '1', '5', 'menu', 'system/menu/index', '', '1', '0', 'C', '0', '0', 'system:menu:list', 'tree-table', 'admin', '2021-12-10 14:12:14', 'admin', '2021-12-10 15:44:17', '菜单管理菜单');
 INSERT INTO `sys_menu` VALUES ('103', '部门管理', '1', '1', 'dept', 'system/dept/index', '', '1', '0', 'C', '1', '1', 'system:dept:list', 'tree', 'admin', '2021-12-10 14:12:14', 'admin', '2024-05-11 09:55:28', '部门管理菜单');
@@ -1465,12 +1555,19 @@ INSERT INTO `sys_menu` VALUES ('2169', '乐器分类新增', '2167', '2', '#', '
 INSERT INTO `sys_menu` VALUES ('2170', '乐器分类修改', '2167', '3', '#', '', null, '1', '0', 'F', '0', '0', 'music:category:edit', '#', 'admin', '2024-05-14 23:30:00', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2171', '乐器分类删除', '2167', '4', '#', '', null, '1', '0', 'F', '0', '0', 'music:category:remove', '#', 'admin', '2024-05-14 23:30:00', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2172', '乐器分类导出', '2167', '5', '#', '', null, '1', '0', 'F', '0', '0', 'music:category:export', '#', 'admin', '2024-05-14 23:30:00', '', null, '');
-INSERT INTO `sys_menu` VALUES ('2173', '评论管理', '2075', '7', 'comment', 'curriculum/comment/index', null, '1', '0', 'C', '0', '0', 'curriculum:comment:list', '#', 'admin', '2022-01-21 10:27:25', 'admin', '2022-01-21 10:28:24', '评论管理菜单');
+INSERT INTO `sys_menu` VALUES ('2173', '评论管理', '2075', '7', 'curriculumComment', 'curriculum/comment/index', null, '1', '0', 'C', '0', '0', 'curriculum:comment:list', '#', 'admin', '2022-01-21 10:27:25', 'admin', '2022-01-21 10:28:24', '评论管理菜单');
 INSERT INTO `sys_menu` VALUES ('2174', '评论管理查询', '2173', '1', '#', '', null, '1', '0', 'F', '0', '0', 'curriculum:comment:query', '#', 'admin', '2022-01-21 10:27:25', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2175', '评论管理新增', '2173', '2', '#', '', null, '1', '0', 'F', '0', '0', 'curriculum:comment:add', '#', 'admin', '2022-01-21 10:27:25', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2176', '评论管理修改', '2173', '3', '#', '', null, '1', '0', 'F', '0', '0', 'curriculum:comment:edit', '#', 'admin', '2022-01-21 10:27:25', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2177', '评论管理删除', '2173', '4', '#', '', null, '1', '0', 'F', '0', '0', 'curriculum:comment:remove', '#', 'admin', '2022-01-21 10:27:25', '', null, '');
 INSERT INTO `sys_menu` VALUES ('2178', '评论管理导出', '2173', '5', '#', '', null, '1', '0', 'F', '0', '0', 'curriculum:comment:export', '#', 'admin', '2022-01-21 10:27:25', '', null, '');
+INSERT INTO `sys_menu` VALUES ('2179', '论坛评论管理', '2150', '7', 'forumComment', 'cms/forum/comment/index', null, '1', '0', 'C', '0', '0', 'forum:comment:list', '#', 'admin', '2022-01-21 10:27:25', 'admin', '2024-05-30 22:41:32', '评论管理菜单');
+INSERT INTO `sys_menu` VALUES ('2180', '论坛评论管理查询', '2179', '1', '#', '', null, '1', '0', 'F', '0', '0', 'forum:comment:query', '#', 'admin', '2022-01-21 10:27:25', '', null, '');
+INSERT INTO `sys_menu` VALUES ('2181', '论坛评论管理新增', '2179', '2', '#', '', null, '1', '0', 'F', '0', '0', 'forum:comment:add', '#', 'admin', '2022-01-21 10:27:25', '', null, '');
+INSERT INTO `sys_menu` VALUES ('2182', '论坛评论管理修改', '2179', '3', '#', '', null, '1', '0', 'F', '0', '0', 'forum:comment:edit', '#', 'admin', '2022-01-21 10:27:25', '', null, '');
+INSERT INTO `sys_menu` VALUES ('2183', '论坛评论管理删除', '2179', '4', '#', '', null, '1', '0', 'F', '0', '0', 'forum:comment:remove', '#', 'admin', '2022-01-21 10:27:25', '', null, '');
+INSERT INTO `sys_menu` VALUES ('2184', '论坛评论管理导出', '2179', '5', '#', '', null, '1', '0', 'F', '0', '0', 'forum:comment:export', '#', 'admin', '2022-01-21 10:27:25', '', null, '');
+INSERT INTO `sys_menu` VALUES ('2185', '首页论坛', '0', '9', 'cmsForumIndex', 'cms/forum/cmsForumIndex', null, '1', '0', 'C', '0', '0', 'cms:forum:homelist', '#', 'admin', '2024-05-30 22:46:36', 'admin', '2024-05-31 01:07:59', '');
 
 -- ----------------------------
 -- Table structure for sys_notice
@@ -1532,7 +1629,7 @@ CREATE TABLE `sys_oper_log` (
   `error_msg` varchar(2000) DEFAULT '' COMMENT '错误消息',
   `oper_time` datetime DEFAULT NULL COMMENT '操作时间',
   PRIMARY KEY (`oper_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=454 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='操作日志记录';
+) ENGINE=InnoDB AUTO_INCREMENT=468 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='操作日志记录';
 
 -- ----------------------------
 -- Records of sys_oper_log
@@ -1990,6 +2087,20 @@ INSERT INTO `sys_oper_log` VALUES ('450', '乐器', '2', 'com.instrument.music.c
 INSERT INTO `sys_oper_log` VALUES ('451', '角色管理', '2', 'com.instrument.web.controller.system.SysRoleController.edit()', 'PUT', '1', 'admin', null, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":5,\"admin\":false,\"dataScope\":\"1\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"0\",\"deptCheckStrictly\":true,\"createTime\":1715398271000,\"updateBy\":\"admin\",\"menuCheckStrictly\":true,\"roleKey\":\"comAdmin\",\"roleName\":\"普通管理员\",\"menuIds\":[2138,2007,2075,2166,2074,2137,2139,2032,2033,2034,2035,2036,2037,2056,2057,2058,2059,2060,2061,2050,2051,2052,2053,2054,2055,2068,2069,2070,2071,2072,2073,2026,2027,2028,2029,2030,2031,100,1001,1002,1003,1004,1005,1006,1007,101,1008,1009,1010,1011,1012,2076,2077,2078,2079,2080,2081,2082,2083,2084,2085,2086,2087,2146,2147,2145,2148,2106,2107,2108,2109,2110,2111,2100,2101,2102,2103,2104,2105,2112,2113,2114,2115,2116,2117,2118,2123,2144,2150,2088,2089,2090,2091,2092,2093,2038,2039,2040,2041,2042,2043,2149,2152,2062,2063,2064,2065,2066,2067,107,1036,1037,1038,1039,2132],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-15 02:38:46');
 INSERT INTO `sys_oper_log` VALUES ('452', '角色管理', '2', 'com.instrument.web.controller.system.SysRoleController.edit()', 'PUT', '1', 'admin', null, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":4,\"admin\":false,\"dataScope\":\"1\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"0\",\"deptCheckStrictly\":true,\"createTime\":1714226890000,\"updateBy\":\"admin\",\"menuCheckStrictly\":true,\"roleKey\":\"customer\",\"roleName\":\"学生\",\"menuIds\":[1,2075,2076,2074,2112,2124,2154,2156,2157,2158,2159,2160,2155,2161,2162,2163,2164,2165,2138,2139,2140,2141,2142,2143,2007,2077,2125,2126,2127,2128,2129,2130,2146,2147,2173,2174,2175,2176,2177,2178,2145,2148,2113,2114,2144,2120,2149,2137,2132,2133,2134,2135],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-15 02:39:35');
 INSERT INTO `sys_oper_log` VALUES ('453', '角色管理', '2', 'com.instrument.web.controller.system.SysRoleController.edit()', 'PUT', '1', 'admin', null, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":2,\"admin\":false,\"remark\":\"普通角色\",\"dataScope\":\"2\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"2\",\"deptCheckStrictly\":true,\"createTime\":1639116734000,\"updateBy\":\"admin\",\"menuCheckStrictly\":true,\"roleKey\":\"teacher\",\"roleName\":\"教师\",\"menuIds\":[1,2075,2074,2137,2154,2156,2157,2158,2159,2160,2155,2161,2162,2163,2164,2165,2131,2153,2136,2076,2077,2078,2079,2080,2081,2082,2083,2084,2085,2086,2087,2146,2147,2173,2174,2175,2176,2177,2178,2145,2148,2112,2113,2114,2115,2116,2117,2118,2123,2144,2124,2119,2120,2121,2122,2149,2152,2062,2063,2064,2065,2066,2067,107,1036,1037,1038,1039,2132],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-15 02:41:13');
+INSERT INTO `sys_oper_log` VALUES ('454', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"query\":\"\",\"icon\":\"user\",\"orderNum\":\"3\",\"menuName\":\"用户管理\",\"params\":{},\"parentId\":0,\"isCache\":\"0\",\"path\":\"userList\",\"component\":\"system/user/index\",\"children\":[],\"createTime\":1639116734000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":100,\"menuType\":\"C\",\"perms\":\"system:user:list\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-27 00:17:29');
+INSERT INTO `sys_oper_log` VALUES ('455', '角色管理', '2', 'com.instrument.web.controller.system.SysRoleController.edit()', 'PUT', '1', 'admin', null, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":2,\"admin\":false,\"remark\":\"普通角色\",\"dataScope\":\"2\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"2\",\"deptCheckStrictly\":true,\"createTime\":1639116734000,\"updateBy\":\"admin\",\"menuCheckStrictly\":true,\"roleKey\":\"teacher\",\"roleName\":\"教师\",\"menuIds\":[1,2075,2074,2137,2154,2156,2157,2158,2159,2160,2155,2161,2162,2163,2164,2165,2131,2153,2136,2076,2077,2078,2079,2080,2081,2082,2083,2084,2085,2086,2087,2146,2147,2173,2174,2175,2176,2177,2178,2145,2148,2112,2113,2114,2115,2116,2117,2118,2123,2144,2124,2119,2120,2121,2122,2150,2088,2089,2090,2091,2092,2093,2038,2039,2040,2041,2042,2043,2149,2152,2062,2063,2064,2065,2066,2067,107,1036,1037,1038,1039,2132],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-30 22:40:40');
+INSERT INTO `sys_oper_log` VALUES ('456', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"#\",\"orderNum\":\"7\",\"menuName\":\"论坛评论管理\",\"params\":{},\"parentId\":2150,\"isCache\":\"0\",\"path\":\"forumComment\",\"component\":\"cms/forum/comment/index\",\"children\":[],\"createTime\":1642732045000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":2179,\"menuType\":\"C\",\"perms\":\"forum:comment:list\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-30 22:41:32');
+INSERT INTO `sys_oper_log` VALUES ('457', '角色管理', '2', 'com.instrument.web.controller.system.SysRoleController.edit()', 'PUT', '1', 'admin', null, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":2,\"admin\":false,\"remark\":\"普通角色\",\"dataScope\":\"2\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"2\",\"deptCheckStrictly\":true,\"createTime\":1639116734000,\"updateBy\":\"admin\",\"menuCheckStrictly\":true,\"roleKey\":\"teacher\",\"roleName\":\"教师\",\"menuIds\":[1,2075,2074,2137,2154,2156,2157,2158,2159,2160,2155,2161,2162,2163,2164,2165,2131,2153,2136,2076,2077,2078,2079,2080,2081,2082,2083,2084,2085,2086,2087,2146,2147,2173,2174,2175,2176,2177,2178,2145,2148,2112,2113,2114,2115,2116,2117,2118,2123,2144,2124,2119,2120,2121,2122,2150,2088,2089,2090,2091,2092,2093,2038,2039,2040,2041,2042,2043,2179,2180,2181,2182,2183,2184,2149,2152,2062,2063,2064,2065,2066,2067,107,1036,1037,1038,1039,2132],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-30 22:41:56');
+INSERT INTO `sys_oper_log` VALUES ('458', '角色管理', '2', 'com.instrument.web.controller.system.SysRoleController.edit()', 'PUT', '1', 'admin', null, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":4,\"admin\":false,\"dataScope\":\"1\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"0\",\"deptCheckStrictly\":true,\"createTime\":1714226890000,\"updateBy\":\"admin\",\"menuCheckStrictly\":true,\"roleKey\":\"customer\",\"roleName\":\"学生\",\"menuIds\":[1,2075,2076,2074,2112,2124,2150,2154,2156,2157,2158,2159,2160,2155,2161,2162,2163,2164,2165,2138,2139,2140,2141,2142,2143,2007,2077,2125,2126,2127,2128,2129,2130,2146,2147,2173,2174,2175,2176,2177,2178,2145,2148,2113,2114,2144,2120,2179,2180,2181,2182,2183,2184,2149,2137,2132,2133,2134,2135],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-30 22:43:23');
+INSERT INTO `sys_oper_log` VALUES ('459', '菜单管理', '1', 'com.instrument.web.controller.system.SysMenuController.add()', 'POST', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"orderNum\":\"9\",\"menuName\":\"首页论坛\",\"params\":{},\"parentId\":0,\"isCache\":\"0\",\"path\":\"cmsForumIndex\",\"component\":\"cms/forum/cmsForumIndex\",\"createBy\":\"admin\",\"children\":[],\"isFrame\":\"1\",\"menuType\":\"C\",\"perms\":\"cms:forum:list\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-30 22:46:36');
+INSERT INTO `sys_oper_log` VALUES ('460', '角色管理', '2', 'com.instrument.web.controller.system.SysRoleController.edit()', 'PUT', '1', 'admin', null, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":5,\"admin\":false,\"dataScope\":\"1\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"0\",\"deptCheckStrictly\":true,\"createTime\":1715398271000,\"updateBy\":\"admin\",\"menuCheckStrictly\":true,\"roleKey\":\"comAdmin\",\"roleName\":\"普通管理员\",\"menuIds\":[2138,2007,2075,2166,2074,2150,2137,2139,2032,2033,2034,2035,2036,2037,2056,2057,2058,2059,2060,2061,2050,2051,2052,2053,2054,2055,2068,2069,2070,2071,2072,2073,2026,2027,2028,2029,2030,2031,100,1001,1002,1003,1004,1005,1006,1007,101,1008,1009,1010,1011,1012,2076,2077,2078,2079,2080,2081,2082,2083,2084,2085,2086,2087,2146,2147,2145,2148,2106,2107,2108,2109,2110,2111,2100,2101,2102,2103,2104,2105,2112,2113,2114,2115,2116,2117,2118,2123,2144,2088,2089,2090,2091,2092,2093,2038,2039,2040,2041,2042,2043,2149,2152,2062,2063,2064,2065,2066,2067,107,1036,1037,1038,1039,2185,2132],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-31 00:54:46');
+INSERT INTO `sys_oper_log` VALUES ('461', '角色管理', '2', 'com.instrument.web.controller.system.SysRoleController.edit()', 'PUT', '1', 'admin', null, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":4,\"admin\":false,\"dataScope\":\"1\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"0\",\"deptCheckStrictly\":true,\"createTime\":1714226890000,\"updateBy\":\"admin\",\"menuCheckStrictly\":true,\"roleKey\":\"customer\",\"roleName\":\"学生\",\"menuIds\":[1,2075,2076,2074,2112,2124,2150,2152,107,2154,2156,2157,2158,2159,2160,2155,2161,2162,2163,2164,2165,2138,2139,2140,2141,2142,2143,2007,2077,2125,2126,2127,2128,2129,2130,2146,2147,2173,2174,2175,2176,2177,2178,2145,2148,2113,2114,2144,2120,2179,2180,2181,2182,2183,2184,2149,1036,2185,2137,2132,2133,2134,2135],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-31 00:56:07');
+INSERT INTO `sys_oper_log` VALUES ('462', '角色管理', '2', 'com.instrument.web.controller.system.SysRoleController.edit()', 'PUT', '1', 'admin', null, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":2,\"admin\":false,\"remark\":\"普通角色\",\"dataScope\":\"2\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"2\",\"deptCheckStrictly\":true,\"createTime\":1639116734000,\"updateBy\":\"admin\",\"menuCheckStrictly\":true,\"roleKey\":\"teacher\",\"roleName\":\"教师\",\"menuIds\":[1,2075,2074,2137,2154,2156,2157,2158,2159,2160,2155,2161,2162,2163,2164,2165,2131,2153,2136,2076,2077,2078,2079,2080,2081,2082,2083,2084,2085,2086,2087,2146,2147,2173,2174,2175,2176,2177,2178,2145,2148,2112,2113,2114,2115,2116,2117,2118,2123,2144,2124,2119,2120,2121,2122,2150,2088,2089,2090,2091,2092,2093,2038,2039,2040,2041,2042,2043,2179,2180,2181,2182,2183,2184,2149,2152,2062,2063,2064,2065,2066,2067,107,1036,1037,1038,1039,2185,2132],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-31 00:56:20');
+INSERT INTO `sys_oper_log` VALUES ('463', '菜单管理', '2', 'com.instrument.web.controller.system.SysMenuController.edit()', 'PUT', '1', 'admin', null, '/system/menu', '127.0.0.1', '内网IP', '{\"visible\":\"0\",\"icon\":\"#\",\"orderNum\":\"9\",\"menuName\":\"首页论坛\",\"params\":{},\"parentId\":0,\"isCache\":\"0\",\"path\":\"cmsForumIndex\",\"component\":\"cms/forum/cmsForumIndex\",\"children\":[],\"createTime\":1717080396000,\"updateBy\":\"admin\",\"isFrame\":\"1\",\"menuId\":2185,\"menuType\":\"C\",\"perms\":\"cms:forum:homelist\",\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-31 01:07:59');
+INSERT INTO `sys_oper_log` VALUES ('464', '角色管理', '2', 'com.instrument.web.controller.system.SysRoleController.edit()', 'PUT', '1', 'admin', null, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":5,\"admin\":false,\"dataScope\":\"1\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"0\",\"deptCheckStrictly\":true,\"createTime\":1715398271000,\"updateBy\":\"admin\",\"menuCheckStrictly\":true,\"roleKey\":\"comAdmin\",\"roleName\":\"普通管理员\",\"menuIds\":[2138,2007,2075,2166,2074,2150,2137,2139,2032,2033,2034,2035,2036,2037,2056,2057,2058,2059,2060,2061,2050,2051,2052,2053,2054,2055,2068,2069,2070,2071,2072,2073,2026,2027,2028,2029,2030,2031,100,1001,1002,1003,1004,1005,1006,1007,101,1008,1009,1010,1011,1012,2076,2077,2078,2079,2080,2081,2082,2083,2084,2085,2086,2087,2146,2147,2145,2148,2106,2107,2108,2109,2110,2111,2100,2101,2102,2103,2104,2105,2112,2113,2114,2115,2116,2117,2118,2123,2144,2088,2089,2090,2091,2092,2093,2038,2039,2040,2041,2042,2043,2149,2152,2062,2063,2064,2065,2066,2067,107,1036,1037,1038,1039,2185,2132],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-31 01:08:13');
+INSERT INTO `sys_oper_log` VALUES ('465', '角色管理', '2', 'com.instrument.web.controller.system.SysRoleController.edit()', 'PUT', '1', 'admin', null, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":2,\"admin\":false,\"remark\":\"普通角色\",\"dataScope\":\"2\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"2\",\"deptCheckStrictly\":true,\"createTime\":1639116734000,\"updateBy\":\"admin\",\"menuCheckStrictly\":true,\"roleKey\":\"teacher\",\"roleName\":\"教师\",\"menuIds\":[1,2007,2075,2137,2154,2156,2157,2158,2159,2160,2155,2161,2162,2163,2164,2165,2131,2153,2136,2138,2139,2140,2141,2142,2143,2068,2069,2070,2071,2072,2073,2076,2077,2078,2079,2080,2081,2082,2083,2084,2085,2086,2087,2146,2147,2173,2174,2175,2176,2177,2178,2145,2148,2166,2106,2107,2108,2109,2110,2111,2167,2168,2169,2170,2171,2172,2074,2100,2101,2102,2103,2104,2105,2112,2113,2114,2115,2116,2117,2118,2123,2144,2124,2119,2120,2121,2122,2150,2088,2089,2090,2091,2092,2093,2038,2039,2040,2041,2042,2043,2179,2180,2181,2182,2183,2184,2149,2152,2062,2063,2064,2065,2066,2067,107,1036,1037,1038,1039,2185,2132],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-31 01:09:32');
+INSERT INTO `sys_oper_log` VALUES ('466', '角色管理', '2', 'com.instrument.web.controller.system.SysRoleController.edit()', 'PUT', '1', 'admin', null, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":2,\"admin\":false,\"remark\":\"普通角色\",\"dataScope\":\"2\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"2\",\"deptCheckStrictly\":true,\"createTime\":1639116734000,\"updateBy\":\"admin\",\"menuCheckStrictly\":true,\"roleKey\":\"teacher\",\"roleName\":\"教师\",\"menuIds\":[1,2007,100,2137,2154,2156,2157,2158,2159,2160,2155,2161,2162,2163,2164,2165,2131,2153,2136,2138,2139,2140,2141,2142,2143,2068,2069,2070,2071,2072,2073,1001,2075,2076,2077,2078,2079,2080,2081,2082,2083,2084,2085,2086,2087,2125,2126,2127,2128,2129,2130,2146,2147,2173,2174,2175,2176,2177,2178,2145,2148,2166,2106,2107,2108,2109,2110,2111,2167,2168,2169,2170,2171,2172,2074,2100,2101,2102,2103,2104,2105,2112,2113,2114,2115,2116,2117,2118,2123,2144,2124,2119,2120,2121,2122,2150,2088,2089,2090,2091,2092,2093,2038,2039,2040,2041,2042,2043,2179,2180,2181,2182,2183,2184,2149,2152,2062,2063,2064,2065,2066,2067,107,1036,1037,1038,1039,2185,2132],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-31 01:10:18');
+INSERT INTO `sys_oper_log` VALUES ('467', '角色管理', '2', 'com.instrument.web.controller.system.SysRoleController.edit()', 'PUT', '1', 'admin', null, '/system/role', '127.0.0.1', '内网IP', '{\"flag\":false,\"roleId\":4,\"admin\":false,\"dataScope\":\"1\",\"delFlag\":\"0\",\"params\":{},\"roleSort\":\"0\",\"deptCheckStrictly\":true,\"createTime\":1714226890000,\"updateBy\":\"admin\",\"menuCheckStrictly\":true,\"roleKey\":\"customer\",\"roleName\":\"学生\",\"menuIds\":[1,2075,2076,2074,2112,2124,2150,2152,107,2154,2156,2157,2158,2159,2160,2155,2161,2162,2163,2164,2165,2138,2139,2140,2141,2142,2143,2007,2077,2125,2126,2127,2128,2129,2130,2146,2147,2173,2174,2175,2176,2177,2178,2145,2148,2113,2114,2144,2120,2179,2180,2181,2182,2183,2184,2149,1036,2185,2137,2132,2133,2134,2135],\"status\":\"0\"}', '{\"msg\":\"操作成功\",\"code\":200}', '0', null, '2024-05-31 01:10:56');
 
 -- ----------------------------
 -- Table structure for sys_post
@@ -2043,10 +2154,10 @@ CREATE TABLE `sys_role` (
 -- Records of sys_role
 -- ----------------------------
 INSERT INTO `sys_role` VALUES ('1', '超级管理员', 'admin', '1', '1', '1', '1', '0', '0', 'admin', '2021-12-10 14:12:14', '', null, '超级管理员');
-INSERT INTO `sys_role` VALUES ('2', '教师', 'teacher', '2', '2', '1', '1', '0', '0', 'admin', '2021-12-10 14:12:14', 'admin', '2024-05-15 02:41:13', '普通角色');
+INSERT INTO `sys_role` VALUES ('2', '教师', 'teacher', '2', '2', '1', '1', '0', '0', 'admin', '2021-12-10 14:12:14', 'admin', '2024-05-31 01:10:18', '普通角色');
 INSERT INTO `sys_role` VALUES ('3', '内容管理员角色', 'cms', '3', '1', '1', '1', '0', '0', 'admin', '2022-01-04 00:32:39', 'admin', '2024-04-20 17:15:34', null);
-INSERT INTO `sys_role` VALUES ('4', '学生', 'customer', '0', '1', '1', '1', '0', '0', 'admin', '2024-04-27 22:08:10', 'admin', '2024-05-15 02:39:35', null);
-INSERT INTO `sys_role` VALUES ('5', '普通管理员', 'comAdmin', '0', '1', '1', '1', '0', '0', 'admin', '2024-05-11 11:31:11', 'admin', '2024-05-15 02:38:46', null);
+INSERT INTO `sys_role` VALUES ('4', '学生', 'customer', '0', '1', '1', '1', '0', '0', 'admin', '2024-04-27 22:08:10', 'admin', '2024-05-31 01:10:56', null);
+INSERT INTO `sys_role` VALUES ('5', '普通管理员', 'comAdmin', '0', '1', '1', '1', '0', '0', 'admin', '2024-05-11 11:31:11', 'admin', '2024-05-31 01:08:13', null);
 
 -- ----------------------------
 -- Table structure for sys_role_dept
@@ -2079,17 +2190,32 @@ CREATE TABLE `sys_role_menu` (
 -- Records of sys_role_menu
 -- ----------------------------
 INSERT INTO `sys_role_menu` VALUES ('2', '1');
+INSERT INTO `sys_role_menu` VALUES ('2', '100');
 INSERT INTO `sys_role_menu` VALUES ('2', '107');
+INSERT INTO `sys_role_menu` VALUES ('2', '1001');
 INSERT INTO `sys_role_menu` VALUES ('2', '1036');
 INSERT INTO `sys_role_menu` VALUES ('2', '1037');
 INSERT INTO `sys_role_menu` VALUES ('2', '1038');
 INSERT INTO `sys_role_menu` VALUES ('2', '1039');
+INSERT INTO `sys_role_menu` VALUES ('2', '2007');
+INSERT INTO `sys_role_menu` VALUES ('2', '2038');
+INSERT INTO `sys_role_menu` VALUES ('2', '2039');
+INSERT INTO `sys_role_menu` VALUES ('2', '2040');
+INSERT INTO `sys_role_menu` VALUES ('2', '2041');
+INSERT INTO `sys_role_menu` VALUES ('2', '2042');
+INSERT INTO `sys_role_menu` VALUES ('2', '2043');
 INSERT INTO `sys_role_menu` VALUES ('2', '2062');
 INSERT INTO `sys_role_menu` VALUES ('2', '2063');
 INSERT INTO `sys_role_menu` VALUES ('2', '2064');
 INSERT INTO `sys_role_menu` VALUES ('2', '2065');
 INSERT INTO `sys_role_menu` VALUES ('2', '2066');
 INSERT INTO `sys_role_menu` VALUES ('2', '2067');
+INSERT INTO `sys_role_menu` VALUES ('2', '2068');
+INSERT INTO `sys_role_menu` VALUES ('2', '2069');
+INSERT INTO `sys_role_menu` VALUES ('2', '2070');
+INSERT INTO `sys_role_menu` VALUES ('2', '2071');
+INSERT INTO `sys_role_menu` VALUES ('2', '2072');
+INSERT INTO `sys_role_menu` VALUES ('2', '2073');
 INSERT INTO `sys_role_menu` VALUES ('2', '2074');
 INSERT INTO `sys_role_menu` VALUES ('2', '2075');
 INSERT INTO `sys_role_menu` VALUES ('2', '2076');
@@ -2104,6 +2230,24 @@ INSERT INTO `sys_role_menu` VALUES ('2', '2084');
 INSERT INTO `sys_role_menu` VALUES ('2', '2085');
 INSERT INTO `sys_role_menu` VALUES ('2', '2086');
 INSERT INTO `sys_role_menu` VALUES ('2', '2087');
+INSERT INTO `sys_role_menu` VALUES ('2', '2088');
+INSERT INTO `sys_role_menu` VALUES ('2', '2089');
+INSERT INTO `sys_role_menu` VALUES ('2', '2090');
+INSERT INTO `sys_role_menu` VALUES ('2', '2091');
+INSERT INTO `sys_role_menu` VALUES ('2', '2092');
+INSERT INTO `sys_role_menu` VALUES ('2', '2093');
+INSERT INTO `sys_role_menu` VALUES ('2', '2100');
+INSERT INTO `sys_role_menu` VALUES ('2', '2101');
+INSERT INTO `sys_role_menu` VALUES ('2', '2102');
+INSERT INTO `sys_role_menu` VALUES ('2', '2103');
+INSERT INTO `sys_role_menu` VALUES ('2', '2104');
+INSERT INTO `sys_role_menu` VALUES ('2', '2105');
+INSERT INTO `sys_role_menu` VALUES ('2', '2106');
+INSERT INTO `sys_role_menu` VALUES ('2', '2107');
+INSERT INTO `sys_role_menu` VALUES ('2', '2108');
+INSERT INTO `sys_role_menu` VALUES ('2', '2109');
+INSERT INTO `sys_role_menu` VALUES ('2', '2110');
+INSERT INTO `sys_role_menu` VALUES ('2', '2111');
 INSERT INTO `sys_role_menu` VALUES ('2', '2112');
 INSERT INTO `sys_role_menu` VALUES ('2', '2113');
 INSERT INTO `sys_role_menu` VALUES ('2', '2114');
@@ -2117,16 +2261,29 @@ INSERT INTO `sys_role_menu` VALUES ('2', '2121');
 INSERT INTO `sys_role_menu` VALUES ('2', '2122');
 INSERT INTO `sys_role_menu` VALUES ('2', '2123');
 INSERT INTO `sys_role_menu` VALUES ('2', '2124');
+INSERT INTO `sys_role_menu` VALUES ('2', '2125');
+INSERT INTO `sys_role_menu` VALUES ('2', '2126');
+INSERT INTO `sys_role_menu` VALUES ('2', '2127');
+INSERT INTO `sys_role_menu` VALUES ('2', '2128');
+INSERT INTO `sys_role_menu` VALUES ('2', '2129');
+INSERT INTO `sys_role_menu` VALUES ('2', '2130');
 INSERT INTO `sys_role_menu` VALUES ('2', '2131');
 INSERT INTO `sys_role_menu` VALUES ('2', '2132');
 INSERT INTO `sys_role_menu` VALUES ('2', '2136');
 INSERT INTO `sys_role_menu` VALUES ('2', '2137');
+INSERT INTO `sys_role_menu` VALUES ('2', '2138');
+INSERT INTO `sys_role_menu` VALUES ('2', '2139');
+INSERT INTO `sys_role_menu` VALUES ('2', '2140');
+INSERT INTO `sys_role_menu` VALUES ('2', '2141');
+INSERT INTO `sys_role_menu` VALUES ('2', '2142');
+INSERT INTO `sys_role_menu` VALUES ('2', '2143');
 INSERT INTO `sys_role_menu` VALUES ('2', '2144');
 INSERT INTO `sys_role_menu` VALUES ('2', '2145');
 INSERT INTO `sys_role_menu` VALUES ('2', '2146');
 INSERT INTO `sys_role_menu` VALUES ('2', '2147');
 INSERT INTO `sys_role_menu` VALUES ('2', '2148');
 INSERT INTO `sys_role_menu` VALUES ('2', '2149');
+INSERT INTO `sys_role_menu` VALUES ('2', '2150');
 INSERT INTO `sys_role_menu` VALUES ('2', '2152');
 INSERT INTO `sys_role_menu` VALUES ('2', '2153');
 INSERT INTO `sys_role_menu` VALUES ('2', '2154');
@@ -2141,12 +2298,26 @@ INSERT INTO `sys_role_menu` VALUES ('2', '2162');
 INSERT INTO `sys_role_menu` VALUES ('2', '2163');
 INSERT INTO `sys_role_menu` VALUES ('2', '2164');
 INSERT INTO `sys_role_menu` VALUES ('2', '2165');
+INSERT INTO `sys_role_menu` VALUES ('2', '2166');
+INSERT INTO `sys_role_menu` VALUES ('2', '2167');
+INSERT INTO `sys_role_menu` VALUES ('2', '2168');
+INSERT INTO `sys_role_menu` VALUES ('2', '2169');
+INSERT INTO `sys_role_menu` VALUES ('2', '2170');
+INSERT INTO `sys_role_menu` VALUES ('2', '2171');
+INSERT INTO `sys_role_menu` VALUES ('2', '2172');
 INSERT INTO `sys_role_menu` VALUES ('2', '2173');
 INSERT INTO `sys_role_menu` VALUES ('2', '2174');
 INSERT INTO `sys_role_menu` VALUES ('2', '2175');
 INSERT INTO `sys_role_menu` VALUES ('2', '2176');
 INSERT INTO `sys_role_menu` VALUES ('2', '2177');
 INSERT INTO `sys_role_menu` VALUES ('2', '2178');
+INSERT INTO `sys_role_menu` VALUES ('2', '2179');
+INSERT INTO `sys_role_menu` VALUES ('2', '2180');
+INSERT INTO `sys_role_menu` VALUES ('2', '2181');
+INSERT INTO `sys_role_menu` VALUES ('2', '2182');
+INSERT INTO `sys_role_menu` VALUES ('2', '2183');
+INSERT INTO `sys_role_menu` VALUES ('2', '2184');
+INSERT INTO `sys_role_menu` VALUES ('2', '2185');
 INSERT INTO `sys_role_menu` VALUES ('3', '2007');
 INSERT INTO `sys_role_menu` VALUES ('3', '2026');
 INSERT INTO `sys_role_menu` VALUES ('3', '2027');
@@ -2197,6 +2368,8 @@ INSERT INTO `sys_role_menu` VALUES ('3', '2071');
 INSERT INTO `sys_role_menu` VALUES ('3', '2072');
 INSERT INTO `sys_role_menu` VALUES ('3', '2073');
 INSERT INTO `sys_role_menu` VALUES ('4', '1');
+INSERT INTO `sys_role_menu` VALUES ('4', '107');
+INSERT INTO `sys_role_menu` VALUES ('4', '1036');
 INSERT INTO `sys_role_menu` VALUES ('4', '2007');
 INSERT INTO `sys_role_menu` VALUES ('4', '2074');
 INSERT INTO `sys_role_menu` VALUES ('4', '2075');
@@ -2230,6 +2403,8 @@ INSERT INTO `sys_role_menu` VALUES ('4', '2146');
 INSERT INTO `sys_role_menu` VALUES ('4', '2147');
 INSERT INTO `sys_role_menu` VALUES ('4', '2148');
 INSERT INTO `sys_role_menu` VALUES ('4', '2149');
+INSERT INTO `sys_role_menu` VALUES ('4', '2150');
+INSERT INTO `sys_role_menu` VALUES ('4', '2152');
 INSERT INTO `sys_role_menu` VALUES ('4', '2154');
 INSERT INTO `sys_role_menu` VALUES ('4', '2155');
 INSERT INTO `sys_role_menu` VALUES ('4', '2156');
@@ -2248,6 +2423,13 @@ INSERT INTO `sys_role_menu` VALUES ('4', '2175');
 INSERT INTO `sys_role_menu` VALUES ('4', '2176');
 INSERT INTO `sys_role_menu` VALUES ('4', '2177');
 INSERT INTO `sys_role_menu` VALUES ('4', '2178');
+INSERT INTO `sys_role_menu` VALUES ('4', '2179');
+INSERT INTO `sys_role_menu` VALUES ('4', '2180');
+INSERT INTO `sys_role_menu` VALUES ('4', '2181');
+INSERT INTO `sys_role_menu` VALUES ('4', '2182');
+INSERT INTO `sys_role_menu` VALUES ('4', '2183');
+INSERT INTO `sys_role_menu` VALUES ('4', '2184');
+INSERT INTO `sys_role_menu` VALUES ('4', '2185');
 INSERT INTO `sys_role_menu` VALUES ('5', '100');
 INSERT INTO `sys_role_menu` VALUES ('5', '101');
 INSERT INTO `sys_role_menu` VALUES ('5', '107');
@@ -2363,6 +2545,7 @@ INSERT INTO `sys_role_menu` VALUES ('5', '2149');
 INSERT INTO `sys_role_menu` VALUES ('5', '2150');
 INSERT INTO `sys_role_menu` VALUES ('5', '2152');
 INSERT INTO `sys_role_menu` VALUES ('5', '2166');
+INSERT INTO `sys_role_menu` VALUES ('5', '2185');
 
 -- ----------------------------
 -- Table structure for sys_user
@@ -2389,14 +2572,15 @@ CREATE TABLE `sys_user` (
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `remark` varchar(500) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`user_id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='用户信息表';
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC COMMENT='用户信息表';
 
 -- ----------------------------
 -- Records of sys_user
 -- ----------------------------
-INSERT INTO `sys_user` VALUES ('1', '103', 'admin', 'admin', '00', 'ry@163.com', '15888888888', '0', '', '$2a$10$7JB720yubVSZvUI0rEqK/.VqGOZTH.ulu33dHOiBE8ByOhJIrdAu2', '0', '0', '127.0.0.1', '2024-05-14 23:52:56', 'admin', '2021-12-10 14:12:14', '', '2024-05-14 23:52:56', '管理员');
+INSERT INTO `sys_user` VALUES ('1', '103', 'admin', 'admin', '00', 'ry@163.com', '15888888888', '0', '', '$2a$10$7JB720yubVSZvUI0rEqK/.VqGOZTH.ulu33dHOiBE8ByOhJIrdAu2', '0', '0', '127.0.0.1', '2024-05-31 01:07:32', 'admin', '2021-12-10 14:12:14', '', '2024-05-31 01:07:32', '管理员');
 INSERT INTO `sys_user` VALUES ('2', '105', '若依', '若依', '00', 'ry@qq.com', '15666666666', '1', '', '$2a$10$824HoRUuGXB3z/.Ei8jVy.LNBinXUc5iZM2alU7zqgWE4RSpFkyuW', '0', '0', '127.0.0.1', '2022-04-22 17:28:20', 'admin', '2021-12-10 14:12:14', 'admin', '2022-07-28 09:57:07', '测试员');
 INSERT INTO `sys_user` VALUES ('3', null, 'maple', 'maple', '00', '', '', '0', '', '$2a$10$bMXck.xcNa2l4Ky6ENiaZuoqQP1MGZkHHAde3J.OrRefx7dMqsmKm', '0', '0', '127.0.0.1', '2024-05-08 23:24:14', '', '2024-05-07 23:38:32', '', '2024-05-08 23:24:14', null);
+INSERT INTO `sys_user` VALUES ('5', null, 'jiaoshi1', 'jiaoshi1', '00', '', '', '0', '', '$2a$10$.7D4FpoLvE83QdFKT/MTeuoP40c/zs.iiyGg5BleJBH7z0GrNPUje', '0', '0', '127.0.0.1', '2024-05-31 01:11:22', '', '2024-05-31 00:50:39', '', '2024-05-31 01:11:22', null);
 
 -- ----------------------------
 -- Table structure for sys_user_post
@@ -2430,3 +2614,4 @@ CREATE TABLE `sys_user_role` (
 INSERT INTO `sys_user_role` VALUES ('1', '1');
 INSERT INTO `sys_user_role` VALUES ('2', '2');
 INSERT INTO `sys_user_role` VALUES ('3', '4');
+INSERT INTO `sys_user_role` VALUES ('5', '2');
